@@ -1,0 +1,25 @@
+4.0 ;; servings ;; 30 ;; 0 ;; 2 ;; 1 ;;
+INGREDIENTS
+White Rice :: 400.0 :: grams ;;
+Chicken Breast :: 400.0 :: grams ;;
+Carrot :: 2.0 :: whole ;;
+Bell Pepper :: 2.0 :: whole ;;
+Frozen Peas :: 200.0 :: grams ;;
+Egg :: 4.0 :: whole ;;
+Garlic :: 8.0 :: cloves ;;
+Soy Sauce :: 120.0 :: ml ;;
+Vegetable Oil :: 4.0 :: tbsp ;;
+ITEMS
+Pot :: 1 ;;
+Frying Pan :: 1 ;;
+Knife :: 1 ;;
+Cutting Board :: 1 ;;
+INSTRUCTIONS
+1 :: Heat {0.25:Vegetable Oil} in a large skillet or wok over medium-high heat. ;;
+2 :: Add the {Chicken Breast} cubes, seasoning them with salt and pepper. Cook until no longer pink. Remove and set aside. ;;
+3 :: In the same skillet, add {0.25:Vegetable Oil}. Add {1:Garlic}, {1:Carrot}, and {1:Bell Pepper}. Sauté for 2-3 minutes. ;;
+4 :: Add {1:Frozen Peas} and cook for another 2 minutes. ;;
+5 :: Push the vegetables to one side of the skillet. Pour {1:Egg} into the other side and scramble. ;;
+6 :: Add the {1:White Rice} to the skillet, mixing it with the vegetables and eggs. ;;
+7 :: Pour {1:Soy Sauce} over the rice mixture. Add the cooked chicken back into the skillet. ;;
+8 :: Stir everything together and cook for another 2-3 minutes. ;;

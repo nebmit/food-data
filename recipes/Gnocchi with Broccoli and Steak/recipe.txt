@@ -1,0 +1,26 @@
+4.0 ;; servings ;; 30 ;; 15 ;; 2 ;; 1 ;;
+INGREDIENTS
+Potato gnocchi :: 500.0 :: grams ;;
+Broccoli :: 300.0 :: grams ;;
+Sirloin steak :: 400.0 :: grams ;;
+Olive oil :: 30.0 :: milliliters ;;
+Garlic :: 2.0 :: cloves ;;
+Salt :: 5.0 :: grams ;;
+Black pepper :: 3.0 :: grams ;;
+Grated Parmesan cheese :: 50.0 :: grams ;;
+ITEMS
+Large pot :: 1 ;;
+Frying pan :: 1 ;;
+Colander :: 1 ;;
+Knife :: 1 ;;
+Cutting board :: 1 ;;
+INSTRUCTIONS
+1 :: Bring a large pot of salted water to a boil. ;;
+2 :: Add {1:potato gnocchi} to the boiling water and cook until they float to the top, about 3-4 minutes. Drain and set aside. ;;
+3 :: In the same pot, add water and bring to a boil. Add {1:broccoli} and cook for 3-4 minutes until tender. Drain and set aside. ;;
+4 :: Season {1:Sirloin steak} with {1:salt} and {1:black pepper}. ;;
+5 :: Heat {1:olive oil} in a frying pan over medium-high heat. ;;
+6 :: Add {1:Sirloin steak} to the pan and cook for 4-5 minutes on each side for medium-rare. Let rest for 5 minutes, then slice. ;;
+7 :: In the same pan, sauté {1:garlic} until fragrant. ;;
+8 :: Add cooked {1:Potato gnocchi} and {1:broccoli} to the pan, tossing to combine. ;;
+9 :: Serve the gnocchi and broccoli topped with sliced steak and sprinkled with {Grated Parmesan cheese}. ;;

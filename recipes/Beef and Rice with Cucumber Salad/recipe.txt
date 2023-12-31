@@ -1,0 +1,30 @@
+2.0 ;; servings ;; 30 ;; 15 ;; 2 ;; 1 ;;
+INGREDIENTS
+Basmati rice :: 200.0 :: grams ;;
+Green bell pepper :: 1.0 :: whole ;;
+Tomatoes :: 2.0 :: whole ;;
+Red onion :: 1.0 :: whole ;;
+Garlic clove :: 1.0 :: whole ;;
+Mint & dill :: 10.0 :: grams ;;
+Ground beef :: 250.0 :: grams ;;
+North African spice mix :: 1.0 :: packet ;;
+Tomato paste :: 1.0 :: can ;;
+Yogurt :: 1.0 :: cup ;;
+Cucumber :: 1.0 :: whole ;;
+Butter :: 15.0 :: grams ;;
+Olive oil :: 2.0 :: tbsp ;;
+Vinegar :: 1.0 :: tbsp ;;
+ITEMS
+Small pot with lid :: 1 ;;
+Medium-sized frying pan :: 1 ;;
+Measuring cup :: 1 ;;
+Sieve :: 1 ;;
+INSTRUCTIONS
+1 :: Bring 400ml of lightly salted water to a boil in a small pot. ;;
+2 :: Rinse the rice in a sieve until the water runs clear, then add to boiling water. Cover and simmer on low heat for 10–12 minutes. Let sit off the heat for about 5 minutes. ;;
+3 :: Quarter the bell pepper, remove seeds, and chop into 2cm cubes. Dice the tomatoes and onion similarly. Peel and finely mince the garlic. Pick dill tips, setting some aside for garnish and finely chopping the rest. ;;
+4 :: Heat 1 tablespoon of olive oil in a frying pan over medium-high heat. Add the ground beef, ¾ of the onions, bell pepper, spice mix, and a pinch of salt and pepper. Cook for 3–4 minutes until the meat starts to brown. ;;
+5 :: Add the tomatoes, tomato paste, dill stems, and 150ml of water to the pan. Simmer on medium heat for 10–15 minutes, adding more water if needed. Season with salt and pepper to taste. ;;
+6 :: Strip mint leaves from stems and chop finely. Mix half of the yogurt with mint, remaining garlic, 2 teaspoons of olive oil, 1 tablespoon of vinegar, ½ teaspoon of salt, and pepper to taste for a dressing. Slice the cucumber and mix with the remaining onions and dressing. ;;
+7 :: Remove dill stems from the pan, slightly crush some of the tomatoes. Season the sauce with salt, pepper, and 1 teaspoon of vinegar, then stir in the chopped dill. ;;
+8 :: Stir 1 tablespoon of butter into the cooked rice and divide onto plates. Top with the beef mixture and garnish with the remaining dill. Serve with the salad. ;;

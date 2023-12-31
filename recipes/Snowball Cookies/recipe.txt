@@ -1,0 +1,24 @@
+24.0 ;; cookies ;; 20 ;; 10 ;; 2 ;; 1 ;;
+INGREDIENTS
+Unsalted butter :: 230.0 :: grams ;;
+Icing sugar :: 100.0 :: grams ;;
+Vanilla extract :: 5.0 :: milliliters ;;
+All-purpose flour :: 280.0 :: grams ;;
+Salt :: 2.0 :: grams ;;
+Chopped walnuts :: 120.0 :: grams ;;
+Additional icing sugar (for coating) :: 100.0 :: grams ;;
+ITEMS
+Baking sheet :: 2 ;;
+Mixing bowl :: 2 ;;
+Spoon :: 1 ;;
+Oven :: 1 ;;
+INSTRUCTIONS
+1 :: Preheat the oven to 180°C. ;;
+2 :: In a mixing bowl, cream the {1:unsalted butter} and {1:icing sugar} until smooth. ;;
+3 :: Blend in {1:vanilla extract}. ;;
+4 :: Gradually mix in {1:all-purpose flour} and {1:salt} until well combined. ;;
+5 :: Stir in {1:chopped walnuts}. ;;
+6 :: Shape the dough into small balls, about 2 cm in diameter, and place them on the baking sheets. ;;
+7 :: Bake in the preheated oven for 10-12 minutes, until lightly golden. ;;
+8 :: Allow the cookies to cool slightly, then roll them in {1:additional icing sugar} while still warm. ;;
+9 :: Let the cookies cool completely on a wire rack. ;;

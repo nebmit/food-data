@@ -1,0 +1,30 @@
+4.0 ;; servings ;; 60 ;; 30 ;; 3 ;; 2 ;;
+INGREDIENTS
+Olive oil :: 30.0 :: milliliters ;;
+Chorizo sausage :: 150.0 :: grams ;;
+Garlic :: 2.0 :: cloves ;;
+Onion :: 1.0 :: medium ;;
+Red bell pepper :: 1.0 :: medium ;;
+Shrimp :: 300.0 :: grams ;;
+Short-grain rice :: 400.0 :: grams ;;
+Chicken broth :: 950.0 :: milliliters ;;
+Paprika :: 5.0 :: grams ;;
+Saffron threads :: 0.5 :: grams ;;
+Salt :: 5.0 :: grams ;;
+ITEMS
+Large pan :: 1 ;;
+Knife :: 1 ;;
+Measuring spoons :: 1 ;;
+Measuring cups :: 1 ;;
+Spoon :: 1 ;;
+Stove :: 1 ;;
+INSTRUCTIONS
+1 :: Heat {1:olive oil} in the large pan over medium heat. ;;
+2 :: Add {1:chorizo sausage} and cook until browned, then remove and set aside. ;;
+3 :: In the same pan, sauté {1:garlic}, {1:onion}, and {1:red bell pepper} until soft. ;;
+4 :: Add {1:shrimp} and cook until they turn pink, then remove and set aside. ;;
+5 :: Add {1:short-grain rice} to the pan and stir for 2 minutes. ;;
+6 :: Pour in {1:chicken broth}, add {1:paprika}, {1:saffron threads}, and {1:salt}. Bring to a simmer. ;;
+7 :: Reduce heat to low, cover, and cook for 20 minutes. ;;
+8 :: Return {1:chorizo sausage} and {1:shrimp} to the pan, mix gently, and cook for an additional 10 minutes. ;;
+9 :: Remove from heat and let it rest for 10 minutes before serving. ;;
