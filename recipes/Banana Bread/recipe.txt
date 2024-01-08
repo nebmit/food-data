@@ -7,7 +7,6 @@ Eggs :: 2.0 :: whole ;;
 Vanilla extract :: 5.0 :: milliliters ;;
 All-purpose flour :: 250.0 :: grams ;;
 Baking soda :: 5.0 :: grams ;;
-Salt :: 2.5 :: grams ;;
 ITEMS
 Loaf pan :: 1 ;;
 Mixing bowl :: 2 ;;
@@ -19,7 +18,7 @@ INSTRUCTIONS
 2 :: In a bowl, mash the {1:ripe bananas} with a fork. ;;
 3 :: Melt the {1:unsalted butter} and mix it with the {1:granulated sugar} in another bowl. ;;
 4 :: Beat in {1:eggs} and {1:vanilla extract} to the butter and sugar mixture. ;;
-5 :: In another bowl, whisk together the {1:all-purpose flour}, {1:baking soda}, and {1:salt}. ;;
+5 :: In another bowl, whisk together the {1:all-purpose flour}, {1:baking soda}, and a pinch of salt. ;;
 6 :: Combine the banana mixture with the butter mixture. ;;
 7 :: Gradually add the flour mixture to the banana mixture and stir until just combined. ;;
 8 :: Pour the batter into the greased loaf pan. ;;
