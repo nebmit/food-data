@@ -1,18 +1,18 @@
-4.0 ;; servings ;; 25 ;; 0 ;; 2 ;; 1 ;;
+4 :: servings :: 25 :: 0 :: 2 :: 1
 INGREDIENTS
-Potato :: 4.0 :: whole ;;
-Parmesan Cheese :: 50.0 :: grams ;;
-Minced Garlic :: 2.0 :: tbsp ;;
-Olive Oil :: 2.0 :: tbsp ;;
+Potato :: 4.0 :: whole
+Parmesan Cheese :: 50.0 :: grams
+Minced Garlic :: 2.0 :: tbsp
+Olive Oil :: 2.0 :: tbsp
 ITEMS
-Pot :: 1 ;;
-Frying Pan :: 1 ;;
-Knife :: 1 ;;
-Cutting Board :: 1 ;;
+Pot :: 1
+Frying Pan :: 1
+Knife :: 1
+Cutting Board :: 1
 INSTRUCTIONS
-1 :: Preheat your oven to 220°C (425°F). Line a baking sheet with parchment paper. ;;
-2 :: Cut the {Potato} into 1/2-inch thick slices, then cut each slice into 1/2-inch thick fries. ;;
-3 :: Toss the slices with {1:Olive Oil}, {1:Minced Garlic}, Salt, and Black Pepper in a large bowl. ;;
-4 :: Spread the fries evenly on the prepared baking sheet. ;;
-5 :: Bake for 20-25 minutes, flipping halfway through, until they are golden and crisp. ;;
-6 :: Remove the fries from the oven and immediately toss them with {1:Parmesan Cheese}. ;;
+Preheat your oven to 220°C (425°F). Line a baking sheet with parchment paper.
+Cut the {Potato} into 1/2-inch thick slices, then cut each slice into 1/2-inch thick fries.
+Toss the slices with {1:Olive Oil}, {1:Minced Garlic}, Salt, and Black Pepper in a large bowl.
+Spread the fries evenly on the prepared baking sheet.
+Bake for 20-25 minutes, flipping halfway through, until they are golden and crisp.
+Remove the fries from the oven and immediately toss them with {1:Parmesan Cheese}.
