@@ -1,24 +1,24 @@
-10.0 ;; pieces ;; 30 ;; 120 ;; 2 ;; 1 ;;
+10 :: pieces :: 30 :: 120 :: 2 :: 1
 INGREDIENTS
-Dark chocolate :: 300.0 :: grams ;;
-White chocolate :: 150.0 :: grams ;;
-Dried cranberries :: 50.0 :: grams ;;
-Pistachios (chopped) :: 50.0 :: grams ;;
-Candied orange peel (chopped) :: 40.0 :: grams ;;
-Crushed candy canes :: 40.0 :: grams ;;
+Dark chocolate :: 300.0 :: grams
+White chocolate :: 150.0 :: grams
+Dried cranberries :: 50.0 :: grams
+Pistachios (chopped) :: 50.0 :: grams
+Candied orange peel (chopped) :: 40.0 :: grams
+Crushed candy canes :: 40.0 :: grams
 ITEMS
-Baking sheet :: 1 ;;
-Parchment paper :: 1 ;;
-Heatproof bowl :: 2 ;;
-Pot :: 1 ;;
-Spoon :: 1 ;;
-Refrigerator :: 1 ;;
+Baking sheet :: 1
+Parchment paper :: 1
+Heatproof bowl :: 2
+Pot :: 1
+Spoon :: 1
+Refrigerator :: 1
 INSTRUCTIONS
-1 :: Line the baking sheet with parchment paper. ;;
-2 :: Fill a pot with water and bring to a simmer. Place a heatproof bowl on top and melt {1:dark chocolate}, stirring occasionally. ;;
-3 :: Pour melted {1:dark chocolate} onto the baking sheet, spreading to 1/4 inch thickness. ;;
-4 :: In a separate heatproof bowl, melt {1:white chocolate} using the same method. ;;
-5 :: Drizzle melted {1:white chocolate} over {1:dark chocolate} layer. ;;
-6 :: Sprinkle {1:dried cranberries}, {1:pistachios}, {1:candied orange peel}, and {1:crushed candy canes} over the chocolate. ;;
-7 :: Chill in the refrigerator for 1-2 hours until set. ;;
-8 :: Break into pieces and serve. ;;
+Line the baking sheet with parchment paper.
+Fill a pot with water and bring to a simmer. Place a heatproof bowl on top and melt {1:dark chocolate}, stirring occasionally.
+Pour melted {1:dark chocolate} onto the baking sheet, spreading to 1/4 inch thickness.
+In a separate heatproof bowl, melt {1:white chocolate} using the same method.
+Drizzle melted {1:white chocolate} over {1:dark chocolate} layer.
+Sprinkle {1:dried cranberries}, {1:pistachios}, {1:candied orange peel}, and {1:crushed candy canes} over the chocolate.
+Chill in the refrigerator for 1-2 hours until set.
+Break into pieces and serve.

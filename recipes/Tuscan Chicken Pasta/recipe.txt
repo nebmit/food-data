@@ -1,28 +1,28 @@
-4.0 ;; servings ;; 30 ;; 15 ;; 2 ;; 2 ;;
+4 :: servings :: 30 :: 15 :: 2 :: 2
 INGREDIENTS
-Chicken breast :: 400.0 :: grams ;;
-Salt :: 5.0 :: grams ;;
-Black pepper :: 2.0 :: grams ;;
-Olive oil :: 30.0 :: milliliters ;;
-Garlic :: 2.0 :: cloves ;;
-Sun-dried tomatoes :: 100.0 :: grams ;;
-Baby spinach :: 150.0 :: grams ;;
-Heavy cream :: 300.0 :: milliliters ;;
-Chicken broth :: 250.0 :: milliliters ;;
-Parmesan cheese :: 50.0 :: grams ;;
-Penne pasta :: 300.0 :: grams ;;
+Chicken breast :: 400.0 :: grams
+Salt :: 5.0 :: grams
+Black pepper :: 2.0 :: grams
+Olive oil :: 30.0 :: milliliters
+Garlic :: 2.0 :: cloves
+Sun-dried tomatoes :: 100.0 :: grams
+Baby spinach :: 150.0 :: grams
+Heavy cream :: 300.0 :: milliliters
+Chicken broth :: 250.0 :: milliliters
+Parmesan cheese :: 50.0 :: grams
+Penne pasta :: 300.0 :: grams
 ITEMS
-Frying pan :: 1 ;;
-Pot :: 1 ;;
-Spoon :: 1 ;;
-Strainer :: 1 ;;
+Frying pan :: 1
+Pot :: 1
+Spoon :: 1
+Strainer :: 1
 INSTRUCTIONS
-1 :: Season the {1:chicken breast} with {1:salt} and {1:black pepper}. ;;
-2 :: In a frying pan, heat {1:olive oil} and cook the chicken on medium heat until golden and cooked through, then set aside. ;;
-3 :: In the same pan, add the {1:garlic} and {1:sun-dried tomatoes}, sauté for a minute. ;;
-4 :: Add {1:baby spinach} and cook until it wilts. ;;
-5 :: Pour in {1:heavy cream} and {1:chicken broth}, bring to a simmer. ;;
-6 :: Stir in {1:Parmesan cheese} until it melts into the sauce. ;;
-7 :: Cook the {1:penne pasta} in boiling water as per package instructions, then drain. ;;
-8 :: Add the cooked pasta and chicken to the sauce, stir to combine. ;;
-9 :: Serve the creamy Tuscan chicken pasta hot. ;;
+Season the {1:chicken breast} with {1:salt} and {1:black pepper}.
+In a frying pan, heat {1:olive oil} and cook the chicken on medium heat until golden and cooked through, then set aside.
+In the same pan, add the {1:garlic} and {1:sun-dried tomatoes}, sauté for a minute.
+Add {1:baby spinach} and cook until it wilts.
+Pour in {1:heavy cream} and {1:chicken broth}, bring to a simmer.
+Stir in {1:Parmesan cheese} until it melts into the sauce.
+Cook the {1:penne pasta} in boiling water as per package instructions, then drain.
+Add the cooked pasta and chicken to the sauce, stir to combine.
+Serve the creamy Tuscan chicken pasta hot.

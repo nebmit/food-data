@@ -1,28 +1,28 @@
-4.0 ;; servings ;; 30 ;; 0 ;; 3 ;; 1 ;;
+4 :: servings :: 30 :: 0 :: 3 :: 1
 INGREDIENTS
-Ground Beef :: 450.0 :: grams ;;
-Burger Bun :: 4.0 :: whole ;;
-Cheddar Cheese :: 4.0 :: slices ;;
-Tomato :: 1.0 :: whole ;;
-Red Onion :: 1.0 :: whole ;;
-Lettuce :: 4.0 :: leaves ;;
-Olive Oil :: 2.0 :: tbsp ;;
-Mayonnaise :: 60.0 :: ml ;;
-Ketchup :: 2.0 :: tbsp ;;
-Dijon Mustard :: 1.0 :: tbsp ;;
-Worcestershire Sauce :: 1.0 :: tsp ;;
+Ground Beef :: 450.0 :: grams
+Burger Bun :: 4.0 :: whole
+Cheddar Cheese :: 4.0 :: slices
+Tomato :: 1.0 :: whole
+Red Onion :: 1.0 :: whole
+Lettuce :: 4.0 :: leaves
+Olive Oil :: 2.0 :: tbsp
+Mayonnaise :: 60.0 :: ml
+Ketchup :: 2.0 :: tbsp
+Dijon Mustard :: 1.0 :: tbsp
+Worcestershire Sauce :: 1.0 :: tsp
 ITEMS
-Pot :: 1 ;;
-Frying Pan :: 1 ;;
-Knife :: 1 ;;
-Cutting Board :: 1 ;;
+Pot :: 1
+Frying Pan :: 1
+Knife :: 1
+Cutting Board :: 1
 INSTRUCTIONS
-1 :: Preheat your grill or stovetop grilling pan over medium-high heat. ;;
-2 :: Mix together all the ingredients for the sauce in a small bowl. Set aside. ;;
-3 :: Form the {1:Ground Beef} into 4 burger patties. Make a small indent in the center of each patty. ;;
-4 :: Drizzle {Olive Oil} over the patties and season both sides with Salt and Black Pepper. ;;
-5 :: Place the patties on the preheated grill or pan. Cook for about 4 minutes per side or to your desired doneness. ;;
-6 :: Just before the burgers are done, place one {Cheddar Cheese} slice on each patty to melt. ;;
-7 :: Toast {Burger Bun} until lightly browned. ;;
-8 :: To assemble the burgers, spread the prepared sauce on the bottom half of each bun. Add {Lettuce}, then the burger patty with melted cheese, followed by {Tomato} and {Red Onion} slices. ;;
-9 :: Top with the other half of the bun. Serve immediately. ;;
+Preheat your grill or stovetop grilling pan over medium-high heat.
+Mix together all the ingredients for the sauce in a small bowl. Set aside.
+Form the {1:Ground Beef} into 4 burger patties. Make a small indent in the center of each patty.
+Drizzle {Olive Oil} over the patties and season both sides with Salt and Black Pepper.
+Place the patties on the preheated grill or pan. Cook for about 4 minutes per side or to your desired doneness.
+Just before the burgers are done, place one {Cheddar Cheese} slice on each patty to melt.
+Toast {Burger Bun} until lightly browned.
+To assemble the burgers, spread the prepared sauce on the bottom half of each bun. Add {Lettuce}, then the burger patty with melted cheese, followed by {Tomato} and {Red Onion} slices.
+Top with the other half of the bun. Serve immediately.

@@ -1,30 +1,30 @@
-2.0 ;; servings ;; 45 ;; 5 ;; 2 ;; 2 ;;
+4 :: servings :: 45 :: 5 :: 2 :: 2
+TAGS
+vegetarian
 INGREDIENTS
-Sushi rice :: 200.0 :: grams ;;
-Lightly salted water :: 400.0 :: milliliters ;;
-Bell pepper :: 1.0 :: whole ;;
-Green beans :: 250.0 :: grams ;;
-Spring onion :: 1.0 :: whole ;;
-Chili pepper :: 1.0 :: whole ;;
-Garlic clove :: 1.0 :: whole ;;
-Vegetable oil :: 15.0 :: milliliters ;;
-Hoisin sauce :: 50.0 :: milliliters ;;
-Ginger seasoning sauce :: 100.0 :: milliliters ;;
-Vinegar :: 30.0 :: milliliters ;;
-Water :: 75.0 :: milliliters ;;
-Eggs :: 2.0 :: whole ;;
+Sushi rice :: 400.0 :: grams
+Green beans :: 500.0 :: grams
+Bell pepper :: 2.0 :: whole
+Spring onion :: 2.0 :: whole
+Chili pepper :: 2.0 :: whole
+Garlic clove :: 2.0 :: whole
+Ginger seasoning sauce :: 200.0 :: milliliters
+Hoisin sauce :: 100.0 :: milliliters
+Vinegar :: 60.0 :: milliliters
+Eggs :: 4.0 :: whole
+COMMON INGREDIENTS
+Water :: 950 :: milliliters
 ITEMS
-Small pot :: 1 ;;
-Sieve :: 1 ;;
-Large frying pan :: 1 ;;
-Spoon :: 1 ;;
+Small pot :: 1
+Sieve :: 1
+Large frying pan :: 1
 INSTRUCTIONS
-1 :: Bring 400ml of lightly salted water to a boil in a small pot. ;;
-2 :: Rinse 200g of sushi rice in a sieve until the water runs clear. Then add to the boiling pot, cover, and cook on the lowest heat for 18–20 minutes. ;;
-3 :: Quarter, deseed, and slice the bell pepper into thin strips. Trim the ends off the green beans. Slice the spring onion into fine rings, setting the green part aside. Slice the chili pepper into fine rings (remove seeds for less heat). Peel and finely dice the garlic clove. ;;
-4 :: Mix hoisin sauce, ginger seasoning sauce, 2 tablespoons of vinegar, and 75ml of water. ;;
-5 :: Heat 1 tablespoon of vegetable oil in a large frying pan. Sauté garlic for 1 minute on medium to high heat. ;;
-6 :: Add the beans, white parts of the spring onions, and bell pepper. Stir-fry for 2–3 minutes. ;;
-7 :: Add the sauce to the pan and bring to a boil. Reduce heat and let the vegetables simmer covered for 6–7 minutes. Add a bit of water if necessary. ;;
-8 :: Make 2 indentations in the vegetables with the back of a spoon and slide an egg into each. Cover and simmer for 3–5 minutes until the egg whites are set. ;;
-9 :: Distribute the rice and vegetables onto plates, carefully place the eggs on top. Garnish with chili pepper and green spring onion rings. ;;
+Bring {0.842105263158:water} to a boil in a small pot.
+Add {1:sushi rice} to the boiling pot, cover, and cook on the lowest heat for 18–20 minutes.
+Quarter, deseed, and slice {1:bell pepper} into thin strips. Trim the ends off of {1:green beans}. Slice the {1:spring onion} into fine rings, setting the green part aside. Slice {1:chili pepper} into fine rings (remove seeds for less heat). Peel and finely dice {1:garlic clove}.
+Heat vegetable oil in a large frying pan. Sauté {1:garlic clove} for 1 minute on medium to high heat.
+Add the green beans, white parts of the spring onions, and bell pepper. Stir-fry for 2–3 minutes.
+Mix {1:hoisin sauce}, {1:ginger seasoning sauce}, {1:vinegar}, and {0.15789473684210526:water}.
+Add the sauce to the pan and bring to a boil. Reduce heat and let the vegetables simmer covered for 6–7 minutes. Add a bit of water if necessary.
+Make indentations in the vegetables with the back of a spoon and slide an egg into each. Cover and simmer for 3–5 minutes until the egg whites are set.
+Distribute the rice and vegetables onto plates, carefully place the eggs on top. Garnish with chili pepper and green spring onion rings.

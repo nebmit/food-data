@@ -1,0 +1,26 @@
+# Commented Line (ignored by parser)
+[PortionQuantity | integer] :: [PortionDescriptor | string] :: [ActiveTimeMinutes | integer] :: [PassiveTimeMinutes | integer] :: [ComplexityRating | integer (1-5)] :: [MayhemRating | integer (1-5)]
+# Optional Section
+TAGS
+[Tag | string]
+[Tag | string]
+# ...
+INGREDIENTS
+[IngredientName | string] :: [Quantity | number] :: [Measurement | string]
+[IngredientName | string] :: [Quantity | number] :: [Measurement | string]
+# ...
+# Optional Section
+COMMON INGREDIENTS
+[IngredientName | string] :: [Quantity | number] :: [Measurement | string]
+# ...
+ITEMS
+[ItemName | string] :: [Quantity | integer]
+[ItemName | string] :: [Quantity | integer]
+# ...
+INSTRUCTIONS
+[StepDetail | string]
+[StepDetail | string]
+# ...
+# Optional Section
+NOTE
+[Note | string]
