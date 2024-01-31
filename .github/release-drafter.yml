@@ -1,0 +1,49 @@
+name-template: 'v$NEXT_PATCH_VERSION'
+tag-template: 'v$NEXT_PATCH_VERSION'
+categories:
+  - title: '🆕 Data Added'
+    labels:
+      - 'addition'
+  - title: '🔧 Data Modified'
+    labels:
+      - 'modification'
+  - title: '🗑️ Data Removed'
+    labels:
+      - 'removal'
+  - title: '🎨 Style Fixes'
+    labels:
+      - 'style'
+  - title: '🐛 Bug Fixes'
+    labels:
+      - 'bug'
+  - title: '🚨 Breaking Changes'
+    labels:
+      - 'breaking-change'
+  - title: '🔨 CI/CD Changes'
+    labels:
+      - 'ci'
+  - title: '📝 Documentation Changes'
+    labels:
+      - 'documentation'
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+version-resolver:
+  major:
+    labels:
+      - 'breaking-change'
+  minor:
+    labels:
+      - 'addition'
+      - 'modification'
+      - 'removal'
+  patch:
+    labels:
+      - 'bug'
+      - 'style'
+      - 'ci'
+      - 'documentation'
+  default: minor
+template: |
+  ## Changes
+
+  $CHANGES
+
