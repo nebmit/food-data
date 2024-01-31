@@ -16,6 +16,15 @@ categories:
   - title: '🐛 Bug Fixes'
     labels:
       - 'bug'
+  - title: '🚨 Breaking Changes'
+    labels:
+      - 'breaking-change'
+  - title: '🔨 CI/CD Changes'
+    labels:
+      - 'ci'
+  - title: '📝 Documentation Changes'
+    labels:
+      - 'documentation'
 change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
 version-resolver:
   major:
@@ -30,11 +39,11 @@ version-resolver:
     labels:
       - 'bug'
       - 'style'
+      - 'ci'
+      - 'documentation'
   default: minor
 template: |
   ## Changes
 
   $CHANGES
 
-  ## Contributors
-  Special thanks to $CONTRIBUTORS for their contributions to this release!
