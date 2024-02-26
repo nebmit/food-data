@@ -1,30 +1,30 @@
-2 :: servings :: 30 :: 15 :: 2 :: 1
+4 :: servings :: 30 :: 15 :: 2 :: 1
 INGREDIENTS
-Basmati rice :: 200.0 :: grams
-Green bell pepper :: 1.0 :: whole
-Tomatoes :: 2.0 :: whole
-Red onion :: 1.0 :: whole
-Garlic clove :: 1.0 :: whole
-Mint & dill :: 10.0 :: grams
-Ground beef :: 250.0 :: grams
-North African spice mix :: 1.0 :: packet
-Tomato paste :: 1.0 :: can
-Yogurt :: 1.0 :: cup
-Cucumber :: 1.0 :: whole
-Butter :: 15.0 :: grams
-Olive oil :: 2.0 :: tbsp
-Vinegar :: 1.0 :: tbsp
+Rice :: 400.0 :: grams
+Green bell pepper :: 2.0 :: whole
+Tomatoes :: 4.0 :: whole
+Red onion :: 2.0 :: whole
+Garlic :: 2.0 :: cloves
+Mint & dill :: 20.0 :: grams
+Ground beef :: 500.0 :: grams
+North African spice mix :: 2.0 :: packet
+Tomato paste :: 2.0 :: can
+Yogurt :: 500.0 :: grams
+Cucumber :: 2.0 :: whole
+Butter :: 30.0 :: grams
+Olive oil :: 50.0 :: milliliters
+Vinegar :: 60.0 :: milliliters
+COMMON INGREDIENTS
+Water :: 950.0 :: milliliters
 ITEMS
-Small pot with lid :: 1
-Medium-sized frying pan :: 1
-Measuring cup :: 1
-Sieve :: 1
+Small pot :: 1
+Large frying pan :: 1
 INSTRUCTIONS
-Bring 400ml of lightly salted water to a boil in a small pot.
-Rinse the rice in a sieve until the water runs clear, then add to boiling water. Cover and simmer on low heat for 10–12 minutes. Let sit off the heat for about 5 minutes.
-Quarter the bell pepper, remove seeds, and chop into 2cm cubes. Dice the tomatoes and onion similarly. Peel and finely mince the garlic. Pick dill tips, setting some aside for garnish and finely chopping the rest.
-Heat 1 tablespoon of olive oil in a frying pan over medium-high heat. Add the ground beef, ¾ of the onions, bell pepper, spice mix, and a pinch of salt and pepper. Cook for 3–4 minutes until the meat starts to brown.
-Add the tomatoes, tomato paste, dill stems, and 150ml of water to the pan. Simmer on medium heat for 10–15 minutes, adding more water if needed. Season with salt and pepper to taste.
-Strip mint leaves from stems and chop finely. Mix half of the yogurt with mint, remaining garlic, 2 teaspoons of olive oil, 1 tablespoon of vinegar, ½ teaspoon of salt, and pepper to taste for a dressing. Slice the cucumber and mix with the remaining onions and dressing.
-Remove dill stems from the pan, slightly crush some of the tomatoes. Season the sauce with salt, pepper, and 1 teaspoon of vinegar, then stir in the chopped dill.
+Bring {0.842105263158:water} to a boil in a small pot. Add {1:rice} to boiling water.
+Quarter {1:Green Bell Pepper}, remove seeds, and chop into 2 cm cubes. Dice {1:tomatoes} and {1:red onion} similarly. 
+Peel and finely mince {1:garlic}. Pick dill tips, setting some aside for garnish and finely chopping the rest.
+Heat {0.5:olive oil} in a frying pan over medium-high heat. Add {1:ground beef}, ¾{red onion}, {green bell pepper}, and {1:north african spice mix}. Cook for 3–4 minutes until the meat starts to brown.
+Add {tomatoes}, {1:tomato paste}, dill stems, and {0.15789473684210526:water} to the pan. Simmer on medium heat for 10–15 minutes, adding more water if needed. Season with salt and pepper to taste.
+Strip mint leaves from stems and chop finely. Mix {1:yogurt} with mint, garlic, {0.5:olive oil}, {1:vinegar}, salt, and pepper to taste for a dressing. 
+Slice {1:cucumber} and mix with the remaining onions and dressing.
 Stir 1 tablespoon of butter into the cooked rice and divide onto plates. Top with the beef mixture and garnish with the remaining dill. Serve with the salad.

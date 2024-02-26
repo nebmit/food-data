@@ -1,24 +1,22 @@
 4 :: servings :: 30 :: 20 :: 2 :: 2
 INGREDIENTS
 Rigatoni Pasta :: 350.0 :: grams
+Chopped tomatoes :: 1.0 :: tin
+Spinach :: 200.0 :: grams
 Milk :: 150.0 :: milliliters
 Pork sausages :: 4.0 :: whole
-Spinach :: 200.0 :: grams
+Onion :: 1.0 :: whole
+Garlic :: 2.0 :: cloves
 Rosemary :: 2.0 :: tsp
 Chili flakes :: 1.0 :: tsp
+COMMON INGREDIENTS
 Water :: 100.0 :: milliliters
-Onion :: 1.0 :: whole
-Chopped tomatoes :: 1.0 :: tin
-Garlic :: 2.0 :: cloves
 ITEMS
 Large pot :: 1
-Frying pan :: 1
-Wooden spoon :: 1
-Knife :: 1
-Cutting board :: 1
+Large frying pan :: 1
 INSTRUCTIONS
 Chop {1:onion}, slice {1:Pork sausages}, and finely chop {1:garlic}.
-In a large pot, cook the {1:Rigatoni Pasta} in boiling salted water until al dente.
+In a large pot, cook the {1:Rigatoni Pasta} in boiling water until al dente.
 Simultaneously, in a frying pan, cook {1:Pork sausages} and {1:onion} over medium heat until sausages are browned and onions are softened.
 Add {1:chopped tomatoes}, {1:water}, {1:rosemary}, {1:chili flakes}, and {1:garlic} to the pan. Simmer for 10 minutes.
 Stir in {1:Spinach} and {1:Milk}, and cook until the spinach wilts.
