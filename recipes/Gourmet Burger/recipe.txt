@@ -6,13 +6,11 @@ Cheddar Cheese :: 4.0 :: slices
 Tomato :: 1.0 :: whole
 Red Onion :: 1.0 :: whole
 Lettuce :: 4.0 :: leaves
-Mayonnaise :: 60.0 :: ml
-Ketchup :: 2.0 :: tbsp
-Worcestershire Sauce :: 1.0 :: tsp
+Mayonnaise :: 60.0 :: milliliters
+Ketchup :: 30.0 :: milliliters
+Worcestershire Sauce :: 5.0 :: milliliters
 ITEMS
 Frying Pan :: 1
-Knife :: 1
-Cutting Board :: 1
 INSTRUCTIONS
 Preheat your grill or stovetop grilling pan over medium-high heat.
 Mix together the {1:Mayonnaise}, {1:Ketchup} and {1:Worcestershire Sauce} in a small bowl. Set aside.

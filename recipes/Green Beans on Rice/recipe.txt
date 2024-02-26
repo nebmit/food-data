@@ -7,7 +7,7 @@ Green beans :: 500.0 :: grams
 Bell pepper :: 2.0 :: whole
 Spring onion :: 2.0 :: whole
 Chili pepper :: 2.0 :: whole
-Garlic clove :: 2.0 :: whole
+Garlic :: 2.0 :: cloves
 Ginger seasoning sauce :: 200.0 :: milliliters
 Hoisin sauce :: 100.0 :: milliliters
 Vinegar :: 60.0 :: milliliters
@@ -16,7 +16,6 @@ COMMON INGREDIENTS
 Water :: 950 :: milliliters
 ITEMS
 Small pot :: 1
-Sieve :: 1
 Large frying pan :: 1
 INSTRUCTIONS
 Bring {0.842105263158:water} to a boil in a small pot.

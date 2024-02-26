@@ -2,23 +2,20 @@
 INGREDIENTS
 Dark chocolate :: 300.0 :: grams
 White chocolate :: 150.0 :: grams
-Dried cranberries :: 50.0 :: grams
-Pistachios (chopped) :: 50.0 :: grams
-Candied orange peel (chopped) :: 40.0 :: grams
-Crushed candy canes :: 40.0 :: grams
+Toppings :: 200 :: grams
 ITEMS
-Baking sheet :: 1
+Sheet pan :: 1
 Parchment paper :: 1
 Heatproof bowl :: 2
 Pot :: 1
-Spoon :: 1
-Refrigerator :: 1
 INSTRUCTIONS
 Line the baking sheet with parchment paper.
 Fill a pot with water and bring to a simmer. Place a heatproof bowl on top and melt {1:dark chocolate}, stirring occasionally.
-Pour melted {1:dark chocolate} onto the baking sheet, spreading to 1/4 inch thickness.
+Pour melted {1:dark chocolate} onto the baking sheet, spreading to 1 cm thickness.
 In a separate heatproof bowl, melt {1:white chocolate} using the same method.
 Drizzle melted {1:white chocolate} over {1:dark chocolate} layer.
-Sprinkle {1:dried cranberries}, {1:pistachios}, {1:candied orange peel}, and {1:crushed candy canes} over the chocolate.
+Sprinkle toppings over the chocolate.
 Chill in the refrigerator for 1-2 hours until set.
 Break into pieces and serve.
+NOTE
+You can use any toppings of your choice, such as nuts, seeds, dried fruits, crushed candy or pretzels. 
