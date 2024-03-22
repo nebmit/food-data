@@ -1,0 +1,26 @@
+4 :: servings :: 60 :: 15 :: 3 :: 2
+TAGS
+Vegetarian
+Mexican
+INGREDIENTS
+Black Beans :: 400 :: grams
+Kidney Beans :: 400 :: grams
+Sweet Potatoes :: 500 :: grams
+Diced Tomatoes :: 800 :: grams
+Bell Peppers :: 200 :: grams
+Onion :: 150 :: grams
+Garlic :: 4 :: cloves
+Chili Powder :: 2 :: tbsp
+Cumin :: 1 :: tbsp
+Smoked Paprika :: 1 :: tbsp
+Avocado :: 1 :: whole
+Cilantro :: 30 :: grams
+Shredded Cheese :: 100 :: grams
+ITEMS
+Large Pot :: 1
+INSTRUCTIONS
+Heat Olive Oil in a pot over medium heat. Add {1:Onion} and {1:Garlic}, cooking until soft, about 5 minutes.
+Incorporate {1:Bell peppers} and cook for another 5 minutes until they start to soften.
+Add cubed {1:Sweet potatoes} to the pot along with {1:Black beans}, {1:Kidney beans}, and {1:Diced tomatoes}. Stir in {1:Chili powder}, {1:Cumin}, and {1:Smoked paprika}. Season with Salt and Pepper to taste.
+Bring to a boil, then reduce heat and simmer for about 30 minutes or until the sweet potatoes are tender.
+Serve the chili in bowls, garnished with slices of {1:Avocado}, a sprinkle of {1:Cilantro}, and a generous amount of {1:Shredded cheese} on top.
