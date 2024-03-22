@@ -1,0 +1,29 @@
+4 :: servings :: 30 :: 5 :: 2 :: 1
+TAGS
+Vegetarian
+Japanese
+INGREDIENTS
+Flour :: 150 :: grams 
+Eggs :: 2 :: whole
+Cabbage :: 300 :: grams 
+Carrot :: 100 :: grams 
+Green Onion :: 50 :: grams 
+Soy Sauce :: 15 :: milliliters
+Baking Powder :: 1 :: tsp
+Mayonnaise :: 100 :: milliliters 
+Okonomiyaki Sauce :: 100 :: milliliters 
+Aonori :: 10 :: grams 
+COMMON INGREDIENTS
+Water :: 200 :: milliliters
+ITEMS
+Mixing Bowl :: 1
+Frying Pan :: 1
+INSTRUCTIONS
+Mix {1:Flour}, {0.5:Water}, {1:Salt}, and {1:Baking powder} until smooth.
+Add {1:Eggs} to the mixture and stir until well combined.
+Finely chop {1:Cabbage}, {1:Carrot}, and {1:Green onion}, then fold into the batter with {0.5:Water} and {1:Soy sauce}.
+Heat Vegetable Oil in a frying pan over medium heat.
+Pour batter into the pan, spreading it to form a pancake about 1.5 cm thick.
+Cook for about 5 minutes per side, or until golden brown, then repeat with the remaining batter.
+Serve hot with {1:Mayonnaise}, {1:Okonomiyaki sauce}, and {1:Aonori} to taste.
+
