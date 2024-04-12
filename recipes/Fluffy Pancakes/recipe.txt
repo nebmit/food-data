@@ -1,0 +1,23 @@
+# PortionQuantity :: PortionDescriptor :: ActiveTimeMinutes :: PassiveTimeMinutes :: ComplexityRating :: MayhemRating
+4 :: servings :: 30 :: 0 :: 2 :: 2
+TAGS
+vegetarian
+dessert
+INGREDIENTS
+Egg :: 8.0 :: whole
+Milk :: 80 :: milliliters
+Sugar :: 80 :: grams
+Flour :: 120 :: grams
+Vanilla Extract :: 2 :: teaspoons
+ITEMS
+Bowl :: 1
+Pan :: 1
+INSTRUCTIONS
+Preheat a pan over low heat.
+Separate the {1:Egg}s into whites and yolks. Place the whites in a bowl and set the yolks aside.
+Beat the egg whites until stiff peaks form.
+Mix the yolks, {1:Milk}, {1:Sugar}, {1:Flour}, and {1:Vanilla Extract} into the egg whites.
+Portion the batter into the pan and cook for 2-3 minutes on each side on low heat.
+NOTE
+Serve with your favorite toppings like fresh fruit, whipped cream, or syrup.
+Flip the pancakes when bubbles form on the surface.
