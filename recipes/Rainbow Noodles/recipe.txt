@@ -1,0 +1,28 @@
+4 :: servings :: 30 :: 10 :: 2 :: 1
+TAGS
+vegetarian
+INGREDIENTS
+Vegetable stock :: 200.0 :: milliliters
+Bell pepper :: 2.0 :: whole
+Carrot :: 1.0 :: whole
+Edamame beans :: 200.0 :: grams
+Broccoli :: 1.0 :: whole
+Rainbow chard :: 1.0 :: whole
+Egg noodles :: 500.0 :: grams
+Red chili :: 1.0 :: whole
+Shallot :: 1.0 :: whole
+Garlic :: 1.0 :: clove
+Peanut butter :: 2.0 :: tablespoons
+Nut oil :: 2.0 :: tablespoons
+Soy sauce :: 1.0 :: tablespoons
+Palm sugar :: 1.0 :: tablespoons
+ITEMS
+Large frying pan :: 1
+INSTRUCTIONS
+Heat the {1:nut oil} in a large frying pan. 
+Cut {1:bell pepper}, {1:broccoli}, {1:shallot} and {1:garlic}. Slice {1:carrot} using a peeler.
+Add the vegetables with {1:edamame beans} to the pan. Cook for 5 minutes.
+Combine {1:vegetable stock}, {1:soy sauce}, {1:palm sugar} and {1:peanut butter} in a bowl. Cut {1:red chili} and add it to the bowl.
+Add the {1:egg noodles} and {1:rainbow chard} to the frying pan. Pour the sauce over the noodles and cook for 5 minutes.
+NOTE
+Add prawn or chicken for extra protein.
