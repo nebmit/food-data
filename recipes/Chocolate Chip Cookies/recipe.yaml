@@ -1,0 +1,54 @@
+# Chocolate Chip Cookies
+portion:
+  quantity: 12
+  descriptor: cookies
+  active_time_minutes: 20
+  passive_time_minutes: 10
+  complexity_rating: 2
+  mayhem_rating: 2
+
+# Optional Section
+tags:
+  - Vegetarian
+
+ingredients:
+  - name: Flour
+    quantity: 270
+    measurement: grams
+  - name: Butter
+    quantity: 170
+    measurement: grams
+  - name: Brown Sugar
+    quantity: 200
+    measurement: grams
+  - name: Refined Sugar
+    quantity: 100
+    measurement: grams
+  - name: Chocolate Chips
+    quantity: 350
+    measurement: grams
+  - name: Egg
+    quantity: 1
+    measurement: unit
+  - name: Baking Powder
+    quantity: 1
+    measurement: teaspoon
+  - name: Vanilla Extract
+    quantity: 1
+    measurement: teaspoon
+
+items:
+  - name: Mixing Bowl
+    quantity: 1
+
+instructions:
+  - Preheat the oven to 200°C.
+  - Mix {1:Flour}, {1:Baking Powder}, {1:Butter}, {1:Brown Sugar}, {1:Refined Sugar}, {1:Egg}, {1:Chocolate Chips} and {1:Vanilla Extract} to the mixture.
+  - Roll the dough into small balls and place them on a baking tray.
+  - Bake for 10 minutes or until golden brown.
+  - Let the cookies cool down before serving.
+
+# Optional Section
+note: 
+  - You can substitute the chocolate chips with nuts or dried fruits.
+  - Reduce sugar and butter for a healthier version.
