@@ -1,0 +1,34 @@
+# Commented Line (ignored by parser)
+portion:
+  quantity: <Integer>
+  descriptor: <String>
+  active_time_minutes: <Integer>
+  passive_time_minutes: <Integer>
+  complexity_rating: <Integer>
+  mayhem_rating: <Integer>
+
+# Optional Section
+tags:
+  - <String>
+
+ingredients:
+  - name: <String>
+    quantity: <Number>
+    measurement: <String>
+
+# Optional Section
+common_ingredients:
+  - name: <String>
+    quantity: <Number>
+    measurement: <String>
+
+items:
+  - name: <String>
+    quantity: <Number>
+
+instructions:
+  - <String>
+
+# Optional Section
+note:
+  - <String>
