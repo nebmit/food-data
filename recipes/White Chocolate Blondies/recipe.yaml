@@ -1,0 +1,52 @@
+portion:
+  quantity: 16
+  descriptor: "pieces"
+  active_time_minutes: 40
+  passive_time_minutes: 120
+  complexity_rating: 2
+  mayhem_rating: 2
+
+tags:
+  - Vegetarian
+
+ingredients:
+  - name: Butter
+    quantity: 175
+    measurement: grams
+  - name: White Chocolate
+    quantity: 175
+    measurement: grams
+  - name: Refined Sugar
+    quantity: 100
+    measurement: grams
+  - name: Brown Sugar
+    quantity: 100
+    measurement: grams
+  - name: Egg
+    quantity: 3
+    measurement: unit
+  - name: Flour
+    quantity: 175
+    measurement: grams
+  - name: White Chocolate Chips
+    quantity: 250
+    measurement: grams
+
+common_ingredients: []
+
+items:
+  - name: Mixing Bowl
+    quantity: 1
+
+instructions:
+  - "Preheat the oven to 180ºC/160ºC fan and line a baking tray with parchment paper."
+  - "Melt {1:Butter} and {1:White Chocolate} in a heatproof bowl over a pan of simmering water."
+  - "Mix {1:refined sugar}, {1:Brown Sugar}, {1:Egg}, {1:Flour}, and {1:White Chocolate Chips}."
+  - "Add the melted butter and white chocolate to the mixture and stir until combined."
+  - "Pour the mixture into the lined tin and bake for 22-27 minutes, until there is an ever-so-slight wobble in the mixture."
+  - "Let the blondies cool fully in the tin, then set them in the fridge overnight if you can for best results."
+
+note:
+  - "Drizzle with melted white chocolate for extra decoration."
+  - "You can add nuts or dried fruits to the mixture for extra texture."
+
