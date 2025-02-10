@@ -16,7 +16,8 @@ ingredients:
     quantity: <Number>
     measurement: <String>
 
-# Optional Section
+# Optional Section 
+# Ingredients used in the instructions that should not be listed in the ingredients section (e.g. water)
 common_ingredients:
   - name: <String>
     quantity: <Number>
@@ -26,6 +27,7 @@ items:
   - name: <String>
     quantity: <Number>
 
+# Refer to ingredients with {Percentage Amount:Ingredient Name} e.g. {0.5:flour}, for 50% of the flour in the ingredients section
 instructions:
   - <String>
 
