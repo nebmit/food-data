@@ -1,15 +1,20 @@
-# Chocolate Chip Cookies
+meta:
+  description: "Classic chocolate chip cookies with crispy edges and chewy centres."
+  source: "Original"
+  cuisine: "American"
+
 portion:
   quantity: 12
-  descriptor: cookies
+  descriptor: "cookies"
   active_time_minutes: 20
   passive_time_minutes: 10
   complexity_rating: 2
   mayhem_rating: 2
 
-# Optional Section
 tags:
-  - Vegetarian
+  - "Vegetarian"
+  - "Dessert"
+  - "Baking"
 
 ingredients:
   - name: Flour
@@ -18,37 +23,50 @@ ingredients:
   - name: Butter
     quantity: 170
     measurement: grams
-  - name: Brown Sugar
+    prep: "softened"
+    sub: "or margarine"
+  - name: Brown sugar
     quantity: 200
     measurement: grams
-  - name: Refined Sugar
+  - name: Sugar
     quantity: 100
     measurement: grams
-  - name: Chocolate Chips
+  - name: Chocolate chips
     quantity: 350
     measurement: grams
   - name: Egg
     quantity: 1
     measurement: unit
-  - name: Baking Powder
+  - name: Baking powder
     quantity: 1
     measurement: teaspoon
-  - name: Vanilla Extract
+  - name: Vanilla extract
     quantity: 1
     measurement: teaspoon
 
+pantry:
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+
 items:
-  - name: Mixing Bowl
+  - name: Oven
+    quantity: 1
+  - name: Mixing bowl
+    quantity: 1
+  - name: Baking tray
     quantity: 1
 
 instructions:
-  - Preheat the oven to 200°C.
-  - Mix {1:Flour}, {1:Baking Powder}, {1:Butter}, {1:Brown Sugar}, {1:Refined Sugar}, {1:Egg}, {1:Chocolate Chips} and {1:Vanilla Extract} to the mixture.
-  - Roll the dough into small balls and place them on a baking tray.
-  - Bake for 10 minutes or until golden brown.
-  - Let the cookies cool down before serving.
+  - "Preheat the oven to 200°C. Line a baking tray with parchment paper."
+  - "Cream 170g [butter] with 200g [brown sugar] and 100g [sugar] until light and fluffy."
+  - "Beat in the [egg], then add 1 tsp [vanilla extract]."
+  - "Mix in 270g [flour], 1 tsp [baking powder], and a pinch of [salt] until just combined."
+  - "Fold in 350g [chocolate chips]."
+  - "Roll the dough into small balls and place on the baking tray, spaced apart."
+  - "Bake for 10 minutes until the edges are golden but the centres are still soft."
+  - "Let the cookies cool on the tray for 5 minutes before serving."
 
-# Optional Section
-note: 
-  - You can substitute the chocolate chips with nuts or dried fruits.
-  - Reduce sugar and butter for a healthier version.
+note:
+  - "Substitute chocolate chips with chopped nuts or dried fruit."
+  - "Reduce sugar and butter quantities for a lighter version."

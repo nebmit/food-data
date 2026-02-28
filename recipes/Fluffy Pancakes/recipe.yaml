@@ -1,0 +1,52 @@
+meta:
+  description: "Light and airy Japanese-style souffle pancakes made with whipped egg whites."
+  source: "Original"
+  cuisine: "Japanese"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 30
+  passive_time_minutes: 0
+  complexity_rating: 2
+  mayhem_rating: 2
+
+tags:
+  - "Dessert"
+  - "Vegetarian"
+
+ingredients:
+  - name: Egg
+    quantity: 8
+    measurement: unit
+  - name: Milk
+    quantity: 80
+    measurement: ml
+  - name: Sugar
+    quantity: 80
+    measurement: grams
+  - name: Flour
+    quantity: 120
+    measurement: grams
+  - name: Vanilla extract
+    quantity: 2
+    measurement: teaspoon
+
+items:
+  - name: Mixing bowl
+    quantity: 2
+  - name: Non-stick pan
+    quantity: 1
+
+instructions:
+  - "Preheat a non-stick pan over the lowest heat setting."
+  - "Separate the [egg] into whites and yolks, placing the whites in a clean, dry bowl."
+  - "Beat the egg whites with 40g [sugar] until stiff peaks form."
+  - "In a separate bowl, whisk the yolks with 80ml [milk], 40g [sugar], 120g [flour], and 2 tsp [vanilla extract] until smooth."
+  - "Gently fold the egg whites into the yolk mixture in three additions, being careful not to deflate them."
+  - "Spoon the batter into the pan, stacking it high. Cover and cook on the lowest heat for 5–6 minutes."
+  - "Carefully flip and cook for another 5–6 minutes until golden and cooked through."
+
+note:
+  - "Serve with fresh fruit, whipped cream, maple syrup, or a dusting of icing sugar."
+  - "The key to fluffy pancakes is keeping the heat very low and not deflating the egg whites."

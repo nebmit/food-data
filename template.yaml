@@ -1,36 +1,45 @@
 # Commented Line (ignored by parser)
+
+meta:
+  description: <String> # Short summary of the recipe
+  source: <String> # Where the recipe comes from (e.g. "Original", "BBC Good Food", book title)
+  cuisine: <String> # Cuisine type (e.g. "Mexican", "Italian", "Japanese")
+
 portion:
   quantity: <Integer>
   descriptor: <String>
   active_time_minutes: <Integer>
   passive_time_minutes: <Integer>
-  complexity_rating: <Integer>
-  mayhem_rating: <Integer>
+  complexity_rating: <Integer> # 1 (very simple) to 5 (very complex)
+  mayhem_rating: <Integer> # 1 (very clean) to 5 (very messy)
 
 # Optional Section
 tags:
-  - <String>
+- <String>
 
 ingredients:
-  - name: <String>
-    quantity: <Number>
-    measurement: <String>
+- name: <String>
+  quantity: <Number>
+  measurement: <String> # Must be one of: grams, ml, unit, teaspoon, tablespoon, clove, pinch, can, bunch
+  prep: <String> # Optional - preparation state (e.g. "diced", "room temperature", "finely chopped")
+  sub: <String> # Optional - substitution note (e.g. "or plant-based butter")
 
-# Optional Section 
-# Ingredients used in the instructions that should not be listed in the ingredients section (e.g. water)
-common_ingredients:
-  - name: <String>
-    quantity: <Number>
-    measurement: <String>
+# Optional Section
+# Pantry staples that most people already have and don't need to buy (e.g. water, salt, pepper, cooking oil)
+pantry:
+- name: <String>
+  quantity: <Number>
+  measurement: <String>
 
 items:
-  - name: <String>
-    quantity: <Number>
+- name: <String>
+  quantity: <Integer>
 
-# Refer to ingredients with {Percentage Amount:Ingredient Name} e.g. {0.5:flour}, for 50% of the flour in the ingredients section
+# Reference ingredients or pantry items with [Ingredient Name], e.g. [flour], [butter]
+# Write actual quantities naturally in the instruction text
 instructions:
-  - <String>
+- <String>
 
 # Optional Section
 note:
-  - <String>
+- <String>

@@ -1,0 +1,80 @@
+meta:
+  description: "Stir-fried green beans and vegetables in a hoisin-ginger sauce, served over sushi rice with a runny egg on top."
+  source: "Original"
+  cuisine: "Asian"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 45
+  passive_time_minutes: 5
+  complexity_rating: 2
+  mayhem_rating: 2
+
+tags:
+  - "Vegetarian"
+
+ingredients:
+  - name: Sushi rice
+    quantity: 400
+    measurement: grams
+  - name: Green beans
+    quantity: 500
+    measurement: grams
+    prep: "ends trimmed"
+  - name: Bell pepper
+    quantity: 2
+    measurement: unit
+    prep: "deseeded and sliced into thin strips"
+  - name: Spring onion
+    quantity: 2
+    measurement: unit
+    prep: "sliced into rings, green and white parts separated"
+  - name: Chili pepper
+    quantity: 2
+    measurement: unit
+    prep: "sliced into fine rings"
+    sub: "remove seeds for less heat"
+  - name: Garlic
+    quantity: 2
+    measurement: clove
+    prep: "finely diced"
+  - name: Ginger seasoning sauce
+    quantity: 200
+    measurement: ml
+  - name: Hoisin sauce
+    quantity: 100
+    measurement: ml
+  - name: Vinegar
+    quantity: 60
+    measurement: ml
+  - name: Egg
+    quantity: 4
+    measurement: unit
+
+pantry:
+  - name: Water
+    quantity: 950
+    measurement: ml
+  - name: Vegetable oil
+    quantity: 15
+    measurement: ml
+
+items:
+  - name: Small pot
+    quantity: 1
+  - name: Large frying pan
+    quantity: 1
+
+instructions:
+  - "Bring 800ml [water] to a boil in a small pot. Add the [sushi rice], cover, and cook on the lowest heat for 18–20 minutes."
+  - "Heat 15ml [vegetable oil] in a large frying pan. Sauté the [garlic] for 1 minute over medium-high heat."
+  - "Add the [green beans], white parts of the [spring onion], and [bell pepper]. Stir-fry for 2–3 minutes."
+  - "Mix 200ml [hoisin sauce], 200ml [ginger seasoning sauce], 60ml [vinegar], and 150ml [water] in a bowl."
+  - "Pour the sauce into the pan and bring to a boil. Reduce heat and simmer covered for 6–7 minutes."
+  - "Make 4 indentations in the vegetables with the back of a spoon and crack an [egg] into each. Cover and simmer for 3–5 minutes until the whites are set."
+  - "Divide the rice onto plates, spoon the vegetables alongside, and carefully place an egg on top. Garnish with [chili pepper] rings and the green parts of the [spring onion]."
+
+note:
+  - "Add tofu or chicken for extra protein."
+  - "Adjust the chili to taste — the seeds carry most of the heat."

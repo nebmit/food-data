@@ -1,0 +1,76 @@
+meta:
+  description: "An elegant French lemon tart with silky lemon curd, candied lemon slices, and a ready-made sweet crust."
+  source: "Original"
+  cuisine: "French"
+
+portion:
+  quantity: 8
+  descriptor: "slices"
+  active_time_minutes: 25
+  passive_time_minutes: 60
+  complexity_rating: 2
+  mayhem_rating: 2
+
+tags:
+  - "Dessert"
+  - "No-bake"
+  - "Vegetarian"
+
+ingredients:
+  - name: Sweet tart shell
+    quantity: 1
+    measurement: unit
+    sub: "or homemade pâte sucrée"
+  - name: Lemon
+    quantity: 1
+    measurement: unit
+    prep: "organic, cut into 2mm slices"
+  - name: Lemon juice
+    quantity: 120
+    measurement: ml
+  - name: Lemon zest
+    quantity: 2
+    measurement: tablespoon
+  - name: Curd sugar
+    quantity: 120
+    measurement: grams
+  - name: Syrup sugar
+    quantity: 100
+    measurement: grams
+  - name: Egg
+    quantity: 3
+    measurement: unit
+  - name: Butter
+    quantity: 175
+    measurement: grams
+    prep: "cut into small cubes"
+  - name: Apricot jam
+    quantity: 200
+    measurement: grams
+
+pantry:
+  - name: Water
+    quantity: 215
+    measurement: ml
+
+items:
+  - name: Saucepan
+    quantity: 1
+  - name: Fine sieve
+    quantity: 1
+
+instructions:
+  - "Combine 215ml [water] and 100g [syrup sugar] in a saucepan and bring to a gentle boil."
+  - "Add the [lemon] slices to the syrup and simmer for 10 minutes until translucent. Transfer to parchment paper to cool."
+  - "In a clean saucepan, whisk 120ml [lemon juice], 2 tbsp [lemon zest], 120g [curd sugar], and the [egg] until smooth."
+  - "Cook over medium-low heat, stirring constantly, until the mixture is thick enough to coat the back of a spoon (about 82°C)."
+  - "Strain through a fine sieve onto the [butter] cubes. Whisk until glossy and the butter is fully melted."
+  - "Let the lemon cream cool for 10 minutes."
+  - "Place the [sweet tart shell] on a serving plate. Pour in the lemon cream and level the top."
+  - "Gently warm 200g [apricot jam] with 1 tbsp water and brush a thin layer over the surface."
+  - "Arrange the candied lemon slices decoratively on top. Refrigerate for at least 60 minutes before serving."
+
+note:
+  - "Using a ready-made crust eliminates all baking."
+  - "For the crispest crust, serve within 24 hours."
+  - "Dust with icing sugar just before serving for a elegant finish."

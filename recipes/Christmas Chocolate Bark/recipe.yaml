@@ -1,0 +1,52 @@
+meta:
+  description: "Easy festive chocolate bark with a dark and white chocolate swirl, topped with your favourite toppings."
+  source: "Original"
+  cuisine: "American"
+
+portion:
+  quantity: 10
+  descriptor: "pieces"
+  active_time_minutes: 30
+  passive_time_minutes: 120
+  complexity_rating: 2
+  mayhem_rating: 1
+
+tags:
+  - "Dessert"
+  - "Vegetarian"
+
+ingredients:
+  - name: Dark chocolate
+    quantity: 300
+    measurement: grams
+    prep: "roughly chopped"
+  - name: White chocolate
+    quantity: 150
+    measurement: grams
+    prep: "roughly chopped"
+  - name: Toppings
+    quantity: 200
+    measurement: grams
+    sub: "nuts, seeds, dried fruit, crushed candy, or pretzels"
+
+items:
+  - name: Oven tray
+    quantity: 1
+  - name: Heatproof bowl
+    quantity: 2
+  - name: Pot
+    quantity: 1
+
+instructions:
+  - "Line an oven tray with parchment paper."
+  - "Fill a pot with water and bring to a gentle simmer. Place a heatproof bowl on top and melt the [dark chocolate], stirring occasionally."
+  - "Pour the melted [dark chocolate] onto the lined tray, spreading it to about 1cm thickness."
+  - "In a separate heatproof bowl, melt the [white chocolate] using the same method."
+  - "Drizzle the melted [white chocolate] over the dark chocolate layer. Use a skewer or knife to create a swirl pattern."
+  - "Scatter the [toppings] evenly over the surface."
+  - "Chill in the refrigerator for 1–2 hours until fully set."
+  - "Break into irregular pieces and serve."
+
+note:
+  - "Use any toppings you like — crushed candy canes and pistachios are great for Christmas."
+  - "Store in an airtight container in a cool place for up to 2 weeks."

@@ -1,3 +1,8 @@
+meta:
+  description: "Thick, chewy chocolate chip cookies with crisp edges and soft, gooey centres using chopped chocolate."
+  source: "100 Cookies by Sarah Kieffer (Chronicle Books, 2020)"
+  cuisine: "American"
+
 portion:
   quantity: 24
   descriptor: "cookies"
@@ -12,7 +17,7 @@ tags:
   - "Baking"
 
 ingredients:
-  - name: All-purpose flour
+  - name: Flour
     quantity: 355
     measurement: grams
   - name: Baking soda
@@ -21,9 +26,10 @@ ingredients:
   - name: Fine salt
     quantity: 0.75
     measurement: teaspoon
-  - name: Unsalted butter, room temperature
+  - name: Butter
     quantity: 170
     measurement: grams
+    prep: "room temperature"
   - name: Granulated sugar
     quantity: 150
     measurement: grams
@@ -33,18 +39,21 @@ ingredients:
   - name: Egg
     quantity: 2
     measurement: unit
-  - name: Pure vanilla extract
+  - name: Vanilla extract
     quantity: 1.5
     measurement: teaspoon
-  - name: Bittersweet or semisweet chocolate, coarsely chopped
+  - name: Dark chocolate
     quantity: 198
     measurement: grams
+    prep: "coarsely chopped"
+    sub: "or chocolate chips"
 
 items:
   - name: Oven
     quantity: 1
-  - name: Stand mixer with paddle attachment
+  - name: Stand mixer
     quantity: 1
+    sub: "or hand mixer"
   - name: Baking tray
     quantity: 3
   - name: Mixing bowl
@@ -54,22 +63,19 @@ items:
 
 instructions:
   - "Preheat the oven to 180°C. Line three baking trays with parchment paper."
-  - "Whisk together {1:All-purpose flour}, {1:Baking soda}, and {1:Fine salt} in a mixing bowl. Set aside."
-  - "Beat {1:Unsalted butter, room temperature} in a stand mixer on medium speed until creamy, about 1 minute."
-  - "Add {1:Granulated sugar} and {1:Brown sugar} and beat on medium speed until light and fluffy, 2–3 minutes. Scrape down the sides and bottom of the bowl."
-  - "Add {1:Egg} one at a time, mixing until combined after each addition."
-  - "Add {1:Pure vanilla extract} and mix until smooth. Scrape down the bowl."
+  - "Whisk together 355g [flour], 1 tsp [baking soda], and 0.75 tsp [fine salt] in a mixing bowl. Set aside."
+  - "Beat 170g [butter] in a stand mixer on medium speed until creamy, about 1 minute."
+  - "Add 150g [granulated sugar] and 150g [brown sugar]. Beat on medium speed until light and fluffy, 2–3 minutes. Scrape down the sides."
+  - "Add the [egg] one at a time, mixing until combined after each addition."
+  - "Add 1.5 tsp [vanilla extract] and mix until smooth."
   - "Add the flour mixture and beat on low speed until just combined."
-  - "Add {1:Bittersweet or semisweet chocolate, coarsely chopped} and mix on low speed until distributed. Finish mixing with a spatula."
-  - "Scoop dough into 45g balls and place 8 per tray, evenly spaced."
-  - "Bake one tray at a time for 8 minutes, until cookies are slightly puffed in the centre."
-  - "Tap the tray gently on the oven rack, then bake for a further 2–3 minutes until edges are just turning golden but centres remain soft."
-  - "Tap the tray once more, then transfer to a wire rack."
-  - "Cool on the tray for 5 minutes before moving. Cookies will look underdone — this is correct."
+  - "Fold in 198g [dark chocolate] with a spatula until evenly distributed."
+  - "Scoop the dough into 45g balls and place 8 per tray, evenly spaced."
+  - "Bake one tray at a time for 8 minutes until the cookies are slightly puffed in the centre."
+  - "Tap the tray gently on the oven rack, then bake for a further 2–3 minutes until the edges are just turning golden but the centres remain soft."
+  - "Tap the tray once more, then transfer to a wire rack. Cool on the tray for 5 minutes before moving."
 
 note:
-  - "Chop a bar of chocolate rather than using chips for irregular shards and melted puddles throughout."
-  - "Using chips instead of chopped chocolate will produce slightly puffier cookies."
+  - "Chopping a bar of chocolate rather than using chips creates irregular shards and melted puddles throughout."
   - "Do not overbake — the centres should look underset when removed from the oven."
   - "Add a pinch of flaky sea salt on top of each dough ball before baking."
-  - "Recipe from 100 Cookies by Sarah Kieffer (Chronicle Books, 2020)."

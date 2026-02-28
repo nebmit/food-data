@@ -1,0 +1,54 @@
+meta:
+  description: "Crisp golden fries tossed with garlic and freshly grated parmesan cheese."
+  source: "Original"
+  cuisine: "American"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 25
+  passive_time_minutes: 0
+  complexity_rating: 2
+  mayhem_rating: 1
+
+ingredients:
+  - name: Potato
+    quantity: 6
+    measurement: unit
+    prep: "cut into 1cm-thick fries"
+  - name: Parmesan cheese
+    quantity: 50
+    measurement: grams
+    prep: "finely grated"
+  - name: Garlic
+    quantity: 2
+    measurement: clove
+    prep: "minced"
+
+pantry:
+  - name: Olive oil
+    quantity: 30
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+  - name: Pepper
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Oven
+    quantity: 1
+  - name: Baking tray
+    quantity: 1
+
+instructions:
+  - "Preheat the oven to 220°C. Line a baking tray with parchment paper."
+  - "Toss the [potato] fries with 30ml [olive oil], the [garlic], [salt], and [pepper] in a large bowl."
+  - "Spread the fries in a single layer on the baking tray."
+  - "Bake for 20–25 minutes, flipping halfway through, until golden and crisp."
+  - "Remove from the oven and immediately toss with the [parmesan cheese]. Serve hot."
+
+note:
+  - "Soak the cut potatoes in cold water for 30 minutes before baking for extra crispiness."
+  - "Add a sprinkle of dried rosemary or smoked paprika for extra flavour."

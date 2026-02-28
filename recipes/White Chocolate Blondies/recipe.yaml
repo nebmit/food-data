@@ -1,3 +1,8 @@
+meta:
+  description: "Rich, fudgy blondies loaded with white chocolate chips and a golden caramelised top."
+  source: "Original"
+  cuisine: "American"
+
 portion:
   quantity: 16
   descriptor: "pieces"
@@ -7,19 +12,22 @@ portion:
   mayhem_rating: 2
 
 tags:
-  - Vegetarian
+  - "Vegetarian"
+  - "Dessert"
+  - "Baking"
 
 ingredients:
   - name: Butter
     quantity: 175
     measurement: grams
-  - name: White Chocolate
+  - name: White chocolate
     quantity: 175
     measurement: grams
-  - name: Refined Sugar
+    prep: "roughly chopped"
+  - name: Sugar
     quantity: 100
     measurement: grams
-  - name: Brown Sugar
+  - name: Brown sugar
     quantity: 100
     measurement: grams
   - name: Egg
@@ -28,25 +36,28 @@ ingredients:
   - name: Flour
     quantity: 175
     measurement: grams
-  - name: White Chocolate Chips
+  - name: White chocolate chips
     quantity: 250
     measurement: grams
 
-common_ingredients: []
-
 items:
-  - name: Mixing Bowl
+  - name: Oven
+    quantity: 1
+  - name: Heatproof bowl
+    quantity: 1
+  - name: Baking tin
     quantity: 1
 
 instructions:
-  - "Preheat the oven to 180ºC/160ºC fan and line a baking tray with parchment paper."
-  - "Melt {1:Butter} and {1:White Chocolate} in a heatproof bowl over a pan of simmering water."
-  - "Mix {1:refined sugar}, {1:Brown Sugar}, {1:Egg}, {1:Flour}, and {1:White Chocolate Chips}."
-  - "Add the melted butter and white chocolate to the mixture and stir until combined."
-  - "Pour the mixture into the lined tin and bake for 22-27 minutes, until there is an ever-so-slight wobble in the mixture."
-  - "Let the blondies cool fully in the tin, then set them in the fridge overnight if you can for best results."
+  - "Preheat the oven to 180°C (160°C fan). Line a baking tin with parchment paper."
+  - "Melt 175g [butter] and 175g [white chocolate] in a heatproof bowl set over a pan of simmering water, stirring until smooth."
+  - "In a separate bowl, whisk 100g [sugar], 100g [brown sugar], and the [egg] together until combined."
+  - "Fold in 175g [flour] and 250g [white chocolate chips]."
+  - "Pour in the melted butter and white chocolate mixture. Stir until just combined."
+  - "Pour the batter into the lined tin and bake for 22–27 minutes, until there is the slightest wobble in the centre."
+  - "Let the blondies cool completely in the tin, then refrigerate overnight for the best fudgy texture."
 
 note:
-  - "Drizzle with melted white chocolate for extra decoration."
-  - "You can add nuts or dried fruits to the mixture for extra texture."
-
+  - "Drizzle with melted white chocolate for decoration."
+  - "Add dried cranberries or macadamia nuts for extra texture."
+  - "The blondies will firm up significantly as they cool and chill."

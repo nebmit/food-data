@@ -1,0 +1,93 @@
+meta:
+  description: "Spiced ground beef served over buttery rice with a cool cucumber yogurt salad on the side."
+  source: "Original"
+  cuisine: "North African"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 30
+  passive_time_minutes: 15
+  complexity_rating: 2
+  mayhem_rating: 1
+
+ingredients:
+  - name: Rice
+    quantity: 400
+    measurement: grams
+  - name: Green bell pepper
+    quantity: 2
+    measurement: unit
+  - name: Tomato
+    quantity: 4
+    measurement: unit
+  - name: Red onion
+    quantity: 2
+    measurement: unit
+  - name: Garlic
+    quantity: 2
+    measurement: clove
+  - name: Mint
+    quantity: 10
+    measurement: grams
+    prep: "leaves picked, finely chopped"
+  - name: Dill
+    quantity: 10
+    measurement: grams
+    prep: "tips picked, stems reserved"
+  - name: Ground beef
+    quantity: 500
+    measurement: grams
+  - name: North african spice mix
+    quantity: 2
+    measurement: unit
+    sub: "or ras el hanout"
+  - name: Tomato paste
+    quantity: 2
+    measurement: can
+  - name: Yogurt
+    quantity: 500
+    measurement: grams
+  - name: Cucumber
+    quantity: 2
+    measurement: unit
+  - name: Butter
+    quantity: 30
+    measurement: grams
+  - name: Vinegar
+    quantity: 60
+    measurement: ml
+
+pantry:
+  - name: Water
+    quantity: 950
+    measurement: ml
+  - name: Olive oil
+    quantity: 50
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+  - name: Pepper
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Small pot
+    quantity: 1
+  - name: Large frying pan
+    quantity: 1
+
+instructions:
+  - "Bring 800ml [water] to a boil in a small pot. Add the [rice], cover, and cook until tender."
+  - "Quarter the [green bell pepper], remove seeds, and chop into 2cm cubes. Dice the [tomato] and [red onion] similarly."
+  - "Peel and finely mince the [garlic]. Pick the [dill] tips, setting some aside for garnish and finely chopping the rest."
+  - "Heat 25ml [olive oil] in a frying pan over medium-high heat. Add the [ground beef], three quarters of the [red onion], the [green bell pepper], and the [north african spice mix]. Cook for 3–4 minutes until the meat starts to brown."
+  - "Add the [tomato], [tomato paste], dill stems, and 150ml [water] to the pan. Simmer on medium heat for 10–15 minutes, adding more water if needed. Season with [salt] and [pepper] to taste."
+  - "Finely chop the [mint]. Mix the [yogurt] with the mint, [garlic], 25ml [olive oil], and 60ml [vinegar]. Season with [salt] and [pepper]."
+  - "Slice the [cucumber] and mix with the remaining onion and dressing."
+  - "Stir the [butter] into the cooked rice and divide onto plates. Top with the beef mixture and garnish with the reserved [dill]. Serve with the salad."
+
+note:
+  - "The cucumber salad can be made ahead and chilled for a fresher taste."
+  - "Substitute yogurt with coconut yogurt for a dairy-free version."

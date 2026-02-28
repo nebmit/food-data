@@ -1,0 +1,76 @@
+meta:
+  description: "A classic Spanish rice dish with saffron, chorizo, and plump shrimp."
+  source: "Original"
+  cuisine: "Spanish"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 60
+  passive_time_minutes: 30
+  complexity_rating: 3
+  mayhem_rating: 2
+
+tags:
+  - "Spanish"
+
+ingredients:
+  - name: Short-grain rice
+    quantity: 400
+    measurement: grams
+  - name: Chicken broth
+    quantity: 950
+    measurement: ml
+  - name: Shrimp
+    quantity: 300
+    measurement: grams
+    prep: "peeled and deveined"
+  - name: Chorizo sausage
+    quantity: 150
+    measurement: grams
+    prep: "sliced into rounds"
+  - name: Onion
+    quantity: 1
+    measurement: unit
+    prep: "finely diced"
+  - name: Red bell pepper
+    quantity: 1
+    measurement: unit
+    prep: "diced"
+  - name: Paprika
+    quantity: 5
+    measurement: grams
+  - name: Garlic
+    quantity: 2
+    measurement: clove
+    prep: "minced"
+  - name: Saffron threads
+    quantity: 0.5
+    measurement: grams
+
+pantry:
+  - name: Olive oil
+    quantity: 30
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Large shallow pan
+    quantity: 1
+
+instructions:
+  - "Heat 30ml [olive oil] in a large shallow pan over medium heat."
+  - "Add the [chorizo sausage] and cook until browned. Remove and set aside."
+  - "In the same pan, sauté the [garlic], [onion], and [red bell pepper] until soft, about 5 minutes."
+  - "Add the [shrimp] and cook until they turn pink, about 2 minutes per side. Remove and set aside."
+  - "Add the [short-grain rice] to the pan and stir for 2 minutes to toast lightly."
+  - "Pour in 950ml [chicken broth] and add the [paprika], [saffron threads], and [salt]. Bring to a simmer."
+  - "Reduce heat to low, cover, and cook for 20 minutes without stirring."
+  - "Return the chorizo and shrimp to the pan, nestling them into the rice. Cover and cook for another 10 minutes until the rice is tender and the liquid is absorbed."
+
+note:
+  - "For a traditional socarrat (crispy bottom), increase heat for the final 2 minutes."
+  - "Substitute shrimp with mussels or clams for a different seafood paella."
+  - "Add a squeeze of lemon juice before serving."

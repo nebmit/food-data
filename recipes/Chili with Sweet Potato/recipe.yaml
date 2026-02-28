@@ -1,0 +1,93 @@
+meta:
+  description: "A hearty vegetarian chili loaded with sweet potato, two kinds of beans, and warm spices."
+  source: "Original"
+  cuisine: "Mexican"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 60
+  passive_time_minutes: 15
+  complexity_rating: 3
+  mayhem_rating: 2
+
+tags:
+  - "Mexican"
+  - "Vegetarian"
+
+ingredients:
+  - name: Black beans
+    quantity: 400
+    measurement: grams
+    prep: "drained and rinsed"
+  - name: Kidney beans
+    quantity: 400
+    measurement: grams
+    prep: "drained and rinsed"
+  - name: Sweet potato
+    quantity: 500
+    measurement: grams
+    prep: "peeled and cubed"
+  - name: Diced tomatoes
+    quantity: 800
+    measurement: grams
+    sub: "or 2 cans of chopped tomatoes"
+  - name: Bell pepper
+    quantity: 200
+    measurement: grams
+    prep: "diced"
+  - name: Onion
+    quantity: 150
+    measurement: grams
+    prep: "diced"
+  - name: Garlic
+    quantity: 4
+    measurement: clove
+    prep: "minced"
+  - name: Chili powder
+    quantity: 2
+    measurement: tablespoon
+  - name: Cumin
+    quantity: 1
+    measurement: tablespoon
+  - name: Smoked paprika
+    quantity: 1
+    measurement: tablespoon
+  - name: Avocado
+    quantity: 1
+    measurement: unit
+    prep: "sliced"
+  - name: Cilantro
+    quantity: 30
+    measurement: grams
+    prep: "roughly chopped"
+  - name: Shredded cheese
+    quantity: 100
+    measurement: grams
+
+pantry:
+  - name: Olive oil
+    quantity: 15
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+  - name: Pepper
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Large pot
+    quantity: 1
+
+instructions:
+  - "Heat 15ml [olive oil] in a large pot over medium heat. Add the [onion] and [garlic], cooking until soft, about 5 minutes."
+  - "Add the [bell pepper] and cook for another 5 minutes until starting to soften."
+  - "Add the [sweet potato], [black beans], [kidney beans], and [diced tomatoes]. Stir in the [chili powder], [cumin], and [smoked paprika]. Season with [salt] and [pepper] to taste."
+  - "Bring to a boil, then reduce heat and simmer for about 30 minutes until the sweet potato is tender."
+  - "Serve in bowls, garnished with [avocado] slices, a sprinkle of [cilantro], and a generous amount of [shredded cheese]."
+
+note:
+  - "Add a squeeze of lime juice for extra brightness."
+  - "For a vegan version, skip the cheese or use a plant-based alternative."
+  - "Leftovers freeze well for up to 3 months."

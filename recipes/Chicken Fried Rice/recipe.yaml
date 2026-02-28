@@ -1,0 +1,74 @@
+meta:
+  description: "A quick weeknight stir-fry with tender chicken, scrambled eggs, and crisp vegetables over rice."
+  source: "Original"
+  cuisine: "Chinese"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 30
+  passive_time_minutes: 0
+  complexity_rating: 2
+  mayhem_rating: 1
+
+ingredients:
+  - name: Rice
+    quantity: 400
+    measurement: grams
+  - name: Chicken breast
+    quantity: 400
+    measurement: grams
+    prep: "cut into 2cm cubes"
+  - name: Frozen peas
+    quantity: 200
+    measurement: grams
+  - name: Carrot
+    quantity: 2
+    measurement: unit
+    prep: "diced"
+  - name: Bell pepper
+    quantity: 2
+    measurement: unit
+    prep: "diced"
+  - name: Egg
+    quantity: 4
+    measurement: unit
+  - name: Garlic
+    quantity: 8
+    measurement: clove
+    prep: "minced"
+  - name: Soy sauce
+    quantity: 120
+    measurement: ml
+
+pantry:
+  - name: Vegetable oil
+    quantity: 60
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+  - name: Pepper
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Pot
+    quantity: 1
+  - name: Wok
+    quantity: 1
+    sub: "or large frying pan"
+
+instructions:
+  - "Cook the [rice] according to package instructions in a pot. Set aside."
+  - "Heat 15ml [vegetable oil] in a wok over medium-high heat. Add the [chicken breast] cubes, season with [salt] and [pepper], and cook until no longer pink. Remove and set aside."
+  - "Add 15ml [vegetable oil] to the same wok. Sauté the [garlic], [carrot], and [bell pepper] for 2–3 minutes."
+  - "Add the [frozen peas] and cook for another 2 minutes."
+  - "Push the vegetables to one side. Crack the [egg] into the other side and scramble."
+  - "Add the cooked [rice] to the wok and mix everything together."
+  - "Pour 120ml [soy sauce] over the rice mixture, return the chicken, and stir-fry for another 2–3 minutes."
+
+note:
+  - "Use day-old rice for the best fried rice texture."
+  - "Add a splash of sesame oil at the end for extra flavour."
+  - "Substitute chicken with tofu for a vegetarian version."

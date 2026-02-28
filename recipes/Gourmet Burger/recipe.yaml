@@ -1,0 +1,72 @@
+meta:
+  description: "Juicy homemade burgers with melted cheddar, fresh toppings, and a tangy burger sauce."
+  source: "Original"
+  cuisine: "American"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 30
+  passive_time_minutes: 0
+  complexity_rating: 2
+  mayhem_rating: 2
+
+ingredients:
+  - name: Ground beef
+    quantity: 450
+    measurement: grams
+  - name: Burger bun
+    quantity: 4
+    measurement: unit
+  - name: Cheddar cheese
+    quantity: 4
+    measurement: slice
+  - name: Tomato
+    quantity: 1
+    measurement: unit
+    prep: "sliced"
+  - name: Red onion
+    quantity: 1
+    measurement: unit
+    prep: "sliced into rings"
+  - name: Lettuce
+    quantity: 4
+    measurement: unit
+    prep: "leaves separated"
+  - name: Mayonnaise
+    quantity: 60
+    measurement: ml
+  - name: Ketchup
+    quantity: 30
+    measurement: ml
+  - name: Worcestershire sauce
+    quantity: 5
+    measurement: ml
+
+pantry:
+  - name: Olive oil
+    quantity: 15
+    measurement: ml
+  - name: Salt
+    quantity: 1
+    measurement: pinch
+  - name: Pepper
+    quantity: 1
+    measurement: pinch
+
+items:
+  - name: Frying pan
+    quantity: 1
+
+instructions:
+  - "Mix the [mayonnaise], [ketchup], and [worcestershire sauce] in a small bowl. Set the sauce aside."
+  - "Divide the [ground beef] into 4 equal portions and shape into patties, slightly wider than the buns. Press a small indent into the centre of each."
+  - "Drizzle [olive oil] over the patties and season both sides generously with [salt] and [pepper]."
+  - "Heat a frying pan over medium-high heat. Cook the patties for about 4 minutes per side, or to your preferred doneness."
+  - "Place a slice of [cheddar cheese] on each patty during the last minute of cooking to melt."
+  - "Toast the [burger bun] cut-side down in the pan until lightly browned."
+  - "Spread the sauce on the bottom bun. Layer with [lettuce], the cheesy patty, [tomato] slices, and [red onion] rings. Top with the other half of the bun."
+
+note:
+  - "For smash burgers, press the beef balls flat on a very hot pan instead of pre-shaping patties."
+  - "Add pickles, jalapeños, or crispy bacon for variations."

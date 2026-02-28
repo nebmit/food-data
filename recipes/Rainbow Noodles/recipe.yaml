@@ -1,0 +1,83 @@
+meta:
+  description: "Colourful stir-fried egg noodles with fresh vegetables and a rich peanut sauce."
+  source: "Original"
+  cuisine: "Asian"
+
+portion:
+  quantity: 4
+  descriptor: "servings"
+  active_time_minutes: 30
+  passive_time_minutes: 10
+  complexity_rating: 2
+  mayhem_rating: 1
+
+tags:
+  - "Vegetarian"
+
+ingredients:
+  - name: Egg noodles
+    quantity: 500
+    measurement: grams
+  - name: Vegetable stock
+    quantity: 200
+    measurement: ml
+  - name: Bell pepper
+    quantity: 2
+    measurement: unit
+    prep: "sliced"
+  - name: Carrot
+    quantity: 1
+    measurement: unit
+    prep: "peeled into ribbons"
+  - name: Edamame beans
+    quantity: 200
+    measurement: grams
+  - name: Broccoli
+    quantity: 1
+    measurement: unit
+    prep: "cut into small florets"
+  - name: Rainbow chard
+    quantity: 1
+    measurement: bunch
+    prep: "roughly chopped"
+  - name: Red chili
+    quantity: 1
+    measurement: unit
+    prep: "finely sliced"
+  - name: Shallot
+    quantity: 1
+    measurement: unit
+    prep: "finely sliced"
+  - name: Garlic
+    quantity: 1
+    measurement: clove
+    prep: "minced"
+  - name: Peanut butter
+    quantity: 2
+    measurement: tablespoon
+  - name: Nut oil
+    quantity: 2
+    measurement: tablespoon
+  - name: Soy sauce
+    quantity: 1
+    measurement: tablespoon
+  - name: Palm sugar
+    quantity: 1
+    measurement: tablespoon
+    sub: "or brown sugar"
+
+items:
+  - name: Large frying pan
+    quantity: 1
+
+instructions:
+  - "Heat 2 tbsp [nut oil] in a large frying pan over medium-high heat."
+  - "Add the [bell pepper], [broccoli], [shallot], and [garlic]. Stir-fry for 2 minutes."
+  - "Add the [carrot] ribbons and [edamame beans]. Cook for another 3 minutes."
+  - "In a bowl, whisk together 200ml [vegetable stock], 1 tbsp [soy sauce], 1 tbsp [palm sugar], and 2 tbsp [peanut butter]. Stir in the sliced [red chili]."
+  - "Add the [egg noodles] and [rainbow chard] to the pan. Pour the sauce over everything and toss to coat."
+  - "Cook for 4–5 minutes until the noodles are heated through and the chard has wilted."
+
+note:
+  - "Add prawns or chicken for extra protein."
+  - "Top with crushed peanuts and a squeeze of lime juice before serving."
