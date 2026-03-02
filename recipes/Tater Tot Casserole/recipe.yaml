@@ -1,15 +1,15 @@
 meta:
-description: “Hearty Midwestern casserole with seasoned ground beef, melted cheddar, and crispy tater tots baked until golden.”
-source: “The Official Overwatch Cookbook by Chelsea Monroe-Cassel”
-cuisine: “American”
+  description: “Hearty Midwestern casserole with seasoned ground beef, melted cheddar, and crispy tater tots baked until golden.”
+  source: “The Official Overwatch Cookbook by Chelsea Monroe-Cassel”
+  cuisine: “American”
 
 portion:
-quantity: 6
-descriptor: “servings”
-active_time_minutes: 15
-passive_time_minutes: 35
-complexity_rating: 2
-mayhem_rating: 2
+  quantity: 6
+  descriptor: “servings”
+  active_time_minutes: 15
+  passive_time_minutes: 35
+  complexity_rating: 2
+  mayhem_rating: 2
 
 tags:
 
