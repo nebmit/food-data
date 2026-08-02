@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "Thick, chewy chocolate chip cookies with crisp edges and soft, gooey centres using chopped chocolate."
   source: "100 Cookies by Sarah Kieffer (Chronicle Books, 2020)"
@@ -12,70 +14,134 @@ portion:
   mayhem_rating: 2
 
 tags:
-  - "Vegetarian"
-  - "Dessert"
-  - "Baking"
-
-ingredients:
-  - name: Flour
-    quantity: 355
-    measurement: grams
-  - name: Baking soda
-    quantity: 1
-    measurement: teaspoon
-  - name: Fine salt
-    quantity: 0.75
-    measurement: teaspoon
-  - name: Butter
-    quantity: 170
-    measurement: grams
-    prep: "room temperature"
-  - name: Granulated sugar
-    quantity: 150
-    measurement: grams
-  - name: Brown sugar
-    quantity: 150
-    measurement: grams
-  - name: Egg
-    quantity: 2
-    measurement: unit
-  - name: Vanilla extract
-    quantity: 1.5
-    measurement: teaspoon
-  - name: Dark chocolate
-    quantity: 198
-    measurement: grams
-    prep: "coarsely chopped"
-    sub: "or chocolate chips"
+- "Vegetarian"
+- "Dessert"
+- "Baking"
 
 items:
-  - name: Oven
-    quantity: 1
-  - name: Stand mixer
-    quantity: 1
-    sub: "or hand mixer"
-  - name: Baking tray
-    quantity: 3
-  - name: Mixing bowl
-    quantity: 1
-  - name: Wire rack
-    quantity: 1
+- name: Oven
+  quantity: 1
+- name: Stand mixer
+  quantity: 1
+  sub: "or hand mixer"
+- name: Baking tray
+  quantity: 3
+- name: Mixing bowl
+  quantity: 1
+- name: Wire rack
+  quantity: 1
 
-instructions:
-  - "Preheat the oven to 180°C. Line three baking trays with parchment paper."
-  - "Whisk together 355g [flour], 1 tsp [baking soda], and 0.75 tsp [fine salt] in a mixing bowl. Set aside."
-  - "Beat 170g [butter] in a stand mixer on medium speed until creamy, about 1 minute."
-  - "Add 150g [granulated sugar] and 150g [brown sugar]. Beat on medium speed until light and fluffy, 2–3 minutes. Scrape down the sides."
-  - "Add the [egg] one at a time, mixing until combined after each addition."
-  - "Add 1.5 tsp [vanilla extract] and mix until smooth."
-  - "Add the flour mixture and beat on low speed until just combined."
-  - "Fold in 198g [dark chocolate] with a spatula until evenly distributed."
-  - "Scoop the dough into 45g balls and place 8 per tray, evenly spaced."
-  - "Bake one tray at a time for 8 minutes until the cookies are slightly puffed in the centre."
-  - "Tap the tray gently on the oven rack, then bake for a further 2–3 minutes until the edges are just turning golden but the centres remain soft."
-  - "Tap the tray once more, then transfer to a wire rack. Cool on the tray for 5 minutes before moving."
+tables:
+- name: Dough
+  stages:
+  - id: dry_mixture
+    inputs:
+    - ingredient: Flour
+      quantity: 355
+      measurement: grams
+    - ingredient: Baking soda
+      quantity: 1
+      measurement: teaspoon
+    - ingredient: Fine salt
+      quantity: 0.75
+      measurement: teaspoon
+    action: Whisk together
+    hint: "set aside"
+
+  - id: creamed_butter
+    inputs:
+    - ingredient: Butter
+      quantity: 170
+      measurement: grams
+      hint: "room temperature"
+    action: Beat
+    hint: "medium speed; about 1 min; until creamy"
+
+  - id: creamed_sugars
+    inputs:
+    - stage: creamed_butter
+    - ingredient: Granulated sugar
+      quantity: 150
+      measurement: grams
+    - ingredient: Brown sugar
+      quantity: 150
+      measurement: grams
+    action: Beat together
+    hint: "medium speed; 2–3 min; until light and fluffy; scrape down sides"
+
+  - id: egg_mixture
+    inputs:
+    - stage: creamed_sugars
+    - ingredient: Egg
+      quantity: 2
+      measurement: unit
+    action: Beat in
+    hint: "one at a time"
+
+  - id: flavored_mixture
+    inputs:
+    - stage: egg_mixture
+    - ingredient: Vanilla extract
+      quantity: 1.5
+      measurement: teaspoon
+    action: Mix
+    hint: "until smooth"
+
+  - id: cookie_dough
+    inputs:
+    - stage: flavored_mixture
+    - stage: dry_mixture
+    action: Mix
+    hint: "low speed; until just combined"
+
+  - id: chocolate_dough
+    inputs:
+    - stage: cookie_dough
+    - ingredient: Dark chocolate
+      quantity: 198
+      measurement: grams
+      hint: "coarsely chopped; or chocolate chips"
+    action: Fold in
+    hint: "until evenly distributed"
+
+- name: Bake
+  stages:
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven and line trays
+    hint: "180°C; 3 trays"
+
+  - id: portioned_cookies
+    inputs:
+    - stage: chocolate_dough
+    action: Scoop onto trays
+    hint: "45 g balls; 8 per tray; evenly spaced"
+
+  - id: first_bake
+    inputs:
+    - stage: portioned_cookies
+    action: Bake
+    hint: "one tray at a time; 8 min; until slightly puffed in centre"
+
+  - id: tapped_cookies
+    inputs:
+    - stage: first_bake
+    action: Tap tray
+    hint: "gently against oven rack"
+
+  - id: baked_cookies
+    inputs:
+    - stage: tapped_cookies
+    action: Bake again
+    hint: "2–3 min; edges just golden; centres soft"
+
+  - id: cool_cookies
+    inputs:
+    - stage: baked_cookies
+    action: Tap and cool
+    hint: "tap once; cool on tray 5 min; transfer to wire rack"
 
 note:
-  - "Chopping a bar of chocolate rather than using chips creates irregular shards and melted puddles throughout."
-  - "Do not overbake — the centres should look underset when removed from the oven."
-  - "Add a pinch of flaky sea salt on top of each dough ball before baking."
+- "Chopping a bar of chocolate rather than using chips creates irregular shards and melted puddles throughout."
+- "Do not overbake — the centres should look underset when removed from the oven."
+- "Add a pinch of flaky sea salt on top of each dough ball before baking."

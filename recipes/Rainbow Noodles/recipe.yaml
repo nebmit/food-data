@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "Colourful stir-fried egg noodles with fresh vegetables and a rich peanut sauce."
   source: "Original"
@@ -12,72 +14,97 @@ portion:
   mayhem_rating: 1
 
 tags:
-  - "Vegetarian"
+- "Vegetarian"
 
-ingredients:
-  - name: Egg noodles
-    quantity: 500
-    measurement: grams
-  - name: Vegetable stock
-    quantity: 200
-    measurement: ml
-  - name: Bell pepper
-    quantity: 2
-    measurement: unit
-    prep: "sliced"
-  - name: Carrot
-    quantity: 1
-    measurement: unit
-    prep: "peeled into ribbons"
-  - name: Edamame beans
-    quantity: 200
-    measurement: grams
-  - name: Broccoli
-    quantity: 1
-    measurement: unit
-    prep: "cut into small florets"
-  - name: Rainbow chard
-    quantity: 1
-    measurement: bunch
-    prep: "roughly chopped"
-  - name: Red chili
-    quantity: 1
-    measurement: unit
-    prep: "finely sliced"
-  - name: Shallot
-    quantity: 1
-    measurement: unit
-    prep: "finely sliced"
-  - name: Garlic
-    quantity: 1
-    measurement: clove
-    prep: "minced"
-  - name: Peanut butter
-    quantity: 2
-    measurement: tablespoon
-  - name: Nut oil
-    quantity: 2
-    measurement: tablespoon
-  - name: Soy sauce
-    quantity: 1
-    measurement: tablespoon
-  - name: Palm sugar
-    quantity: 1
-    measurement: tablespoon
-    sub: "or brown sugar"
+tables:
+- name: Sauce
+  stages:
+  - id: mix_peanut_sauce
+    inputs:
+    - ingredient: Vegetable stock
+      quantity: 200
+      measurement: ml
+    - ingredient: Soy sauce
+      quantity: 1
+      measurement: tablespoon
+    - ingredient: Palm sugar
+      quantity: 1
+      measurement: tablespoon
+      hint: "or brown sugar"
+    - ingredient: Peanut butter
+      quantity: 2
+      measurement: tablespoon
+    - ingredient: Red chili
+      quantity: 1
+      measurement: unit
+      hint: "finely sliced"
+    action: Whisk
+
+- name: Noodles
+  stages:
+  - id: heat_nut_oil
+    inputs:
+    - ingredient: Nut oil
+      quantity: 2
+      measurement: tablespoon
+    action: Heat
+    hint: "medium-high heat"
+  - id: stir_fry_firm_vegetables
+    inputs:
+    - stage: heat_nut_oil
+    - ingredient: Bell pepper
+      quantity: 2
+      measurement: unit
+      hint: "sliced"
+    - ingredient: Broccoli
+      quantity: 1
+      measurement: unit
+      hint: "cut into small florets"
+    - ingredient: Shallot
+      quantity: 1
+      measurement: unit
+      hint: "finely sliced"
+    - ingredient: Garlic
+      quantity: 1
+      measurement: clove
+      hint: "minced"
+    action: Stir-fry
+    hint: "2 minutes"
+  - id: stir_fry_remaining_vegetables
+    inputs:
+    - stage: stir_fry_firm_vegetables
+    - ingredient: Carrot
+      quantity: 1
+      measurement: unit
+      hint: "peeled into ribbons"
+    - ingredient: Edamame beans
+      quantity: 200
+      measurement: grams
+    action: Stir-fry
+    hint: "3 minutes"
+  - id: combine_rainbow_noodles
+    inputs:
+    - stage: stir_fry_remaining_vegetables
+    - stage: mix_peanut_sauce
+    - ingredient: Egg noodles
+      quantity: 500
+      measurement: grams
+    - ingredient: Rainbow chard
+      quantity: 1
+      measurement: bunch
+      hint: "roughly chopped"
+    action: Toss
+    hint: "until evenly coated"
+  - id: cook_rainbow_noodles
+    inputs:
+    - stage: combine_rainbow_noodles
+    action: Cook
+    hint: "4–5 minutes; until the noodles are heated through and the chard has wilted"
 
 items:
-  - name: Large frying pan
-    quantity: 1
-
-instructions:
-  - "Heat 2 tbsp [nut oil] in a large frying pan over medium-high heat."
-  - "Add the [bell pepper], [broccoli], [shallot], and [garlic]. Stir-fry for 2 minutes."
-  - "Add the [carrot] ribbons and [edamame beans]. Cook for another 3 minutes."
-  - "In a bowl, whisk together 200ml [vegetable stock], 1 tbsp [soy sauce], 1 tbsp [palm sugar], and 2 tbsp [peanut butter]. Stir in the sliced [red chili]."
-  - "Add the [egg noodles] and [rainbow chard] to the pan. Pour the sauce over everything and toss to coat."
-  - "Cook for 4–5 minutes until the noodles are heated through and the chard has wilted."
+- name: Large frying pan
+  quantity: 1
 
 note:
-  - "Add prawns or chicken for extra protein."
-  - "Top with crushed peanuts and a squeeze of lime juice before serving."
+- "Add prawns or chicken for extra protein."
+- "Top with crushed peanuts and a squeeze of lime juice before serving."

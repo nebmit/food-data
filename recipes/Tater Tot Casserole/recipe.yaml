@@ -1,70 +1,25 @@
+schema_version: 2
+
 meta:
-  description: “Hearty Midwestern casserole with seasoned ground beef, melted cheddar, and crispy tater tots baked until golden.”
-  source: “The Official Overwatch Cookbook by Chelsea Monroe-Cassel”
-  cuisine: “American”
+  description: "Hearty Midwestern casserole with seasoned ground beef, melted cheddar, and crispy tater tots baked until golden."
+  source: "The Official Overwatch Cookbook by Chelsea Monroe-Cassel"
+  cuisine: "American"
 
 portion:
   quantity: 6
-  descriptor: “servings”
+  descriptor: "servings"
   active_time_minutes: 15
   passive_time_minutes: 35
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
-
-- “Gluten-free”
-- “Comfort food”
-- “Casserole”
-- “Dinner”
-
-ingredients:
-
-- name: Garlic
-  quantity: 2
-  measurement: clove
-  prep: “minced”
-- name: Ground beef
-  quantity: 680
-  measurement: grams
-- name: Dark brown sugar
-  quantity: 60
-  measurement: ml
-- name: Tomato paste
-  quantity: 30
-  measurement: ml
-- name: Worcestershire sauce
-  quantity: 15
-  measurement: ml
-- name: Dried savory
-  quantity: 0.5
-  measurement: teaspoon
-  sub: “or dried thyme”
-- name: Mixed frozen vegetables
-  quantity: 240
-  measurement: ml
-- name: Cheddar cheese
-  quantity: 360
-  measurement: ml
-  prep: “shredded”
-- name: Frozen tater tots
-  quantity: 907
-  measurement: grams
-
-pantry:
-
-- name: Olive oil
-  quantity: 30
-  measurement: ml
-- name: Salt
-  quantity: 1
-  measurement: pinch
-- name: Pepper
-  quantity: 1
-  measurement: pinch
+- "Gluten-free"
+- "Comfort food"
+- "Casserole"
+- "Dinner"
 
 items:
-
 - name: Oven
   quantity: 1
 - name: Casserole dish
@@ -72,24 +27,113 @@ items:
 - name: Large frying pan
   quantity: 1
 
-instructions:
+tables:
+- name: Filling
+  stages:
+  - id: hot_oil
+    inputs:
+    - ingredient: Olive oil
+      quantity: 30
+      measurement: ml
+    action: Heat
+    hint: "medium heat"
 
-- “Preheat the oven to 218°C. Set out a 20x28cm casserole dish.”
-- “Heat 30ml [olive oil] in a large frying pan over medium heat.”
-- “Cook 2 cloves [garlic] for several minutes until golden brown and fragrant.”
-- “Add 680g [ground beef] and cook for a few minutes, breaking it up, until completely browned.”
-- “Stir in 60ml [dark brown sugar], 30ml [tomato paste], 15ml [Worcestershire sauce], 0.5 tsp [dried savory], and 240ml [mixed frozen vegetables]. Combine thoroughly.”
-- “Season with [salt] and [pepper] to taste.”
-- “Remove from heat and transfer the mixture to the casserole dish.”
-- “Top the meat mixture evenly with 360ml [cheddar cheese].”
-- “Lay the [frozen tater tots] on top in even rows.”
-- “Bake for 30 minutes until the tater tots are crispy.”
-- “For extra crispiness, place under the broiler for 2–3 minutes, watching closely to prevent burning.”
-- “Serve hot with ketchup or condiments of choice.”
+  - id: cooked_garlic
+    inputs:
+    - stage: hot_oil
+    - ingredient: Garlic
+      quantity: 2
+      measurement: clove
+      hint: "minced"
+    action: Cook
+    hint: "several min; until golden and fragrant"
+
+  - id: browned_beef
+    inputs:
+    - stage: cooked_garlic
+    - ingredient: Ground beef
+      quantity: 680
+      measurement: grams
+    action: Brown
+    hint: "break up the meat; cook completely"
+
+  - id: seasoned_filling
+    inputs:
+    - stage: browned_beef
+    - ingredient: Dark brown sugar
+      quantity: 60
+      measurement: ml
+    - ingredient: Tomato paste
+      quantity: 30
+      measurement: ml
+    - ingredient: Worcestershire sauce
+      quantity: 15
+      measurement: ml
+    - ingredient: Dried savory
+      quantity: 0.5
+      measurement: teaspoon
+      hint: "or dried thyme"
+    - ingredient: Mixed frozen vegetables
+      quantity: 240
+      measurement: ml
+    - ingredient: Salt
+      hint: "to taste"
+    - ingredient: Pepper
+      hint: "to taste"
+    action: Stir and season
+    hint: "combine thoroughly"
+
+  - id: filling_in_dish
+    inputs:
+    - stage: seasoned_filling
+    action: Transfer to casserole dish
+    hint: "20 × 28 cm"
+
+- name: Bake
+  stages:
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "218°C"
+
+  - id: cheese_layer
+    inputs:
+    - stage: filling_in_dish
+    - ingredient: Cheddar cheese
+      quantity: 360
+      measurement: ml
+      hint: "shredded"
+    action: Top evenly
+
+  - id: tater_tot_layer
+    inputs:
+    - stage: cheese_layer
+    - ingredient: Frozen tater tots
+      quantity: 907
+      measurement: grams
+    action: Arrange on top
+    hint: "in even rows"
+
+  - id: baked_casserole
+    inputs:
+    - stage: tater_tot_layer
+    action: Bake
+    hint: "30 min; until tater tots are crispy"
+
+  - id: broiled_casserole
+    inputs:
+    - stage: baked_casserole
+    action: Broil if desired
+    hint: "2–3 min; watch closely to prevent burning"
+
+  - id: finish_casserole
+    inputs:
+    - stage: broiled_casserole
+    action: Serve hot
+    hint: "with ketchup or preferred condiments"
 
 note:
-
-- “Dried thyme can be substituted for dried savory if unavailable.”
-- “Soy sauce is a surprisingly good condiment pairing.”
-- “This recipe is gluten-free as written, but check tater tot packaging to confirm.”
-- “Ground turkey can be used in place of ground beef for a lighter version.”
+- "Dried thyme can be substituted for dried savory if unavailable."
+- "Soy sauce is a surprisingly good condiment pairing."
+- "This recipe is gluten-free as written, but check tater tot packaging to confirm."
+- "Ground turkey can be used in place of ground beef for a lighter version."

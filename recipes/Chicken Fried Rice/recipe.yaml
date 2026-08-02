@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "A quick weeknight stir-fry with tender chicken, scrambled eggs, and crisp vegetables over rice."
   source: "Original"
@@ -11,64 +13,97 @@ portion:
   complexity_rating: 2
   mayhem_rating: 1
 
-ingredients:
-  - name: Rice
-    quantity: 400
-    measurement: grams
-  - name: Chicken breast
-    quantity: 400
-    measurement: grams
-    prep: "cut into 2cm cubes"
-  - name: Frozen peas
-    quantity: 200
-    measurement: grams
-  - name: Carrot
-    quantity: 2
-    measurement: unit
-    prep: "diced"
-  - name: Bell pepper
-    quantity: 2
-    measurement: unit
-    prep: "diced"
-  - name: Egg
-    quantity: 4
-    measurement: unit
-  - name: Garlic
-    quantity: 8
-    measurement: clove
-    prep: "minced"
-  - name: Soy sauce
-    quantity: 120
-    measurement: ml
-
-pantry:
-  - name: Vegetable oil
-    quantity: 60
-    measurement: ml
-  - name: Salt
-    quantity: 1
-    measurement: pinch
-  - name: Pepper
-    quantity: 1
-    measurement: pinch
-
 items:
-  - name: Pot
-    quantity: 1
-  - name: Wok
-    quantity: 1
-    sub: "or large frying pan"
+- name: Pot
+  quantity: 1
+- name: Wok
+  quantity: 1
+  sub: "or large frying pan"
 
-instructions:
-  - "Cook the [rice] according to package instructions in a pot. Set aside."
-  - "Heat 15ml [vegetable oil] in a wok over medium-high heat. Add the [chicken breast] cubes, season with [salt] and [pepper], and cook until no longer pink. Remove and set aside."
-  - "Add 15ml [vegetable oil] to the same wok. Sauté the [garlic], [carrot], and [bell pepper] for 2–3 minutes."
-  - "Add the [frozen peas] and cook for another 2 minutes."
-  - "Push the vegetables to one side. Crack the [egg] into the other side and scramble."
-  - "Add the cooked [rice] to the wok and mix everything together."
-  - "Pour 120ml [soy sauce] over the rice mixture, return the chicken, and stir-fry for another 2–3 minutes."
+tables:
+- name: Rice
+  stages:
+  - id: cook_fried_rice_rice
+    inputs:
+    - ingredient: Rice
+      quantity: 400
+      measurement: grams
+    - ingredient: Water
+      hint: "as directed on the rice package"
+    action: Cook
+    hint: "follow the package instructions; set aside"
+
+- name: Chicken
+  stages:
+  - id: cook_chicken
+    inputs:
+    - ingredient: Vegetable oil
+      quantity: 15
+      measurement: ml
+    - ingredient: Chicken breast
+      quantity: 400
+      measurement: grams
+      hint: "cut into 2 cm cubes"
+    - ingredient: Salt
+      hint: "to taste"
+    - ingredient: Pepper
+      hint: "to taste"
+    action: Cook
+    hint: "medium-high heat until no longer pink; remove and set aside"
+
+- name: Fried rice
+  stages:
+  - id: saute_vegetables
+    inputs:
+    - ingredient: Vegetable oil
+      quantity: 15
+      measurement: ml
+    - ingredient: Garlic
+      quantity: 8
+      measurement: clove
+      hint: "minced"
+    - ingredient: Carrot
+      quantity: 2
+      measurement: unit
+      hint: "diced"
+    - ingredient: Bell pepper
+      quantity: 2
+      measurement: unit
+      hint: "diced"
+    action: Sauté
+    hint: "medium-high heat, 2–3 min"
+  - id: cook_peas
+    inputs:
+    - stage: saute_vegetables
+    - ingredient: Frozen peas
+      quantity: 200
+      measurement: grams
+    action: Cook
+    hint: "2 min"
+  - id: scramble_eggs
+    inputs:
+    - stage: cook_peas
+    - ingredient: Egg
+      quantity: 4
+      measurement: unit
+    action: Scramble
+    hint: "push the vegetables to one side and cook the eggs on the other"
+  - id: mix_fried_rice
+    inputs:
+    - stage: scramble_eggs
+    - stage: cook_fried_rice_rice
+    action: Mix
+  - id: finish_fried_rice
+    inputs:
+    - stage: mix_fried_rice
+    - stage: cook_chicken
+    - ingredient: Soy sauce
+      quantity: 120
+      measurement: ml
+    action: Stir-fry
+    hint: "2–3 min"
 
 note:
-  - "Use day-old rice for the best fried rice texture."
-  - "Add a splash of sesame oil at the end for extra flavour."
-  - "Substitute chicken with tofu for a vegetarian version."
+- "Use day-old rice for the best fried rice texture."
+- "Add a splash of sesame oil at the end for extra flavour."
+- "Substitute chicken with tofu for a vegetarian version."

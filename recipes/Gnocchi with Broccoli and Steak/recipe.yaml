@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "Pan-fried gnocchi with tender broccoli and sliced sirloin steak in a buttery garlic sauce."
   source: "Original"
@@ -11,51 +13,80 @@ portion:
   complexity_rating: 2
   mayhem_rating: 1
 
-ingredients:
-  - name: Potato gnocchi
-    quantity: 500
-    measurement: grams
-  - name: Broccoli
-    quantity: 300
-    measurement: grams
-    prep: "cut into small florets"
-  - name: Sirloin steak
-    quantity: 400
-    measurement: grams
-  - name: Parmesan cheese
-    quantity: 50
-    measurement: grams
-    prep: "grated"
-  - name: Garlic
-    quantity: 2
-    measurement: clove
-    prep: "thinly sliced"
-  - name: Butter
-    quantity: 50
-    measurement: grams
+tables:
+- name: Steak
+  stages:
+  - id: sear_steak
+    inputs:
+    - ingredient: Sirloin steak
+      quantity: 400
+      measurement: grams
+    - ingredient: Olive oil
+      quantity: 15
+      measurement: ml
+    - ingredient: Salt
+      hint: "to taste"
+    - ingredient: Pepper
+      hint: "to taste"
+    action: Sear
+    hint: "high heat; 2–3 minutes per side for medium-rare"
+  - id: rest_steak
+    inputs:
+    - stage: sear_steak
+    action: Rest
+    hint: "5 minutes"
+  - id: slice_steak
+    inputs:
+    - stage: rest_steak
+    action: Slice
 
-pantry:
-  - name: Olive oil
-    quantity: 30
-    measurement: ml
-  - name: Salt
-    quantity: 1
-    measurement: pinch
-  - name: Pepper
-    quantity: 1
-    measurement: pinch
+- name: Gnocchi
+  stages:
+  - id: brown_gnocchi
+    inputs:
+    - ingredient: Butter
+      quantity: 50
+      measurement: grams
+    - ingredient: Potato gnocchi
+      quantity: 500
+      measurement: grams
+    action: Pan-fry
+    hint: "medium heat; 5–6 minutes; until golden on all sides"
+  - id: cook_broccoli
+    inputs:
+    - stage: brown_gnocchi
+    - ingredient: Garlic
+      quantity: 2
+      measurement: clove
+      hint: "thinly sliced"
+    - ingredient: Broccoli
+      quantity: 300
+      measurement: grams
+      hint: "cut into small florets"
+    action: Cook
+    hint: "3–4 minutes; until the broccoli is tender-crisp"
+
+- name: Assembly
+  stages:
+  - id: assemble_gnocchi
+    inputs:
+    - stage: slice_steak
+    - stage: cook_broccoli
+    - ingredient: Parmesan cheese
+      quantity: 50
+      measurement: grams
+      hint: "grated"
+    - ingredient: Salt
+      hint: "to taste"
+    - ingredient: Pepper
+      hint: "to taste"
+    action: Assemble
+    hint: "season the gnocchi and broccoli; top with steak and parmesan"
 
 items:
-  - name: Large frying pan
-    quantity: 1
-
-instructions:
-  - "Season the [sirloin steak] with [salt] and [pepper]. Heat 15ml [olive oil] in a large frying pan over high heat."
-  - "Sear the steak for 2–3 minutes on each side for medium-rare. Remove from the pan and rest for 5 minutes, then slice."
-  - "In the same pan, melt the [butter] over medium heat. Add the [potato gnocchi] and cook for 5–6 minutes until golden brown on all sides."
-  - "Add the [garlic] and [broccoli] to the pan. Toss to combine and cook for 3–4 minutes until the broccoli is tender-crisp."
-  - "Season with [salt] and [pepper]. Serve the gnocchi and broccoli topped with sliced steak and a generous sprinkle of [parmesan cheese]."
+- name: Large frying pan
+  quantity: 1
 
 note:
-  - "Let the steak rest before slicing to keep it juicy."
-  - "Substitute steak with chicken breast for a lighter option."
+- "Let the steak rest before slicing to keep it juicy."
+- "Substitute steak with chicken breast for a lighter option."

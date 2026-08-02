@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "Classic chocolate chip cookies with crispy edges and chewy centres."
   source: "Original"
@@ -12,61 +14,93 @@ portion:
   mayhem_rating: 2
 
 tags:
-  - "Vegetarian"
-  - "Dessert"
-  - "Baking"
-
-ingredients:
-  - name: Flour
-    quantity: 270
-    measurement: grams
-  - name: Butter
-    quantity: 170
-    measurement: grams
-    prep: "softened"
-    sub: "or margarine"
-  - name: Brown sugar
-    quantity: 200
-    measurement: grams
-  - name: Sugar
-    quantity: 100
-    measurement: grams
-  - name: Chocolate chips
-    quantity: 350
-    measurement: grams
-  - name: Egg
-    quantity: 1
-    measurement: unit
-  - name: Baking powder
-    quantity: 1
-    measurement: teaspoon
-  - name: Vanilla extract
-    quantity: 1
-    measurement: teaspoon
-
-pantry:
-  - name: Salt
-    quantity: 1
-    measurement: pinch
+- "Vegetarian"
+- "Dessert"
+- "Baking"
 
 items:
-  - name: Oven
-    quantity: 1
-  - name: Mixing bowl
-    quantity: 1
-  - name: Baking tray
-    quantity: 1
+- name: Oven
+  quantity: 1
+- name: Mixing bowl
+  quantity: 1
+- name: Baking tray
+  quantity: 1
 
-instructions:
-  - "Preheat the oven to 200°C. Line a baking tray with parchment paper."
-  - "Cream 170g [butter] with 200g [brown sugar] and 100g [sugar] until light and fluffy."
-  - "Beat in the [egg], then add 1 tsp [vanilla extract]."
-  - "Mix in 270g [flour], 1 tsp [baking powder], and a pinch of [salt] until just combined."
-  - "Fold in 350g [chocolate chips]."
-  - "Roll the dough into small balls and place on the baking tray, spaced apart."
-  - "Bake for 10 minutes until the edges are golden but the centres are still soft."
-  - "Let the cookies cool on the tray for 5 minutes before serving."
+tables:
+- name: Dough
+  stages:
+  - id: cream_cookie_base
+    inputs:
+    - ingredient: Butter
+      quantity: 170
+      measurement: grams
+      hint: "softened; or margarine"
+    - ingredient: Brown sugar
+      quantity: 200
+      measurement: grams
+    - ingredient: Sugar
+      quantity: 100
+      measurement: grams
+    action: Cream
+    hint: "until light and fluffy"
+  - id: beat_cookie_egg
+    inputs:
+    - stage: cream_cookie_base
+    - ingredient: Egg
+      quantity: 1
+      measurement: unit
+    - ingredient: Vanilla extract
+      quantity: 1
+      measurement: teaspoon
+    action: Beat
+  - id: mix_cookie_dough
+    inputs:
+    - stage: beat_cookie_egg
+    - ingredient: Flour
+      quantity: 270
+      measurement: grams
+    - ingredient: Baking powder
+      quantity: 1
+      measurement: teaspoon
+    - ingredient: Salt
+      quantity: 1
+      measurement: pinch
+    action: Mix
+    hint: "until just combined"
+  - id: add_chocolate_chips
+    inputs:
+    - stage: mix_cookie_dough
+    - ingredient: Chocolate chips
+      quantity: 350
+      measurement: grams
+    action: Fold
+
+- name: Bake
+  stages:
+  - id: preheat_cookie_oven
+    setup: true
+    action: Preheat
+    hint: "oven to 200°C"
+  - id: line_cookie_tray
+    setup: true
+    action: Line
+    hint: "cover a baking tray with parchment paper"
+  - id: shape_cookies
+    inputs:
+    - stage: add_chocolate_chips
+    action: Shape
+    hint: "form small balls and space them apart on the lined tray"
+  - id: bake_cookies
+    inputs:
+    - stage: shape_cookies
+    action: Bake
+    hint: "10 min until the edges are golden and the centres remain soft"
+  - id: cool_cookies
+    inputs:
+    - stage: bake_cookies
+    action: Cool
+    hint: "on the tray for 5 min before serving"
 
 note:
-  - "Substitute chocolate chips with chopped nuts or dried fruit."
-  - "Reduce sugar and butter quantities for a lighter version."
+- "Substitute chocolate chips with chopped nuts or dried fruit."
+- "Reduce sugar and butter quantities for a lighter version."

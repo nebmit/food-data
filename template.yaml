@@ -1,9 +1,10 @@
-# Commented Line (ignored by parser)
+# Recipe schema version. Only version 2 is supported.
+schema_version: 2
 
 meta:
   description: <String> # Short summary of the recipe
-  source: <String> # Where the recipe comes from (e.g. "Original", "BBC Good Food", book title)
-  cuisine: <String> # Cuisine type (e.g. "Mexican", "Italian", "Japanese")
+  source: <String> # Origin, publication, or "Original"
+  cuisine: <String> # Cuisine type
 
 portion:
   quantity: <Integer>
@@ -13,33 +14,38 @@ portion:
   complexity_rating: <Integer> # 1 (very simple) to 5 (very complex)
   mayhem_rating: <Integer> # 1 (very clean) to 5 (very messy)
 
-# Optional Section
+# Optional
 tags:
 - <String>
 
-ingredients:
-- name: <String>
-  quantity: <Number>
-  measurement: <String> # Must be one of: grams, ml, unit, teaspoon, tablespoon, clove, pinch, can, bunch
-  prep: <String> # Optional - preparation state (e.g. "diced", "room temperature", "finely chopped")
-  sub: <String> # Optional - substitution note (e.g. "or plant-based butter")
-
-# Optional Section
-# Pantry staples that most people already have and don't need to buy (e.g. water, salt, pepper, cooking oil)
-pantry:
-- name: <String>
-  quantity: <Number>
-  measurement: <String>
-
+# Equipment remains outside the tabular cooking flow.
 items:
 - name: <String>
-  quantity: <Integer>
+  quantity: <Number> # Optional, defaults to 1
+  sub: <String> # Optional substitute
 
-# Reference ingredients or pantry items with [Ingredient Name], e.g. [flour], [butter]
-# Write actual quantities naturally in the instruction text
-instructions:
-- <String>
+# Tables are ordered component flows. The last stage is the table result, and
+# the last stage of the last table is the finished dish. Every other stage must
+# be consumed by a later one.
+tables:
+- name: <String>
+  stages:
+  - id: <snake_case_id> # Unique across the whole recipe; named after the action
+    setup: true # Optional. Action-only setup such as preheating: takes no
+                # inputs, is never referenced as food, and cannot end a table.
+    inputs:
+    # Prepared inputs come first, then ingredient inputs.
+    # Prepared input: reference an earlier stage by ID.
+    - stage: <snake_case_id>
+      part: <String> # Required when that stage feeds more than one later stage
+    # Ingredient input: quantity and measurement must appear together.
+    - ingredient: <String>
+      quantity: <Number> # Optional when hint describes an unquantified amount
+      measurement: <String> # grams, ml, unit, teaspoon, tablespoon, clove, pinch, can, bunch, slice, packet, leaf
+      hint: <String> # Optional prep, substitution, or qualitative amount
+    action: <String> # Short imperative action, capitalised
+    hint: <String> # Optional time, heat, temperature, doneness, or caution; starts lowercase
 
-# Optional Section
+# Optional recipe-level guidance
 note:
 - <String>

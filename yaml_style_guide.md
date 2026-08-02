@@ -1,199 +1,28 @@
 # YAML Recipe Style Guide
 
-This document outlines the formatting and structure requirements for recipe files written in YAML format.
+Every recipe is stored as `recipes/<Recipe Name>/recipe.yaml` and uses schema version 2. The cooking method is an ordered collection of named tables inspired by Cooking for Engineers: ingredient inputs enter on the left and prepared stages flow into later actions.
 
-Each recipe must be saved as a `recipe.yaml` file within its respective directory under `recipes/`.
+## Naming and writing style
 
----
+1. Use Title Case for recipe directory names.
+2. Use sentence capitalization for ingredient, equipment, and table names. An ingredient name must be the product someone buys; put preparation and substitutions in `hint`.
+3. Reuse existing ingredient names so grocery lists aggregate correctly. Run `python scripts/format-check.py --list` before adding a new name; it also reports names that look like duplicates of an existing one.
+4. Use metric measurements where practical and the singular measurement values listed below.
+5. Start actions with a capitalised imperative verb and keep stages chronological.
+6. Put timing, heat, Celsius temperature, sensory cues, dimensions, and cautions in the action `hint`. Hints start lowercase because they continue the action.
+7. Name stage IDs after the action, not its result: `preheat_oven` and `cool_cookies`, not `oven_ready` or `cooled_cookies`. IDs only need to be unique inside one recipe, so they do not need a recipe-name prefix.
 
-## Writing Style Guidelines
+Use `ingredient: Butter` with `hint: "softened; or margarine"`, not separate ingredient names such as `Softened butter`. Do not use legacy `[ingredient]` or `{proportion:name}` references.
 
-### Naming and Capitalization
+## Top-level structure
 
-1. **Recipe directory names**: Use Title Case (capitalize each main word)
-2. **Ingredient names**: Capitalize the first letter only. Keep names short and clean — put preparation state in the `prep` field, not the name.
-3. **Measurements**: Use lowercase, always singular form (`grams`, `ml`, `teaspoon`)
-4. **Tags**: Capitalize the first letter only
-
-### Instructions Style
-
-1. **Use imperative voice**: Start with action verbs ("Mix" instead of "You should mix")
-2. **Be specific with temperatures**: Use Celsius
-3. **Use precise timing**: "Bake for 20–25 minutes" rather than "Bake until done"
-4. **Include sensory cues alongside timing**: "Bake for 20 minutes until golden brown"
-5. **Order chronologically**: Write steps in the exact order they should be performed
-6. **One main action per instruction**: Split complex steps into multiple instructions
-7. **Be concise**: Avoid unnecessary words or explanations
-8. **Write naturally**: Instructions should read like clear cooking directions, not code
-
-### Notes
-
-1. **Include substitutions**: Note possible ingredient alternatives
-2. **Highlight dietary information**: Mention if a recipe is vegetarian, vegan, gluten-free, etc.
-3. **Add helpful tips**: Include practical advice for best results
-
-### Measurements and Quantities
-
-1. **Use metric system** as primary measurement (`grams`, `ml`)
-2. **Keep ingredient names clean**: Put form/preparation in the `prep` field — use `Butter` with `prep: "room temperature"`, not `Butter, room temperature` as the name
-3. **One ingredient per entry**: Never combine two ingredients in one entry (e.g. don't list "Mint & dill" — list them separately)
-
----
-
-## Allowed Measurements
-
-Use only the following measurement values. Always use singular form:
-
-| Value         | Use for                                      |
-|---------------|----------------------------------------------|
-| `grams`       | Dry/solid ingredients by weight              |
-| `ml`          | Liquids by volume                            |
-| `unit`        | Whole items (eggs, onions, lemons)           |
-| `teaspoon`    | Small volumes (vanilla extract, spices)      |
-| `tablespoon`  | Medium volumes (oil, sauces in small amounts)|
-| `clove`       | Garlic                                       |
-| `pinch`       | Very small dry amounts (salt, spices)        |
-| `can`         | Tinned/canned goods                          |
-| `bunch`       | Fresh herbs                                  |
-| `slice`       | Pre-sliced items (cheese, bread)             |
-
----
-
-## Required Sections
-
-### 1. Meta (Recipe Metadata)
-
-Every recipe must include a short description, source, and cuisine type.
+Every recipe requires `schema_version`, `meta`, `portion`, `items`, and a non-empty `tables` list. `tags` and `note` are optional.
 
 ```yaml
+schema_version: 2
+
 meta:
-  description: "Crisp golden fries tossed with garlic and parmesan cheese."
-  source: "Original"               # or book title, website, etc.
-  cuisine: "American"
-```
-
-### 2. Portion Information
-
-```yaml
-portion:
-  quantity: 4                  # Integer — number of servings/pieces
-  descriptor: "servings"       # String — what the quantity describes
-  active_time_minutes: 25      # Integer — hands-on time in minutes
-  passive_time_minutes: 0      # Integer — waiting/baking time in minutes
-  complexity_rating: 2         # Integer 1–5 (1 = very simple, 5 = very complex)
-  mayhem_rating: 1             # Integer 1–5 (1 = very clean, 5 = very messy)
-```
-
-### 3. Ingredients
-
-```yaml
-ingredients:
-  - name: Butter               # Capitalize first letter; keep it short
-    quantity: 170
-    measurement: grams
-    prep: "room temperature"   # Optional — preparation state
-    sub: "or margarine"        # Optional — substitution suggestion
-  - name: Egg
-    quantity: 2
-    measurement: unit
-```
-
-### 4. Items (Equipment)
-
-List kitchen equipment that is **non-obvious or hard to substitute**. Skip universally available items like plates or cutlery. Include common items (bowls, trays) only if they're specifically essential.
-
-```yaml
-items:
-  - name: Oven
-    quantity: 1
-  - name: Stand mixer
-    quantity: 1
-```
-
-### 5. Instructions
-
-Write instructions as natural, readable sentences. Reference ingredients using `[Ingredient Name]` in square brackets. Write quantities directly in the instruction text.
-
-```yaml
-instructions:
-  - "Preheat the oven to 200°C. Line a baking tray with parchment paper."
-  - "Cream 170g [butter] with 200g [brown sugar] and 100g [sugar] until fluffy."
-  - "Beat in the [egg] one at a time, then add [vanilla extract]."
-  - "Fold in 270g [flour] and [baking powder]. Stir in the [chocolate chips]."
-  - "Scoop dough into balls and bake for 10 minutes until golden brown."
-```
-
-#### Referencing Rules
-
-- **Bracket syntax**: `[Ingredient Name]` — case-insensitive match to `ingredients` or `pantry` names
-- **Write quantities naturally**: Include the actual amount in the instruction text (e.g. "Add 200ml [milk]")
-- **No proportions or fractions**: Don't calculate fractions of ingredient totals — just write the amount
-- **Splitting ingredients across steps**: Write the amount for each step directly (e.g. "Add 500ml [water] to the pot" then later "Add the remaining 200ml [water]")
-- **Pantry staples**: Reference the same way: "Season with [salt] and [pepper] to taste"
-
----
-
-## Optional Sections
-
-### 1. Tags
-
-```yaml
-tags:
-  - "Vegetarian"
-  - "Dessert"
-  - "Baking"
-```
-
-### 2. Pantry Staples
-
-Items most people already have at home and don't need to buy specifically for this recipe. Common examples: water, salt, pepper, olive oil, vegetable oil.
-
-```yaml
-pantry:
-  - name: Water
-    quantity: 500
-    measurement: ml
-  - name: Salt
-    quantity: 1
-    measurement: pinch
-  - name: Olive oil
-    quantity: 30
-    measurement: ml
-```
-
-### 3. Notes
-
-```yaml
-note:
-  - "For a vegan version, substitute butter with plant-based butter."
-  - "Reduce sugar by 25% for a less sweet result."
-```
-
----
-
-## Data Types
-
-| Type      | Used for                                    |
-|-----------|---------------------------------------------|
-| Integer   | Portion quantity, time, ratings, item counts |
-| Float     | Ingredient quantities (e.g. 0.75 teaspoon)  |
-| String    | Names, descriptions, instructions, tags      |
-| List      | Ingredients, instructions, tags, notes       |
-
----
-
-## Rating Systems
-
-- **Complexity Rating**: 1 (very simple) to 5 (very complex)
-- **Mayhem Rating**: 1 (very clean) to 5 (very messy)
-
----
-
-## Complete Example
-
-```yaml
-meta:
-  description: "Classic chocolate chip cookies with crispy edges and chewy centres."
+  description: "Classic cookies with crisp edges and chewy centres."
   source: "Original"
   cuisine: "American"
 
@@ -206,62 +35,145 @@ portion:
   mayhem_rating: 2
 
 tags:
-  - "Vegetarian"
-  - "Dessert"
-  - "Baking"
-
-ingredients:
-  - name: Flour
-    quantity: 270
-    measurement: grams
-  - name: Butter
-    quantity: 170
-    measurement: grams
-    prep: "softened"
-    sub: "or margarine"
-  - name: Brown sugar
-    quantity: 200
-    measurement: grams
-  - name: Sugar
-    quantity: 100
-    measurement: grams
-  - name: Chocolate chips
-    quantity: 350
-    measurement: grams
-  - name: Egg
-    quantity: 1
-    measurement: unit
-  - name: Baking powder
-    quantity: 1
-    measurement: teaspoon
-  - name: Vanilla extract
-    quantity: 1
-    measurement: teaspoon
-
-pantry:
-  - name: Salt
-    quantity: 1
-    measurement: pinch
+- "Vegetarian"
+- "Dessert"
 
 items:
-  - name: Oven
-    quantity: 1
-  - name: Mixing bowl
-    quantity: 1
-  - name: Baking tray
-    quantity: 1
+- name: Oven
+- name: Stand mixer
+  quantity: 2
+  sub: "or hand mixer"
+```
 
-instructions:
-  - "Preheat the oven to 200°C. Line a baking tray with parchment paper."
-  - "Cream 170g [butter] with 200g [brown sugar] and 100g [sugar] until light and fluffy."
-  - "Beat in the [egg], then add 1 tsp [vanilla extract]."
-  - "Mix in 270g [flour], 1 tsp [baking powder], and a pinch of [salt] until just combined."
-  - "Fold in 350g [chocolate chips]."
-  - "Roll the dough into small balls and place on the baking tray, spaced apart."
-  - "Bake for 10 minutes until the edges are golden but the centres are still soft."
-  - "Let the cookies cool on the tray for 5 minutes before serving."
+Ratings range from 1 to 5. Times are non-negative whole minutes, and portion quantities are positive whole numbers. An equipment `quantity` is optional and defaults to one.
 
-note:
-  - "Substitute chocolate chips with chopped nuts or dried fruit."
-  - "Reduce sugar and butter quantities for a lighter version."
+## Tables and stages
+
+Use one table for each independently prepared component and a final table when components are assembled. A simple recipe may use a single table. Tables and stages are written in canonical presentation order; the last stage in a table is its result.
+
+Each stage requires a recipe-global `snake_case` ID and a short imperative `action`. A stage is a **merge, not a micro-step**: everything that goes into the pot together belongs to one stage. Splitting "beat in the egg" and "add the vanilla" into two stages makes the table taller without making it clearer. Prepared inputs are listed before ingredient inputs, because that order is what a reader sees in the rendered table.
+
+```yaml
+tables:
+- name: Dough
+  stages:
+  - id: whisk_dry_mixture
+    inputs:
+    - ingredient: Flour
+      quantity: 270
+      measurement: grams
+    - ingredient: Baking powder
+      quantity: 1
+      measurement: teaspoon
+    action: Whisk together
+
+  - id: mix_cookie_dough
+    inputs:
+    - stage: whisk_dry_mixture
+    - ingredient: Butter
+      quantity: 170
+      measurement: grams
+      hint: "softened"
+    - ingredient: Sugar
+      quantity: 100
+      measurement: grams
+    action: Mix
+    hint: "until just combined"
+
+- name: Bake
+  stages:
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "200°C"
+
+  - id: bake_cookies
+    inputs:
+    - stage: mix_cookie_dough
+    action: Bake
+    hint: "10 min; until edges are golden and centres remain soft"
+```
+
+Every recipe ends in exactly one unused stage holding the finished dish, and it must be the last stage of the last table. Any other stage that nothing consumes is a wiring mistake.
+
+### Setup stages
+
+An action with no food inputs — preheating an oven, lining a tray — is marked `setup: true`. Setup stages take no `inputs`, are never referenced as food, and may not end a table, since a table's last stage is its result. Document order already supplies chronology, so do not reference a setup action merely to express timing.
+
+### Stage references
+
+Stage references describe prepared food flowing into a later action. They must point backward. A stage may reference any earlier stage in its own table; across tables it may reference only the final stage of an earlier table.
+
+A stage that feeds more than one later stage — separated eggs, a reserved garnish, a protein removed from the pan — must name a `part` on **every** reference to it, so each branch says what it carries instead of leaving it to prose:
+
+```yaml
+- id: separate_eggs
+  inputs:
+  - ingredient: Egg
+    quantity: 8
+    measurement: unit
+  action: Separate
+
+- id: whip_egg_whites
+  inputs:
+  - stage: separate_eggs
+    part: "whites"
+  action: Beat
+  hint: "to stiff peaks"
+```
+
+`part` is also allowed on a single reference when it names a reserved portion. Once a `part` says which piece flows where, drop the phrase that used to say it from the `hint`.
+
+Do not store row numbers, column numbers, or cell spans.
+
+## Ingredient inputs and amounts
+
+Put an ingredient at the stage where it is consumed. If it is measured twice, repeat it with the exact amount at each use; consumers can aggregate matching names and measurements.
+
+```yaml
+- ingredient: Olive oil
+  quantity: 15
+  measurement: ml
+  hint: "for frying"
+```
+
+`quantity` and `measurement` must either both be present or both be absent. Quantities are positive numbers. When an amount is genuinely qualitative, omit both fields and explain it with a non-empty hint:
+
+```yaml
+- ingredient: Salt
+  hint: "to taste"
+```
+
+There is no pantry classification in schema v2. Water, salt, oil, and other staples are ordinary ingredient inputs.
+
+### Allowed measurements
+
+| Value | Use for |
+|---|---|
+| `grams` | Dry or solid ingredients by weight |
+| `ml` | Liquids by volume |
+| `unit` | Whole items |
+| `teaspoon` | Small measured volumes |
+| `tablespoon` | Medium measured volumes |
+| `clove` | Garlic cloves |
+| `pinch` | Very small dry amounts |
+| `can` | Tinned or canned goods |
+| `bunch` | Fresh herbs sold in bunches |
+| `slice` | Pre-sliced ingredients |
+| `packet` | Packaged sachets or packets |
+| `leaf` | Individually counted leaves |
+
+## Hints, equipment, and notes
+
+- Ingredient hints contain preparation, substitution, or qualitative amount information: `"coarsely chopped; or chocolate chips"`.
+- Action hints contain compact execution details: `"medium heat; 10–15 min; until thickened"`.
+- Keep equipment in top-level `items`; `sub` is allowed for an equipment substitute.
+- Keep dietary variants, serving ideas, storage advice, and optional enhancements in top-level `note` rather than adding unused ingredient inputs.
+- Use standard YAML quotes. Typographic quote characters must not wrap scalar values.
+
+Run both checks before committing recipe changes:
+
+```text
+python -m unittest discover -s tests
+python scripts/format-check.py
 ```

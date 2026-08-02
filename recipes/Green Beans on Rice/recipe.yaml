@@ -1,3 +1,5 @@
+schema_version: 2
+
 meta:
   description: "Stir-fried green beans and vegetables in a hoisin-ginger sauce, served over sushi rice with a runny egg on top."
   source: "Original"
@@ -12,69 +14,118 @@ portion:
   mayhem_rating: 2
 
 tags:
-  - "Vegetarian"
+- "Vegetarian"
 
-ingredients:
-  - name: Sushi rice
-    quantity: 400
-    measurement: grams
-  - name: Green beans
-    quantity: 500
-    measurement: grams
-    prep: "ends trimmed"
-  - name: Bell pepper
-    quantity: 2
-    measurement: unit
-    prep: "deseeded and sliced into thin strips"
-  - name: Spring onion
-    quantity: 2
-    measurement: unit
-    prep: "sliced into rings, green and white parts separated"
-  - name: Chili pepper
-    quantity: 2
-    measurement: unit
-    prep: "sliced into fine rings"
-    sub: "remove seeds for less heat"
-  - name: Garlic
-    quantity: 2
-    measurement: clove
-    prep: "finely diced"
-  - name: Ginger seasoning sauce
-    quantity: 200
-    measurement: ml
-  - name: Hoisin sauce
-    quantity: 100
-    measurement: ml
-  - name: Vinegar
-    quantity: 60
-    measurement: ml
-  - name: Egg
-    quantity: 4
-    measurement: unit
+tables:
+- name: Rice
+  stages:
+  - id: cook_sushi_rice
+    inputs:
+    - ingredient: Water
+      quantity: 800
+      measurement: ml
+    - ingredient: Sushi rice
+      quantity: 400
+      measurement: grams
+    action: Cook
+    hint: "bring to a boil, then cover; lowest heat for 18–20 minutes"
 
-pantry:
-  - name: Water
-    quantity: 950
-    measurement: ml
-  - name: Vegetable oil
-    quantity: 15
-    measurement: ml
+- name: Vegetables
+  stages:
+  - id: prepare_spring_onions
+    inputs:
+    - ingredient: Spring onion
+      quantity: 2
+      measurement: unit
+      hint: "sliced into rings"
+    action: Separate
+    hint: "keep the white and green parts apart"
+  - id: saute_garlic
+    inputs:
+    - ingredient: Vegetable oil
+      quantity: 15
+      measurement: ml
+    - ingredient: Garlic
+      quantity: 2
+      measurement: clove
+      hint: "finely diced"
+    action: Sauté
+    hint: "medium-high heat; 1 minute"
+  - id: stir_fry_vegetables
+    inputs:
+    - stage: saute_garlic
+    - stage: prepare_spring_onions
+      part: "white parts"
+    - ingredient: Green beans
+      quantity: 500
+      measurement: grams
+      hint: "ends trimmed"
+    - ingredient: Bell pepper
+      quantity: 2
+      measurement: unit
+      hint: "deseeded and sliced into thin strips"
+    action: Stir-fry
+    hint: "2–3 minutes"
+  - id: mix_hoisin_sauce
+    inputs:
+    - ingredient: Hoisin sauce
+      quantity: 100
+      measurement: ml
+    - ingredient: Ginger seasoning sauce
+      quantity: 200
+      measurement: ml
+    - ingredient: Vinegar
+      quantity: 60
+      measurement: ml
+    - ingredient: Water
+      quantity: 150
+      measurement: ml
+    action: Mix
+  - id: simmer_vegetables
+    inputs:
+    - stage: stir_fry_vegetables
+    - stage: mix_hoisin_sauce
+    action: Simmer
+    hint: "bring to a boil, then cover; 6–7 minutes"
+  - id: add_eggs
+    inputs:
+    - stage: simmer_vegetables
+    - ingredient: Egg
+      quantity: 4
+      measurement: unit
+    action: Add eggs
+    hint: "make 4 indentations; add one egg to each"
+  - id: cook_eggs
+    inputs:
+    - stage: add_eggs
+    action: Simmer
+    hint: "covered; 3–5 minutes; until the whites are set"
+  - id: finish_green_beans
+    inputs:
+    - stage: cook_eggs
+    - stage: prepare_spring_onions
+      part: "green parts"
+    - ingredient: Chili pepper
+      quantity: 2
+      measurement: unit
+      hint: "sliced into fine rings; remove seeds for less heat"
+    action: Garnish
+
+- name: Assembly
+  stages:
+  - id: serve_green_beans_on_rice
+    inputs:
+    - stage: cook_sushi_rice
+    - stage: finish_green_beans
+    action: Serve
+    hint: "divide the rice, add the vegetables, and place one egg on each serving"
 
 items:
-  - name: Small pot
-    quantity: 1
-  - name: Large frying pan
-    quantity: 1
-
-instructions:
-  - "Bring 800ml [water] to a boil in a small pot. Add the [sushi rice], cover, and cook on the lowest heat for 18–20 minutes."
-  - "Heat 15ml [vegetable oil] in a large frying pan. Sauté the [garlic] for 1 minute over medium-high heat."
-  - "Add the [green beans], white parts of the [spring onion], and [bell pepper]. Stir-fry for 2–3 minutes."
-  - "Mix 200ml [hoisin sauce], 200ml [ginger seasoning sauce], 60ml [vinegar], and 150ml [water] in a bowl."
-  - "Pour the sauce into the pan and bring to a boil. Reduce heat and simmer covered for 6–7 minutes."
-  - "Make 4 indentations in the vegetables with the back of a spoon and crack an [egg] into each. Cover and simmer for 3–5 minutes until the whites are set."
-  - "Divide the rice onto plates, spoon the vegetables alongside, and carefully place an egg on top. Garnish with [chili pepper] rings and the green parts of the [spring onion]."
+- name: Small pot
+  quantity: 1
+- name: Large frying pan
+  quantity: 1
 
 note:
-  - "Add tofu or chicken for extra protein."
-  - "Adjust the chili to taste — the seeds carry most of the heat."
+- "Add tofu or chicken for extra protein."
+- "Adjust the chili to taste — the seeds carry most of the heat."
