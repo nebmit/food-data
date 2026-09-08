@@ -72,6 +72,7 @@ tables:
       hint: "diced"
     action: Sauté
     hint: "medium-high heat, 2–3 min"
+    duration_minutes: 3
   - id: cook_peas
     inputs:
     - stage: saute_vegetables
@@ -80,6 +81,7 @@ tables:
       measurement: grams
     action: Cook
     hint: "2 min"
+    duration_minutes: 2
   - id: scramble_eggs
     inputs:
     - stage: cook_peas
@@ -102,6 +104,7 @@ tables:
       measurement: ml
     action: Stir-fry
     hint: "2–3 min"
+    duration_minutes: 3
 
 note:
 - "Use day-old rice for the best fried rice texture."

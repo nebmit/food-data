@@ -85,6 +85,7 @@ tables:
       hint: "or ras el hanout"
     action: Brown
     hint: "medium-high heat, 3–4 min"
+    duration_minutes: 4
   - id: simmer_beef
     inputs:
     - stage: brown_beef
@@ -103,6 +104,7 @@ tables:
       hint: "plus more if needed"
     action: Simmer
     hint: "medium heat, 10–15 min"
+    duration_minutes: 15
   - id: season_beef
     inputs:
     - stage: simmer_beef

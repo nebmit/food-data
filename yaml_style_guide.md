@@ -53,6 +53,8 @@ Use one table for each independently prepared component and a final table when c
 
 Each stage requires a recipe-global `snake_case` ID and a short imperative `action`. A stage is a **merge, not a micro-step**: everything that goes into the pot together belongs to one stage. Splitting "beat in the egg" and "add the vanilla" into two stages makes the table taller without making it clearer. Prepared inputs are listed before ingredient inputs, because that order is what a reader sees in the rendered table.
 
+A stage that runs for a definite length of time also carries `duration_minutes`, a positive whole number of minutes. It is the machine-readable figure a cook's timer is set to; the `hint` keeps the prose and the sensory cue alongside it.
+
 ```yaml
 tables:
 - name: Dough
@@ -92,6 +94,7 @@ tables:
     - stage: mix_cookie_dough
     action: Bake
     hint: "10 min; until edges are golden and centres remain soft"
+    duration_minutes: 10
 ```
 
 Every recipe ends in exactly one unused stage holding the finished dish, and it must be the last stage of the last table. Any other stage that nothing consumes is a wiring mistake.
@@ -167,6 +170,7 @@ There is no pantry classification in schema v2. Water, salt, oil, and other stap
 
 - Ingredient hints contain preparation, substitution, or qualitative amount information: `"coarsely chopped; or chocolate chips"`.
 - Action hints contain compact execution details: `"medium heat; 10–15 min; until thickened"`.
+- A hint that states a definite time is paired with `duration_minutes`, which repeats that time as a single whole number — the upper end of a range, so the timer never rings early. `"medium heat; 10–15 min; until thickened"` takes `duration_minutes: 15`. Leave it off when the stage has no set time (`"until fragrant"`) or when the time is per-portion rather than per-stage (`"about 4 minutes per side"`).
 - Keep equipment in top-level `items`; `sub` is allowed for an equipment substitute.
 - Keep dietary variants, serving ideas, storage advice, and optional enhancements in top-level `note` rather than adding unused ingredient inputs.
 - Use standard YAML quotes. Typographic quote characters must not wrap scalar values.

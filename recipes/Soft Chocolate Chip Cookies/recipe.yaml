@@ -56,6 +56,7 @@ tables:
       hint: "room temperature"
     action: Beat
     hint: "medium speed; about 1 min; until creamy"
+    duration_minutes: 1
 
   - id: creamed_sugars
     inputs:
@@ -68,6 +69,7 @@ tables:
       measurement: grams
     action: Beat together
     hint: "medium speed; 2–3 min; until light and fluffy; scrape down sides"
+    duration_minutes: 3
 
   - id: egg_mixture
     inputs:
@@ -122,6 +124,7 @@ tables:
     - stage: portioned_cookies
     action: Bake
     hint: "one tray at a time; 8 min; until slightly puffed in centre"
+    duration_minutes: 8
 
   - id: tapped_cookies
     inputs:
@@ -134,12 +137,14 @@ tables:
     - stage: tapped_cookies
     action: Bake again
     hint: "2–3 min; edges just golden; centres soft"
+    duration_minutes: 3
 
   - id: cool_cookies
     inputs:
     - stage: baked_cookies
     action: Tap and cool
     hint: "tap once; cool on tray 5 min; transfer to wire rack"
+    duration_minutes: 5
 
 note:
 - "Chopping a bar of chocolate rather than using chips creates irregular shards and melted puddles throughout."

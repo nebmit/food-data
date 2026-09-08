@@ -70,6 +70,7 @@ tables:
       hint: "minced"
     action: Stir-fry
     hint: "2 minutes"
+    duration_minutes: 2
   - id: stir_fry_remaining_vegetables
     inputs:
     - stage: stir_fry_firm_vegetables
@@ -82,6 +83,7 @@ tables:
       measurement: grams
     action: Stir-fry
     hint: "3 minutes"
+    duration_minutes: 3
   - id: combine_rainbow_noodles
     inputs:
     - stage: stir_fry_remaining_vegetables
@@ -100,6 +102,7 @@ tables:
     - stage: combine_rainbow_noodles
     action: Cook
     hint: "4–5 minutes; until the noodles are heated through and the chard has wilted"
+    duration_minutes: 5
 
 items:
 - name: Large frying pan

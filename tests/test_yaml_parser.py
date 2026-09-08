@@ -347,6 +347,34 @@ class RecipeValidatorTests(unittest.TestCase):
         recipe["items"][0]["sub"] = " "
         self.assert_invalid(recipe, "non-empty, trimmed string")
 
+    def test_stage_duration_is_an_optional_positive_integer(self):
+        recipe = valid_recipe()
+        self.assert_valid(recipe)
+
+        recipe = valid_recipe()
+        recipe["tables"][0]["stages"][0]["duration_minutes"] = 15
+        self.assert_valid(recipe)
+
+        for value in (0, -1, True, 1.5, "10", None):
+            with self.subTest(duration_minutes=value):
+                recipe = valid_recipe()
+                recipe["tables"][0]["stages"][0]["duration_minutes"] = value
+                self.assert_invalid(recipe, "positive integer")
+
+    def test_setup_stages_may_carry_a_duration(self):
+        recipe = valid_recipe()
+        recipe["tables"][0]["stages"].insert(
+            0,
+            {
+                "id": "preheat_oven",
+                "setup": True,
+                "action": "Preheat oven",
+                "hint": "200°C",
+                "duration_minutes": 12,
+            },
+        )
+        self.assert_valid(recipe)
+
     def test_tables_and_stages_must_be_non_empty_lists(self):
         for value in (None, {}, []):
             with self.subTest(table_stages=value):

@@ -92,6 +92,7 @@ tables:
     - stage: filled_tin
     action: Bake
     hint: "22–27 min; until centre has the slightest wobble"
+    duration_minutes: 27
 
   - id: cooled_blondies
     inputs:

@@ -51,6 +51,7 @@ tables:
     - stage: arrange_fries
     action: Bake
     hint: "20–25 minutes; flip halfway; until golden and crisp"
+    duration_minutes: 25
   - id: finish_fries
     inputs:
     - stage: bake_fries

@@ -79,6 +79,7 @@ tables:
     - stage: top_chocolate_bark
     action: Chill
     hint: "refrigerate for 1–2 hours until fully set"
+    duration_minutes: 120
   - id: break_chocolate_bark
     inputs:
     - stage: chill_chocolate_bark

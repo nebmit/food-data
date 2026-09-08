@@ -51,6 +51,7 @@ tables:
       hint: "diced"
     action: Sauté
     hint: "in the same pan; about 5 minutes, until soft"
+    duration_minutes: 5
   - id: cook_shrimp
     inputs:
     - stage: saute_paella_aromatics
@@ -69,6 +70,7 @@ tables:
       measurement: grams
     action: Toast
     hint: "2 minutes"
+    duration_minutes: 2
   - id: simmer_paella
     inputs:
     - stage: toast_paella_rice
@@ -86,6 +88,7 @@ tables:
       measurement: pinch
     action: Simmer
     hint: "bring to a simmer, then cover; low heat for 20 minutes without stirring"
+    duration_minutes: 20
   - id: return_paella_proteins
     inputs:
     - stage: simmer_paella
@@ -100,6 +103,7 @@ tables:
     - stage: return_paella_proteins
     action: Cook
     hint: "covered; 10 minutes; until the rice is tender and liquid is absorbed"
+    duration_minutes: 10
 
 items:
 - name: Large shallow pan

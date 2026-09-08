@@ -46,6 +46,7 @@ tables:
       hint: "organic; cut into 2 mm slices"
     action: Simmer and cool
     hint: "10 min; until translucent; transfer to parchment paper"
+    duration_minutes: 10
 
 - name: Lemon cream
   stages:
@@ -87,6 +88,7 @@ tables:
     - stage: lemon_cream
     action: Cool
     hint: "10 min"
+    duration_minutes: 10
 
 - name: Assembly
   stages:
@@ -123,6 +125,7 @@ tables:
     - stage: candied_lemon
     action: Arrange and chill
     hint: "decorate with lemon slices; refrigerate at least 60 min"
+    duration_minutes: 60
 
 note:
 - "Using a ready-made crust eliminates all baking."

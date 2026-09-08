@@ -37,7 +37,7 @@ ITEM_REQUIRED_KEYS = {"name"}
 ITEM_OPTIONAL_KEYS = {"quantity", "sub"}
 TABLE_KEYS = {"name", "stages"}
 STAGE_REQUIRED_KEYS = {"id", "action"}
-STAGE_OPTIONAL_KEYS = {"inputs", "hint", "setup"}
+STAGE_OPTIONAL_KEYS = {"inputs", "hint", "setup", "duration_minutes"}
 INGREDIENT_INPUT_REQUIRED_KEYS = {"ingredient"}
 INGREDIENT_INPUT_OPTIONAL_KEYS = {"quantity", "measurement", "hint"}
 STAGE_INPUT_REQUIRED_KEYS = {"stage"}
@@ -263,6 +263,10 @@ def _validate_stage(stage, path, table_index, stage_index, graph, errors):
         _validate_string(stage["action"], f"{path}.action", errors)
     if "hint" in stage:
         _validate_string(stage["hint"], f"{path}.hint", errors)
+    if "duration_minutes" in stage:
+        _validate_positive_integer(
+            stage["duration_minutes"], f"{path}.duration_minutes", errors
+        )
 
     is_setup = False
     if "setup" in stage:

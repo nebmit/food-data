@@ -45,6 +45,8 @@ tables:
       hint: <String> # Optional prep, substitution, or qualitative amount
     action: <String> # Short imperative action, capitalised
     hint: <String> # Optional time, heat, temperature, doneness, or caution; starts lowercase
+    duration_minutes: <Integer> # Optional. Whole minutes to set a kitchen timer to;
+                                # the upper end when the hint gives a range
 
 # Optional recipe-level guidance
 note:

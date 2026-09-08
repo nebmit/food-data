@@ -95,11 +95,13 @@ tables:
     - stage: shape_cookies
     action: Bake
     hint: "10 min until the edges are golden and the centres remain soft"
+    duration_minutes: 10
   - id: cool_cookies
     inputs:
     - stage: bake_cookies
     action: Cool
     hint: "on the tray for 5 min before serving"
+    duration_minutes: 5
 
 note:
 - "Substitute chocolate chips with chopped nuts or dried fruit."

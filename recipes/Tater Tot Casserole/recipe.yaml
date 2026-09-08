@@ -119,12 +119,14 @@ tables:
     - stage: tater_tot_layer
     action: Bake
     hint: "30 min; until tater tots are crispy"
+    duration_minutes: 30
 
   - id: broiled_casserole
     inputs:
     - stage: baked_casserole
     action: Broil if desired
     hint: "2–3 min; watch closely to prevent burning"
+    duration_minutes: 3
 
   - id: finish_casserole
     inputs:

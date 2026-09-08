@@ -39,6 +39,7 @@ tables:
       hint: "minced"
     action: Cook
     hint: "medium heat, about 5 min until soft"
+    duration_minutes: 5
   - id: soften_bell_pepper
     inputs:
     - stage: soften_aromatics
@@ -48,6 +49,7 @@ tables:
       hint: "diced"
     action: Cook
     hint: "5 min until starting to soften"
+    duration_minutes: 5
   - id: combine_chili
     inputs:
     - stage: soften_bell_pepper
@@ -90,6 +92,7 @@ tables:
     - stage: boil_chili
     action: Simmer
     hint: "reduce the heat; about 30 min until the sweet potato is tender"
+    duration_minutes: 30
   - id: garnish_chili
     inputs:
     - stage: simmer_chili

@@ -83,6 +83,7 @@ tables:
     - stage: portion_pancakes
     action: Cook
     hint: "covered on the lowest heat, 5–6 min"
+    duration_minutes: 6
   - id: flip_pancakes
     inputs:
     - stage: cook_first_pancake_side
@@ -93,6 +94,7 @@ tables:
     - stage: flip_pancakes
     action: Cook
     hint: "lowest heat, 5–6 min until golden and cooked through"
+    duration_minutes: 6
 
 note:
 - "Serve with fresh fruit, whipped cream, maple syrup, or a dusting of icing sugar."
