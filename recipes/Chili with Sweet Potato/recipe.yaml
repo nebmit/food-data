@@ -3,18 +3,18 @@ schema_version: 2
 meta:
   description: "A hearty vegetarian chili loaded with sweet potato, two kinds of beans, and warm spices."
   source: "Original"
+  course: "Main"
   cuisine: "Mexican"
 
 portion:
   quantity: 4
   descriptor: "servings"
-  active_time_minutes: 60
-  passive_time_minutes: 15
+  active_time_minutes: 25
+  passive_time_minutes: 35
   complexity_rating: 3
   mayhem_rating: 2
 
 tags:
-- "Mexican"
 - "Vegetarian"
 
 items:
@@ -30,33 +30,35 @@ tables:
       quantity: 15
       measurement: ml
     - ingredient: Onion
-      quantity: 150
-      measurement: grams
+      quantity: 1
+      measurement: unit
       hint: "diced"
     - ingredient: Garlic
       quantity: 4
       measurement: clove
       hint: "minced"
     action: Cook
-    hint: "medium heat, about 5 min until soft"
+    hint: "medium heat; about 5 min; until soft"
     duration_minutes: 5
+
   - id: soften_bell_pepper
     inputs:
     - stage: soften_aromatics
     - ingredient: Bell pepper
-      quantity: 200
-      measurement: grams
+      quantity: 1
+      measurement: unit
       hint: "diced"
     action: Cook
-    hint: "5 min until starting to soften"
+    hint: "5 min; until starting to soften"
     duration_minutes: 5
-  - id: combine_chili
+
+  - id: simmer_chili
     inputs:
     - stage: soften_bell_pepper
     - ingredient: Sweet potato
       quantity: 500
       measurement: grams
-      hint: "peeled and cubed"
+      hint: "peeled and cut into 2 cm cubes"
     - ingredient: Black beans
       quantity: 400
       measurement: grams
@@ -65,37 +67,38 @@ tables:
       quantity: 400
       measurement: grams
       hint: "drained and rinsed"
-    - ingredient: Diced tomatoes
-      quantity: 800
-      measurement: grams
-      hint: "or 2 cans of chopped tomatoes"
+    - ingredient: Chopped tomatoes
+      quantity: 2
+      measurement: can
+    - ingredient: Vegetable stock
+      quantity: 250
+      measurement: ml
     - ingredient: Chili powder
       quantity: 2
       measurement: tablespoon
+      hint: "mild blend; use far less of pure ground chili"
     - ingredient: Cumin
       quantity: 1
       measurement: tablespoon
     - ingredient: Smoked paprika
       quantity: 1
       measurement: tablespoon
+    action: Simmer
+    hint: "bring to a boil, then cover; low heat; about 30 min; until the sweet potato is tender"
+    duration_minutes: 30
+
+  - id: season_chili
+    inputs:
+    - stage: simmer_chili
     - ingredient: Salt
       hint: "to taste"
     - ingredient: Pepper
       hint: "to taste"
-    action: Stir
-  - id: boil_chili
+    action: Season
+
+  - id: serve_chili
     inputs:
-    - stage: combine_chili
-    action: Boil
-  - id: simmer_chili
-    inputs:
-    - stage: boil_chili
-    action: Simmer
-    hint: "reduce the heat; about 30 min until the sweet potato is tender"
-    duration_minutes: 30
-  - id: garnish_chili
-    inputs:
-    - stage: simmer_chili
+    - stage: season_chili
     - ingredient: Avocado
       quantity: 1
       measurement: unit
@@ -104,15 +107,12 @@ tables:
       quantity: 30
       measurement: grams
       hint: "roughly chopped"
-    - ingredient: Shredded cheese
+    - ingredient: Cheddar cheese
       quantity: 100
       measurement: grams
-    action: Garnish
-  - id: serve_chili
-    inputs:
-    - stage: garnish_chili
+      hint: "shredded"
     action: Serve
-    hint: "divide among bowls"
+    hint: "divide among bowls and top each one"
 
 note:
 - "Add a squeeze of lime juice for extra brightness."

@@ -5,6 +5,8 @@ editing this file. They cover the writing conventions the schema validator
 does not encode, plus a gate that every recipe still validates.
 """
 
+import collections
+import re
 import sys
 import unittest
 from pathlib import Path
@@ -27,6 +29,21 @@ TITLE_CASE_MINOR_WORDS = {"a", "and", "au", "de", "in", "la", "on", "the", "with
 # Hints start lowercase because they continue the action. Add a term here only
 # when a hint genuinely has to open with a proper noun.
 HINT_PROPER_NOUNS = frozenset()
+
+# A stage hint that states a time. Any such stage needs `duration_minutes`, or
+# cook mode has nothing to set a timer to.
+HINT_TIME_PATTERN = re.compile(r"\d\s*(?:min|minutes?|h|hours?)\b", re.IGNORECASE)
+
+# Grocery lists sum an ingredient by name and measurement, so one ingredient
+# must not be weighed in one recipe and counted in another. Volume measures are
+# one family because they convert; every counting measure is its own.
+MEASUREMENT_FAMILIES = {
+    "grams": "weight",
+    "ml": "volume",
+    "teaspoon": "volume",
+    "tablespoon": "volume",
+    "pinch": "volume",
+}
 
 
 def recipe_paths():
@@ -138,6 +155,46 @@ class RecipeCorpusInvariants(unittest.TestCase):
                     if hint.split()[0] in HINT_PROPER_NOUNS:
                         continue
                     self.assertFalse(hint[:1].isupper(), hint)
+
+    def test_a_stage_hint_that_states_a_time_carries_a_duration(self):
+        for name, recipe in self.recipes.items():
+            for stage in stages(recipe):
+                if not HINT_TIME_PATTERN.search(stage.get("hint", "")):
+                    continue
+                with self.subTest(recipe=name, stage=stage["id"]):
+                    self.assertIn("duration_minutes", stage, stage["hint"])
+
+    def test_setup_actions_name_what_they_act_on(self):
+        # A setup stage has no inputs to say what "Preheat" or "Line" refers to.
+        for name, recipe in self.recipes.items():
+            for stage in stages(recipe):
+                if not stage.get("setup"):
+                    continue
+                with self.subTest(recipe=name, stage=stage["id"]):
+                    self.assertGreater(len(stage["action"].split()), 1, stage["action"])
+
+    def test_tags_do_not_repeat_the_course_or_cuisine(self):
+        for name, recipe in self.recipes.items():
+            meta = recipe["meta"]
+            taken = {meta["course"].casefold(), meta["cuisine"].casefold()}
+            for tag in recipe.get("tags", []):
+                with self.subTest(recipe=name, tag=tag):
+                    self.assertNotIn(tag.casefold(), taken)
+
+    def test_an_ingredient_keeps_one_measurement_family_across_the_corpus(self):
+        families = collections.defaultdict(lambda: collections.defaultdict(set))
+        for name, recipe in self.recipes.items():
+            for entry in ingredient_inputs(recipe):
+                measurement = entry.get("measurement")
+                if measurement is None:
+                    continue
+                family = MEASUREMENT_FAMILIES.get(measurement, measurement)
+                families[entry["ingredient"].casefold()][family].add(name)
+
+        for ingredient, used in sorted(families.items()):
+            with self.subTest(ingredient=ingredient):
+                rendered = {family: sorted(names) for family, names in used.items()}
+                self.assertEqual(1, len(used), rendered)
 
 
 if __name__ == "__main__":

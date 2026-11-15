@@ -3,18 +3,27 @@ schema_version: 2
 meta:
   description: "Stir-fried green beans and vegetables in a hoisin-ginger sauce, served over sushi rice with a runny egg on top."
   source: "Original"
+  course: "Main"
   cuisine: "Asian"
 
 portion:
   quantity: 4
   descriptor: "servings"
-  active_time_minutes: 45
-  passive_time_minutes: 5
+  active_time_minutes: 35
+  passive_time_minutes: 15
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
 - "Vegetarian"
+
+items:
+- name: Small pot
+  quantity: 1
+- name: Large frying pan
+  quantity: 1
+- name: Lid
+  quantity: 1
 
 tables:
 - name: Rice
@@ -22,25 +31,48 @@ tables:
   - id: cook_sushi_rice
     inputs:
     - ingredient: Water
-      quantity: 800
+      quantity: 520
       measurement: ml
     - ingredient: Sushi rice
       quantity: 400
       measurement: grams
+      hint: "rinsed until the water runs clear"
     action: Cook
-    hint: "bring to a boil, then cover; lowest heat for 18–20 minutes"
-    duration_minutes: 20
+    hint: "bring to a boil, then cover; lowest heat; 12–15 min; leave covered off the heat until serving"
+    duration_minutes: 15
+
+- name: Sauce
+  stages:
+  - id: mix_hoisin_sauce
+    inputs:
+    - ingredient: Hoisin sauce
+      quantity: 100
+      measurement: ml
+    - ingredient: Soy sauce
+      quantity: 45
+      measurement: ml
+    - ingredient: Vinegar
+      quantity: 30
+      measurement: ml
+    - ingredient: Water
+      quantity: 150
+      measurement: ml
+    - ingredient: Ginger
+      quantity: 20
+      measurement: grams
+      hint: "peeled and finely grated"
+    action: Mix
 
 - name: Vegetables
   stages:
-  - id: prepare_spring_onions
+  - id: slice_spring_onions
     inputs:
     - ingredient: Spring onion
       quantity: 2
       measurement: unit
-      hint: "sliced into rings"
-    action: Separate
-    hint: "keep the white and green parts apart"
+    action: Slice
+    hint: "into rings; keep the white and green parts apart"
+
   - id: saute_garlic
     inputs:
     - ingredient: Vegetable oil
@@ -51,12 +83,13 @@ tables:
       measurement: clove
       hint: "finely diced"
     action: Sauté
-    hint: "medium-high heat; 1 minute"
+    hint: "medium-high heat; 1 min"
     duration_minutes: 1
+
   - id: stir_fry_vegetables
     inputs:
     - stage: saute_garlic
-    - stage: prepare_spring_onions
+    - stage: slice_spring_onions
       part: "white parts"
     - ingredient: Green beans
       quantity: 500
@@ -67,50 +100,33 @@ tables:
       measurement: unit
       hint: "deseeded and sliced into thin strips"
     action: Stir-fry
-    hint: "2–3 minutes"
+    hint: "2–3 min"
     duration_minutes: 3
-  - id: mix_hoisin_sauce
-    inputs:
-    - ingredient: Hoisin sauce
-      quantity: 100
-      measurement: ml
-    - ingredient: Ginger seasoning sauce
-      quantity: 200
-      measurement: ml
-    - ingredient: Vinegar
-      quantity: 60
-      measurement: ml
-    - ingredient: Water
-      quantity: 150
-      measurement: ml
-    action: Mix
+
   - id: simmer_vegetables
     inputs:
     - stage: stir_fry_vegetables
     - stage: mix_hoisin_sauce
     action: Simmer
-    hint: "bring to a boil, then cover; 6–7 minutes"
+    hint: "bring to a boil, then cover; 6–7 min"
     duration_minutes: 7
-  - id: add_eggs
+
+  - id: cook_eggs
     inputs:
     - stage: simmer_vegetables
     - ingredient: Egg
       quantity: 4
       measurement: unit
-    action: Add eggs
-    hint: "make 4 indentations; add one egg to each"
-  - id: cook_eggs
-    inputs:
-    - stage: add_eggs
-    action: Simmer
-    hint: "covered; 3–5 minutes; until the whites are set"
+    action: Poach
+    hint: "make a well for each egg and crack it in; covered; 3–5 min; until the whites are set"
     duration_minutes: 5
+
   - id: finish_green_beans
     inputs:
     - stage: cook_eggs
-    - stage: prepare_spring_onions
+    - stage: slice_spring_onions
       part: "green parts"
-    - ingredient: Chili pepper
+    - ingredient: Red chili
       quantity: 2
       measurement: unit
       hint: "sliced into fine rings; remove seeds for less heat"
@@ -124,12 +140,6 @@ tables:
     - stage: finish_green_beans
     action: Serve
     hint: "divide the rice, add the vegetables, and place one egg on each serving"
-
-items:
-- name: Small pot
-  quantity: 1
-- name: Large frying pan
-  quantity: 1
 
 note:
 - "Add tofu or chicken for extra protein."

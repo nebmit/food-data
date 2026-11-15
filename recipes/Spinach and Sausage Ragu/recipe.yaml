@@ -3,13 +3,14 @@ schema_version: 2
 meta:
   description: "A rich, hearty pasta ragu with pork sausage, wilted spinach, and a splash of milk for creaminess."
   source: "Original"
+  course: "Main"
   cuisine: "Italian"
 
 portion:
   quantity: 4
   descriptor: "servings"
   active_time_minutes: 30
-  passive_time_minutes: 20
+  passive_time_minutes: 10
   complexity_rating: 2
   mayhem_rating: 2
 
@@ -22,26 +23,21 @@ items:
 tables:
 - name: Pasta
   stages:
-  - id: pasta_water
+  - id: cook_pasta
     inputs:
+    - ingredient: Rigatoni pasta
+      quantity: 350
+      measurement: grams
     - ingredient: Water
       hint: "enough to boil the pasta"
     - ingredient: Salt
       hint: "enough to season the water"
-    action: Bring to a boil
-
-  - id: cooked_pasta
-    inputs:
-    - stage: pasta_water
-    - ingredient: Rigatoni pasta
-      quantity: 350
-      measurement: grams
-    action: Cook and drain
-    hint: "until al dente; follow package timing"
+    action: Boil
+    hint: "until al dente; follow the package timing; drain"
 
 - name: Ragu
   stages:
-  - id: browned_sausage
+  - id: brown_sausage
     inputs:
     - ingredient: Olive oil
       quantity: 15
@@ -54,12 +50,12 @@ tables:
       quantity: 1
       measurement: unit
       hint: "diced"
-    action: Brown together
-    hint: "medium heat; until sausage is browned and onion is soft"
+    action: Brown
+    hint: "medium heat; until the sausage is browned and the onion is soft"
 
-  - id: seasoned_sausage
+  - id: bloom_ragu_aromatics
     inputs:
-    - stage: browned_sausage
+    - stage: brown_sausage
     - ingredient: Garlic
       quantity: 2
       measurement: clove
@@ -67,7 +63,7 @@ tables:
     - ingredient: Rosemary
       quantity: 2
       measurement: teaspoon
-      hint: "finely chopped"
+      hint: "fresh; finely chopped"
     - ingredient: Chili flakes
       quantity: 1
       measurement: teaspoon
@@ -75,9 +71,9 @@ tables:
     hint: "1 min; until fragrant"
     duration_minutes: 1
 
-  - id: tomato_ragu
+  - id: simmer_ragu
     inputs:
-    - stage: seasoned_sausage
+    - stage: bloom_ragu_aromatics
     - ingredient: Chopped tomatoes
       quantity: 1
       measurement: can
@@ -88,28 +84,28 @@ tables:
     hint: "10 min; until thickened"
     duration_minutes: 10
 
-  - id: creamy_ragu
+  - id: wilt_spinach
     inputs:
-    - stage: tomato_ragu
+    - stage: simmer_ragu
     - ingredient: Spinach
       quantity: 200
       measurement: grams
     - ingredient: Milk
       quantity: 150
       measurement: ml
-    action: Stir in and cook
-    hint: "about 2 min; until spinach wilts"
+    action: Stir
+    hint: "about 2 min; until the spinach wilts"
     duration_minutes: 2
 
 - name: Assembly
   stages:
-  - id: finished_ragu
+  - id: toss_ragu
     inputs:
-    - stage: cooked_pasta
-    - stage: creamy_ragu
+    - stage: cook_pasta
+    - stage: wilt_spinach
     - ingredient: Salt
       hint: "to taste"
-    action: Toss and season
+    action: Toss
 
 note:
 - "Use Italian-style sausages for the best flavour."

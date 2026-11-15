@@ -3,18 +3,24 @@ schema_version: 2
 meta:
   description: "Colourful stir-fried egg noodles with fresh vegetables and a rich peanut sauce."
   source: "Original"
+  course: "Main"
   cuisine: "Asian"
 
 portion:
   quantity: 4
   descriptor: "servings"
   active_time_minutes: 30
-  passive_time_minutes: 10
+  passive_time_minutes: 0
   complexity_rating: 2
   mayhem_rating: 1
 
 tags:
 - "Vegetarian"
+
+items:
+- name: Large frying pan
+  quantity: 1
+  sub: "or wok"
 
 tables:
 - name: Sauce
@@ -25,8 +31,8 @@ tables:
       quantity: 200
       measurement: ml
     - ingredient: Soy sauce
-      quantity: 1
-      measurement: tablespoon
+      quantity: 15
+      measurement: ml
     - ingredient: Palm sugar
       quantity: 1
       measurement: tablespoon
@@ -39,26 +45,23 @@ tables:
       measurement: unit
       hint: "finely sliced"
     action: Whisk
+    hint: "until the peanut butter dissolves"
 
 - name: Noodles
   stages:
-  - id: heat_nut_oil
-    inputs:
-    - ingredient: Nut oil
-      quantity: 2
-      measurement: tablespoon
-    action: Heat
-    hint: "medium-high heat"
   - id: stir_fry_firm_vegetables
     inputs:
-    - stage: heat_nut_oil
+    - ingredient: Peanut oil
+      quantity: 30
+      measurement: ml
+      hint: "or vegetable oil"
     - ingredient: Bell pepper
       quantity: 2
       measurement: unit
       hint: "sliced"
     - ingredient: Broccoli
-      quantity: 1
-      measurement: unit
+      quantity: 400
+      measurement: grams
       hint: "cut into small florets"
     - ingredient: Shallot
       quantity: 1
@@ -69,8 +72,9 @@ tables:
       measurement: clove
       hint: "minced"
     action: Stir-fry
-    hint: "2 minutes"
+    hint: "medium-high heat; 2 min"
     duration_minutes: 2
+
   - id: stir_fry_remaining_vegetables
     inputs:
     - stage: stir_fry_firm_vegetables
@@ -81,32 +85,26 @@ tables:
     - ingredient: Edamame beans
       quantity: 200
       measurement: grams
+      hint: "shelled"
     action: Stir-fry
-    hint: "3 minutes"
+    hint: "3 min"
     duration_minutes: 3
-  - id: combine_rainbow_noodles
+
+  - id: cook_rainbow_noodles
     inputs:
     - stage: stir_fry_remaining_vegetables
     - stage: mix_peanut_sauce
     - ingredient: Egg noodles
       quantity: 500
       measurement: grams
+      hint: "fresh or pre-cooked"
     - ingredient: Rainbow chard
       quantity: 1
       measurement: bunch
       hint: "roughly chopped"
     action: Toss
-    hint: "until evenly coated"
-  - id: cook_rainbow_noodles
-    inputs:
-    - stage: combine_rainbow_noodles
-    action: Cook
-    hint: "4–5 minutes; until the noodles are heated through and the chard has wilted"
+    hint: "4–5 min; until the noodles are heated through and the chard has wilted"
     duration_minutes: 5
-
-items:
-- name: Large frying pan
-  quantity: 1
 
 note:
 - "Add prawns or chicken for extra protein."

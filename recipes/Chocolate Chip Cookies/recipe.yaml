@@ -3,19 +3,19 @@ schema_version: 2
 meta:
   description: "Classic chocolate chip cookies with crispy edges and chewy centres."
   source: "Original"
+  course: "Dessert"
   cuisine: "American"
 
 portion:
-  quantity: 12
+  quantity: 24
   descriptor: "cookies"
   active_time_minutes: 20
-  passive_time_minutes: 10
+  passive_time_minutes: 25
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
 - "Vegetarian"
-- "Dessert"
 - "Baking"
 
 items:
@@ -24,11 +24,21 @@ items:
 - name: Mixing bowl
   quantity: 1
 - name: Baking tray
-  quantity: 1
+  quantity: 2
 
 tables:
 - name: Dough
   stages:
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "190°C"
+
+  - id: line_trays
+    setup: true
+    action: Line trays
+    hint: "with parchment paper"
+
   - id: cream_cookie_base
     inputs:
     - ingredient: Butter
@@ -43,6 +53,7 @@ tables:
       measurement: grams
     action: Cream
     hint: "until light and fluffy"
+
   - id: beat_cookie_egg
     inputs:
     - stage: cream_cookie_base
@@ -53,6 +64,7 @@ tables:
       quantity: 1
       measurement: teaspoon
     action: Beat
+
   - id: mix_cookie_dough
     inputs:
     - stage: beat_cookie_egg
@@ -67,6 +79,7 @@ tables:
       measurement: pinch
     action: Mix
     hint: "until just combined"
+
   - id: add_chocolate_chips
     inputs:
     - stage: mix_cookie_dough
@@ -77,32 +90,26 @@ tables:
 
 - name: Bake
   stages:
-  - id: preheat_cookie_oven
-    setup: true
-    action: Preheat
-    hint: "oven to 200°C"
-  - id: line_cookie_tray
-    setup: true
-    action: Line
-    hint: "cover a baking tray with parchment paper"
   - id: shape_cookies
     inputs:
     - stage: add_chocolate_chips
     action: Shape
-    hint: "form small balls and space them apart on the lined tray"
+    hint: "roughly 45 g balls; well spaced on the lined trays"
+
   - id: bake_cookies
     inputs:
     - stage: shape_cookies
     action: Bake
-    hint: "10 min until the edges are golden and the centres remain soft"
+    hint: "one tray at a time; 9–10 min per tray; until the edges are golden and the centres still soft"
     duration_minutes: 10
+
   - id: cool_cookies
     inputs:
     - stage: bake_cookies
     action: Cool
-    hint: "on the tray for 5 min before serving"
+    hint: "on the tray; 5 min"
     duration_minutes: 5
 
 note:
 - "Substitute chocolate chips with chopped nuts or dried fruit."
-- "Reduce sugar and butter quantities for a lighter version."
+- "The cookies look underdone when they come out; they firm up as they cool on the tray."

@@ -18,6 +18,7 @@ def valid_recipe():
         "meta": {
             "description": "A compact test recipe.",
             "source": "Original",
+            "course": "Main",
             "cuisine": "Test",
         },
         "portion": {
@@ -373,6 +374,45 @@ class RecipeValidatorTests(unittest.TestCase):
                 "duration_minutes": 12,
             },
         )
+        self.assert_valid(recipe)
+
+    def test_course_is_required_and_drawn_from_the_allowed_list(self):
+        for course in sorted(yaml_parser.ALLOWED_COURSES):
+            with self.subTest(course=course):
+                recipe = valid_recipe()
+                recipe["meta"]["course"] = course
+                self.assert_valid(recipe)
+
+        recipe = valid_recipe()
+        del recipe["meta"]["course"]
+        self.assert_invalid(recipe, "'meta' missing required key 'course'")
+
+        for course in ("main", "Dinner", "Main course"):
+            with self.subTest(course=course):
+                recipe = valid_recipe()
+                recipe["meta"]["course"] = course
+                self.assert_invalid(recipe, "'meta.course' value")
+
+        recipe = valid_recipe()
+        recipe["meta"]["course"] = ["Main"]
+        self.assert_invalid(recipe, "non-empty, trimmed string")
+
+    def test_a_stage_without_inputs_must_be_a_setup_stage(self):
+        for inputs in ("omitted", []):
+            with self.subTest(inputs=inputs):
+                recipe = valid_recipe()
+                stage = {"id": "rest_dough", "action": "Rest"}
+                if inputs != "omitted":
+                    stage["inputs"] = inputs
+                recipe["tables"][0]["stages"].insert(0, stage)
+                self.assert_invalid(
+                    recipe, "must take at least one input or be marked 'setup: true'"
+                )
+
+    def test_a_per_side_or_per_batch_time_still_takes_a_duration(self):
+        recipe = valid_recipe()
+        recipe["tables"][0]["stages"][0]["hint"] = "about 4 min per side"
+        recipe["tables"][0]["stages"][0]["duration_minutes"] = 4
         self.assert_valid(recipe)
 
     def test_tables_and_stages_must_be_non_empty_lists(self):

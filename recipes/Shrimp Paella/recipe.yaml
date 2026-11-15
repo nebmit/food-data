@@ -3,40 +3,43 @@ schema_version: 2
 meta:
   description: "A classic Spanish rice dish with saffron, chorizo, and plump shrimp."
   source: "Original"
+  course: "Main"
   cuisine: "Spanish"
 
 portion:
   quantity: 4
   descriptor: "servings"
-  active_time_minutes: 60
+  active_time_minutes: 30
   passive_time_minutes: 30
   complexity_rating: 3
   mayhem_rating: 2
 
-tags:
-- "Spanish"
+items:
+- name: Large shallow pan
+  quantity: 1
+- name: Lid
+  quantity: 1
+  sub: "or foil"
 
 tables:
 - name: Paella
   stages:
-  - id: heat_paella_oil
+  - id: brown_chorizo
     inputs:
     - ingredient: Olive oil
       quantity: 30
       measurement: ml
-    action: Heat
-    hint: "medium heat"
-  - id: brown_chorizo
-    inputs:
-    - stage: heat_paella_oil
     - ingredient: Chorizo sausage
       quantity: 150
       measurement: grams
       hint: "sliced into rounds"
     action: Brown
-    hint: "remove and reserve"
+    hint: "medium heat; 3–4 min; until the fat renders"
+    duration_minutes: 4
+
   - id: saute_paella_aromatics
     inputs:
+    - stage: brown_chorizo
     - ingredient: Garlic
       quantity: 2
       measurement: clove
@@ -50,66 +53,58 @@ tables:
       measurement: unit
       hint: "diced"
     action: Sauté
-    hint: "in the same pan; about 5 minutes, until soft"
+    hint: "about 5 min; until soft"
     duration_minutes: 5
-  - id: cook_shrimp
-    inputs:
-    - stage: saute_paella_aromatics
-    - ingredient: Shrimp
-      quantity: 300
-      measurement: grams
-      hint: "peeled and deveined"
-    action: Cook
-    hint: "about 2 minutes per side, until pink; remove and reserve"
+
   - id: toast_paella_rice
     inputs:
-    - stage: cook_shrimp
-      part: "aromatic base left in the pan"
+    - stage: saute_paella_aromatics
     - ingredient: Short-grain rice
       quantity: 400
       measurement: grams
     action: Toast
-    hint: "2 minutes"
+    hint: "2 min; stir to coat in the fat"
     duration_minutes: 2
+
   - id: simmer_paella
     inputs:
     - stage: toast_paella_rice
     - ingredient: Chicken broth
-      quantity: 950
+      quantity: 1000
       measurement: ml
+      hint: "hot"
     - ingredient: Paprika
-      quantity: 5
-      measurement: grams
+      quantity: 2
+      measurement: teaspoon
     - ingredient: Saffron threads
-      quantity: 0.5
-      measurement: grams
+      quantity: 1
+      measurement: pinch
     - ingredient: Salt
       quantity: 1
       measurement: pinch
     action: Simmer
-    hint: "bring to a simmer, then cover; low heat for 20 minutes without stirring"
-    duration_minutes: 20
-  - id: return_paella_proteins
+    hint: "bring to a boil, then lower to a gentle simmer; uncovered; 15 min; do not stir"
+    duration_minutes: 15
+
+  - id: cook_shrimp
     inputs:
     - stage: simmer_paella
-    - stage: brown_chorizo
-      part: "reserved chorizo"
-    - stage: cook_shrimp
-      part: "reserved shrimp"
-    action: Return and nestle
-    hint: "nestle into the rice"
-  - id: finish_paella
-    inputs:
-    - stage: return_paella_proteins
-    action: Cook
-    hint: "covered; 10 minutes; until the rice is tender and liquid is absorbed"
-    duration_minutes: 10
+    - ingredient: Shrimp
+      quantity: 300
+      measurement: grams
+      hint: "raw; peeled and deveined"
+    action: Nestle
+    hint: "press into the rice, then cover; 5–8 min; until the shrimp are pink and the liquid is absorbed"
+    duration_minutes: 8
 
-items:
-- name: Large shallow pan
-  quantity: 1
+  - id: rest_paella
+    inputs:
+    - stage: cook_shrimp
+    action: Rest
+    hint: "off the heat; covered; 5 min"
+    duration_minutes: 5
 
 note:
-- "For a traditional socarrat (crispy bottom), increase heat for the final 2 minutes."
+- "For a traditional socarrat (crispy bottom), turn the heat up for the last 2 minutes of the uncovered simmer."
 - "Substitute shrimp with mussels or clams for a different seafood paella."
 - "Add a squeeze of lemon juice before serving."

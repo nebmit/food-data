@@ -6,7 +6,7 @@ Every recipe is stored as `recipes/<Recipe Name>/recipe.yaml` and uses schema ve
 
 1. Use Title Case for recipe directory names.
 2. Use sentence capitalization for ingredient, equipment, and table names. An ingredient name must be the product someone buys; put preparation and substitutions in `hint`.
-3. Reuse existing ingredient names so grocery lists aggregate correctly. Run `python scripts/format-check.py --list` before adding a new name; it also reports names that look like duplicates of an existing one.
+3. Reuse existing ingredient names so grocery lists aggregate correctly. Run `python scripts/format-check.py --list` before adding a new name; it also reports names that look like duplicates of an existing one. Reuse the existing kind of measurement too: an ingredient that is weighed in one recipe must not be counted in another, because `200 g` and `1 ×` of the same thing cannot be summed.
 4. Use metric measurements where practical and the singular measurement values listed below.
 5. Start actions with a capitalised imperative verb and keep stages chronological.
 6. Put timing, heat, Celsius temperature, sensory cues, dimensions, and cautions in the action `hint`. Hints start lowercase because they continue the action.
@@ -24,6 +24,7 @@ schema_version: 2
 meta:
   description: "Classic cookies with crisp edges and chewy centres."
   source: "Original"
+  course: "Dessert"
   cuisine: "American"
 
 portion:
@@ -36,7 +37,7 @@ portion:
 
 tags:
 - "Vegetarian"
-- "Dessert"
+- "Baking"
 
 items:
 - name: Oven
@@ -46,6 +47,10 @@ items:
 ```
 
 Ratings range from 1 to 5. Times are non-negative whole minutes, and portion quantities are positive whole numbers. An equipment `quantity` is optional and defaults to one.
+
+`meta.course` is required and is the first level of the browse drilldown. It takes exactly one of `Breakfast`, `Starter`, `Main`, `Side`, `Dessert`, `Snack`, or `Drink`. `tags` hold what course and cuisine do not: dietary labels and character such as `Vegetarian`, `Gluten-free`, `Baking`, or `No-bake`. Do not repeat the course or the cuisine as a tag.
+
+`active_time_minutes` is hands-on work; `passive_time_minutes` is everything that runs without you, such as baking, simmering, chilling, and cooling. When trays or batches are cooked one after another, count every round.
 
 ## Tables and stages
 
@@ -59,6 +64,11 @@ A stage that runs for a definite length of time also carries `duration_minutes`,
 tables:
 - name: Dough
   stages:
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "200°C"
+
   - id: whisk_dry_mixture
     inputs:
     - ingredient: Flour
@@ -84,11 +94,6 @@ tables:
 
 - name: Bake
   stages:
-  - id: preheat_oven
-    setup: true
-    action: Preheat oven
-    hint: "200°C"
-
   - id: bake_cookies
     inputs:
     - stage: mix_cookie_dough
@@ -101,7 +106,11 @@ Every recipe ends in exactly one unused stage holding the finished dish, and it 
 
 ### Setup stages
 
-An action with no food inputs — preheating an oven, lining a tray — is marked `setup: true`. Setup stages take no `inputs`, are never referenced as food, and may not end a table, since a table's last stage is its result. Document order already supplies chronology, so do not reference a setup action merely to express timing.
+An action with no food inputs — preheating an oven, lining a tray — is marked `setup: true`. Setup stages take no `inputs`, are never referenced as food, and may not end a table, since a table's last stage is its result. Every other stage takes at least one input.
+
+Document order is the order cook mode walks through, so put a setup stage where the cook has to start it, not where its result is needed: an oven is preheated at the top of the first table, before the dough is made. Do not reference a setup action merely to express timing.
+
+A setup stage has no inputs to say what it acts on, so its `action` names the object: `Preheat oven`, `Line tray`, never a bare `Preheat`. The `hint` carries only the setting (`"200°C"`).
 
 ### Stage references
 
@@ -125,7 +134,7 @@ A stage that feeds more than one later stage — separated eggs, a reserved garn
   hint: "to stiff peaks"
 ```
 
-`part` is also allowed on a single reference when it names a reserved portion. Once a `part` says which piece flows where, drop the phrase that used to say it from the `hint`.
+`part` is also allowed on a single reference when it names a reserved portion. Once a `part` says which piece flows where, drop the phrase that used to say it from the `hint`. A `part` names a piece of the food (`"whites"`, `"green parts"`); it is not a place to describe what happens in the pan.
 
 Do not store row numbers, column numbers, or cell spans.
 
@@ -170,7 +179,10 @@ There is no pantry classification in schema v2. Water, salt, oil, and other stap
 
 - Ingredient hints contain preparation, substitution, or qualitative amount information: `"coarsely chopped; or chocolate chips"`.
 - Action hints contain compact execution details: `"medium heat; 10–15 min; until thickened"`.
-- A hint that states a definite time is paired with `duration_minutes`, which repeats that time as a single whole number — the upper end of a range, so the timer never rings early. `"medium heat; 10–15 min; until thickened"` takes `duration_minutes: 15`. Leave it off when the stage has no set time (`"until fragrant"`) or when the time is per-portion rather than per-stage (`"about 4 minutes per side"`).
+- Separate the parts of a hint with semicolons, write times as `min` or `hours`, and put a space between a number and its unit (`2 cm`).
+- A hint that states a time is always paired with `duration_minutes`, which repeats that time as a single whole number — the upper end of a range, so the timer never rings early. `"medium heat; 10–15 min; until thickened"` takes `duration_minutes: 15`. Leave it off only when the stage has no set time (`"until fragrant"`).
+- When the time repeats — per side, per tray, per batch — say so in the hint and give `duration_minutes` the time of one round: `"about 4 min per side"` takes `duration_minutes: 4`. The cook restarts the timer for each round.
+- Keep counts that depend on the yield out of hints, because scaling the recipe does not rewrite prose: `"one patty per bun"`, not `"4 patties"`.
 - Keep equipment in top-level `items`; `sub` is allowed for an equipment substitute.
 - Keep dietary variants, serving ideas, storage advice, and optional enhancements in top-level `note` rather than adding unused ingredient inputs.
 - Use standard YAML quotes. Typographic quote characters must not wrap scalar values.

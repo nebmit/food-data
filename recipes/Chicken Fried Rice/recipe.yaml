@@ -3,6 +3,7 @@ schema_version: 2
 meta:
   description: "A quick weeknight stir-fry with tender chicken, scrambled eggs, and crisp vegetables over rice."
   source: "Original"
+  course: "Main"
   cuisine: "Chinese"
 
 portion:
@@ -31,7 +32,7 @@ tables:
     - ingredient: Water
       hint: "as directed on the rice package"
     action: Cook
-    hint: "follow the package instructions; set aside"
+    hint: "as directed on the package; spread out on a tray to steam dry"
 
 - name: Chicken
   stages:
@@ -49,7 +50,8 @@ tables:
     - ingredient: Pepper
       hint: "to taste"
     action: Cook
-    hint: "medium-high heat until no longer pink; remove and set aside"
+    hint: "medium-high heat; 5–6 min; until no longer pink"
+    duration_minutes: 6
 
 - name: Fried rice
   stages:
@@ -71,8 +73,9 @@ tables:
       measurement: unit
       hint: "diced"
     action: Sauté
-    hint: "medium-high heat, 2–3 min"
+    hint: "medium-high heat; 2–3 min"
     duration_minutes: 3
+
   - id: cook_peas
     inputs:
     - stage: saute_vegetables
@@ -82,6 +85,7 @@ tables:
     action: Cook
     hint: "2 min"
     duration_minutes: 2
+
   - id: scramble_eggs
     inputs:
     - stage: cook_peas
@@ -90,23 +94,21 @@ tables:
       measurement: unit
     action: Scramble
     hint: "push the vegetables to one side and cook the eggs on the other"
-  - id: mix_fried_rice
+
+  - id: finish_fried_rice
     inputs:
     - stage: scramble_eggs
     - stage: cook_fried_rice_rice
-    action: Mix
-  - id: finish_fried_rice
-    inputs:
-    - stage: mix_fried_rice
     - stage: cook_chicken
     - ingredient: Soy sauce
-      quantity: 120
+      quantity: 45
       measurement: ml
+      hint: "plus more to taste"
     action: Stir-fry
-    hint: "2–3 min"
+    hint: "high heat; 2–3 min; until piping hot"
     duration_minutes: 3
 
 note:
-- "Use day-old rice for the best fried rice texture."
+- "Day-old rice straight from the fridge fries best; freshly cooked rice needs to steam dry first or it turns sticky."
 - "Add a splash of sesame oil at the end for extra flavour."
 - "Substitute chicken with tofu for a vegetarian version."

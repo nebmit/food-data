@@ -22,9 +22,21 @@ ALLOWED_MEASUREMENTS = {
     "leaf",
 }
 
+# The first level of the browse drilldown. Dietary and descriptive labels stay in
+# ``tags``; a recipe has exactly one course.
+ALLOWED_COURSES = {
+    "Breakfast",
+    "Starter",
+    "Main",
+    "Side",
+    "Dessert",
+    "Snack",
+    "Drink",
+}
+
 ROOT_REQUIRED_KEYS = {"schema_version", "meta", "portion", "items", "tables"}
 ROOT_OPTIONAL_KEYS = {"tags", "note"}
-META_KEYS = {"description", "source", "cuisine"}
+META_KEYS = {"description", "source", "course", "cuisine"}
 PORTION_KEYS = {
     "quantity",
     "descriptor",
@@ -113,6 +125,14 @@ def _validate_meta(meta, errors):
     for key in ("description", "source", "cuisine"):
         if key in meta:
             _validate_string(meta[key], f"meta.{key}", errors)
+
+    if "course" in meta and _validate_string(meta["course"], "meta.course", errors):
+        if meta["course"] not in ALLOWED_COURSES:
+            allowed = ", ".join(sorted(ALLOWED_COURSES))
+            errors.append(
+                f"'meta.course' value '{meta['course']}' is not allowed. "
+                f"Use one of: {allowed}"
+            )
 
 
 def _validate_portion(portion, errors):
@@ -281,6 +301,12 @@ def _validate_stage(stage, path, table_index, stage_index, graph, errors):
     # reference itself.
     if "inputs" in stage:
         _validate_inputs(stage["inputs"], f"{path}.inputs", table_index, graph, errors)
+
+    # A stage that merges nothing is either a setup action or a wiring mistake.
+    if not is_setup and "setup" not in stage and not stage.get("inputs"):
+        errors.append(
+            f"'{path}' must take at least one input or be marked 'setup: true'"
+        )
 
     if not valid_stage_id:
         graph.complete = False

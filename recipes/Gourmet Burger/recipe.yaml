@@ -3,6 +3,7 @@ schema_version: 2
 meta:
   description: "Juicy homemade burgers with melted cheddar, fresh toppings, and a tangy burger sauce."
   source: "Original"
+  course: "Main"
   cuisine: "American"
 
 portion:
@@ -12,6 +13,10 @@ portion:
   passive_time_minutes: 0
   complexity_rating: 2
   mayhem_rating: 2
+
+items:
+- name: Frying pan
+  quantity: 1
 
 tables:
 - name: Burger sauce
@@ -29,6 +34,17 @@ tables:
       measurement: ml
     action: Mix
 
+- name: Buns
+  stages:
+  - id: toast_buns
+    inputs:
+    - ingredient: Burger bun
+      quantity: 4
+      measurement: unit
+      hint: "halved"
+    action: Toast
+    hint: "cut-side down in the dry pan; until lightly browned"
+
 - name: Patties
   stages:
   - id: shape_patties
@@ -37,7 +53,8 @@ tables:
       quantity: 450
       measurement: grams
     action: Shape
-    hint: "4 patties; slightly wider than the buns; indent the centres"
+    hint: "one patty per bun; slightly wider than the buns; indent the centres"
+
   - id: season_patties
     inputs:
     - stage: shape_patties
@@ -50,38 +67,31 @@ tables:
       hint: "to taste"
     action: Season
     hint: "coat both sides"
+
   - id: cook_patties
     inputs:
     - stage: season_patties
     action: Cook
-    hint: "medium-high heat; about 4 minutes per side or to preferred doneness"
+    hint: "medium-high heat; about 4 min per side; or to preferred doneness"
+    duration_minutes: 4
+
   - id: melt_cheese
     inputs:
     - stage: cook_patties
     - ingredient: Cheddar cheese
-      quantity: 4
-      measurement: slice
+      quantity: 80
+      measurement: grams
+      hint: "sliced"
     action: Melt
     hint: "one slice per patty during the final minute"
-
-- name: Buns
-  stages:
-  - id: toast_buns
-    inputs:
-    - ingredient: Burger bun
-      quantity: 4
-      measurement: unit
-      hint: "halved"
-    action: Toast
-    hint: "cut-side down; until lightly browned"
 
 - name: Assembly
   stages:
   - id: assemble_burgers
     inputs:
     - stage: mix_burger_sauce
-    - stage: melt_cheese
     - stage: toast_buns
+    - stage: melt_cheese
     - ingredient: Lettuce
       quantity: 4
       measurement: leaf
@@ -95,10 +105,6 @@ tables:
       hint: "sliced into rings"
     action: Assemble
     hint: "layer sauce, lettuce, patty, tomato, and onion; serve immediately"
-
-items:
-- name: Frying pan
-  quantity: 1
 
 note:
 - "For smash burgers, press the beef balls flat on a very hot pan instead of pre-shaping patties."

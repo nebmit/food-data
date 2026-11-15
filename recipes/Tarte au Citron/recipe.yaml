@@ -3,18 +3,18 @@ schema_version: 2
 meta:
   description: "An elegant French lemon tart with silky lemon curd, candied lemon slices, and a ready-made sweet crust."
   source: "Original"
+  course: "Dessert"
   cuisine: "French"
 
 portion:
   quantity: 8
   descriptor: "slices"
   active_time_minutes: 25
-  passive_time_minutes: 60
+  passive_time_minutes: 70
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
-- "Dessert"
 - "No-bake"
 - "Vegetarian"
 
@@ -27,7 +27,7 @@ items:
 tables:
 - name: Candied lemon
   stages:
-  - id: lemon_syrup
+  - id: boil_lemon_syrup
     inputs:
     - ingredient: Water
       quantity: 215
@@ -35,99 +35,105 @@ tables:
     - ingredient: Sugar
       quantity: 100
       measurement: grams
-    action: Bring to a gentle boil
+    action: Boil
+    hint: "gently; until the sugar dissolves"
 
-  - id: candied_lemon
+  - id: candy_lemon_slices
     inputs:
-    - stage: lemon_syrup
+    - stage: boil_lemon_syrup
     - ingredient: Lemon
       quantity: 1
       measurement: unit
       hint: "organic; cut into 2 mm slices"
-    action: Simmer and cool
-    hint: "10 min; until translucent; transfer to parchment paper"
-    duration_minutes: 10
+    action: Simmer
+    hint: "10–15 min; until translucent; cool in a single layer on parchment paper"
+    duration_minutes: 15
 
 - name: Lemon cream
   stages:
-  - id: curd_base
+  - id: whisk_curd_base
     inputs:
-    - ingredient: Lemon juice
-      quantity: 120
-      measurement: ml
-    - ingredient: Lemon zest
-      quantity: 2
-      measurement: tablespoon
+    - ingredient: Lemon
+      quantity: 3
+      measurement: unit
+      hint: "organic; zest two finely, then juice all three, about 120 ml"
     - ingredient: Sugar
       quantity: 120
       measurement: grams
     - ingredient: Egg
       quantity: 3
       measurement: unit
-    action: Whisk together
+    action: Whisk
     hint: "until smooth"
 
-  - id: cooked_curd
+  - id: cook_curd
     inputs:
-    - stage: curd_base
+    - stage: whisk_curd_base
     action: Cook
     hint: "medium-low heat; stir constantly; about 82°C; until it coats a spoon"
 
-  - id: lemon_cream
+  - id: finish_lemon_cream
     inputs:
-    - stage: cooked_curd
+    - stage: cook_curd
     - ingredient: Butter
       quantity: 175
       measurement: grams
       hint: "cut into small cubes"
-    action: Strain and whisk
-    hint: "until glossy and fully melted"
+    action: Strain
+    hint: "through the sieve; whisk in the butter until glossy and fully melted"
 
-  - id: cooled_lemon_cream
+  - id: cool_lemon_cream
     inputs:
-    - stage: lemon_cream
+    - stage: finish_lemon_cream
     action: Cool
     hint: "10 min"
     duration_minutes: 10
 
 - name: Assembly
   stages:
-  - id: filled_tart
+  - id: fill_tart_shell
     inputs:
-    - stage: cooled_lemon_cream
+    - stage: cool_lemon_cream
     - ingredient: Sweet tart shell
       quantity: 1
       measurement: unit
       hint: "or homemade pâte sucrée"
-    action: Fill and level
+    action: Fill
+    hint: "level the surface"
 
-  - id: apricot_glaze
+  - id: chill_tart
+    inputs:
+    - stage: fill_tart_shell
+    action: Chill
+    hint: "refrigerate at least 60 min; until set"
+    duration_minutes: 60
+
+  - id: decorate_tart
+    inputs:
+    - stage: chill_tart
+    - stage: candy_lemon_slices
+    action: Arrange
+    hint: "lemon slices over the set cream"
+
+  - id: warm_apricot_glaze
     inputs:
     - ingredient: Apricot jam
-      quantity: 200
+      quantity: 50
       measurement: grams
     - ingredient: Water
       quantity: 1
       measurement: tablespoon
-    action: Warm together
-    hint: "gently"
+    action: Warm
+    hint: "gently; until loose enough to brush"
 
-  - id: glazed_tart
+  - id: glaze_tart
     inputs:
-    - stage: filled_tart
-    - stage: apricot_glaze
-    action: Brush with glaze
-    hint: "use a thin layer"
-
-  - id: finished_tart
-    inputs:
-    - stage: glazed_tart
-    - stage: candied_lemon
-    action: Arrange and chill
-    hint: "decorate with lemon slices; refrigerate at least 60 min"
-    duration_minutes: 60
+    - stage: decorate_tart
+    - stage: warm_apricot_glaze
+    action: Brush
+    hint: "a thin layer over the lemon slices and cream"
 
 note:
 - "Using a ready-made crust eliminates all baking."
 - "For the crispest crust, serve within 24 hours."
-- "Dust with icing sugar just before serving for a elegant finish."
+- "Dust with icing sugar just before serving for an elegant finish."

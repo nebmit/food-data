@@ -3,19 +3,19 @@ schema_version: 2
 meta:
   description: "Thick, chewy chocolate chip cookies with crisp edges and soft, gooey centres using chopped chocolate."
   source: "100 Cookies by Sarah Kieffer (Chronicle Books, 2020)"
+  course: "Dessert"
   cuisine: "American"
 
 portion:
   quantity: 24
   descriptor: "cookies"
   active_time_minutes: 20
-  passive_time_minutes: 11
+  passive_time_minutes: 35
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
 - "Vegetarian"
-- "Dessert"
 - "Baking"
 
 items:
@@ -34,7 +34,17 @@ items:
 tables:
 - name: Dough
   stages:
-  - id: dry_mixture
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "180°C"
+
+  - id: line_trays
+    setup: true
+    action: Line trays
+    hint: "with parchment paper"
+
+  - id: whisk_dry_mixture
     inputs:
     - ingredient: Flour
       quantity: 355
@@ -42,108 +52,89 @@ tables:
     - ingredient: Baking soda
       quantity: 1
       measurement: teaspoon
-    - ingredient: Fine salt
+    - ingredient: Salt
       quantity: 0.75
       measurement: teaspoon
-    action: Whisk together
-    hint: "set aside"
+    action: Whisk
 
-  - id: creamed_butter
+  - id: cream_butter_and_sugar
     inputs:
     - ingredient: Butter
       quantity: 170
       measurement: grams
       hint: "room temperature"
-    action: Beat
-    hint: "medium speed; about 1 min; until creamy"
-    duration_minutes: 1
-
-  - id: creamed_sugars
-    inputs:
-    - stage: creamed_butter
-    - ingredient: Granulated sugar
+    - ingredient: Sugar
       quantity: 150
       measurement: grams
     - ingredient: Brown sugar
       quantity: 150
       measurement: grams
-    action: Beat together
-    hint: "medium speed; 2–3 min; until light and fluffy; scrape down sides"
+    action: Beat
+    hint: "medium speed; 2–3 min; until light and fluffy"
     duration_minutes: 3
 
-  - id: egg_mixture
+  - id: beat_in_eggs
     inputs:
-    - stage: creamed_sugars
+    - stage: cream_butter_and_sugar
     - ingredient: Egg
       quantity: 2
       measurement: unit
-    action: Beat in
-    hint: "one at a time"
-
-  - id: flavored_mixture
-    inputs:
-    - stage: egg_mixture
     - ingredient: Vanilla extract
       quantity: 1.5
       measurement: teaspoon
-    action: Mix
-    hint: "until smooth"
+    action: Beat
+    hint: "add the eggs one at a time; scrape down the sides; until smooth"
 
-  - id: cookie_dough
+  - id: mix_cookie_dough
     inputs:
-    - stage: flavored_mixture
-    - stage: dry_mixture
+    - stage: beat_in_eggs
+    - stage: whisk_dry_mixture
     action: Mix
     hint: "low speed; until just combined"
 
-  - id: chocolate_dough
+  - id: fold_in_chocolate
     inputs:
-    - stage: cookie_dough
+    - stage: mix_cookie_dough
     - ingredient: Dark chocolate
-      quantity: 198
+      quantity: 200
       measurement: grams
       hint: "coarsely chopped; or chocolate chips"
-    action: Fold in
+    action: Fold
     hint: "until evenly distributed"
 
 - name: Bake
   stages:
-  - id: preheat_oven
-    setup: true
-    action: Preheat oven and line trays
-    hint: "180°C; 3 trays"
-
-  - id: portioned_cookies
+  - id: portion_cookies
     inputs:
-    - stage: chocolate_dough
-    action: Scoop onto trays
-    hint: "45 g balls; 8 per tray; evenly spaced"
+    - stage: fold_in_chocolate
+    action: Scoop
+    hint: "45 g balls; evenly spaced across the lined trays"
 
-  - id: first_bake
+  - id: bake_cookies
     inputs:
-    - stage: portioned_cookies
+    - stage: portion_cookies
     action: Bake
-    hint: "one tray at a time; 8 min; until slightly puffed in centre"
+    hint: "one tray at a time; 8 min per tray; until slightly puffed in the centre"
     duration_minutes: 8
 
-  - id: tapped_cookies
+  - id: tap_cookies
     inputs:
-    - stage: first_bake
-    action: Tap tray
-    hint: "gently against oven rack"
+    - stage: bake_cookies
+    action: Tap
+    hint: "the tray gently against the oven rack"
 
-  - id: baked_cookies
+  - id: finish_baking_cookies
     inputs:
-    - stage: tapped_cookies
-    action: Bake again
-    hint: "2–3 min; edges just golden; centres soft"
+    - stage: tap_cookies
+    action: Bake
+    hint: "2–3 min more; until the edges are just golden and the centres still soft"
     duration_minutes: 3
 
   - id: cool_cookies
     inputs:
-    - stage: baked_cookies
-    action: Tap and cool
-    hint: "tap once; cool on tray 5 min; transfer to wire rack"
+    - stage: finish_baking_cookies
+    action: Cool
+    hint: "tap once more; cool on the tray 5 min; then transfer to a wire rack"
     duration_minutes: 5
 
 note:

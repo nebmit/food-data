@@ -4,6 +4,7 @@ schema_version: 2
 meta:
   description: <String> # Short summary of the recipe
   source: <String> # Origin, publication, or "Original"
+  course: <String> # Breakfast, Starter, Main, Side, Dessert, Snack, or Drink
   cuisine: <String> # Cuisine type
 
 portion:
@@ -14,7 +15,7 @@ portion:
   complexity_rating: <Integer> # 1 (very simple) to 5 (very complex)
   mayhem_rating: <Integer> # 1 (very clean) to 5 (very messy)
 
-# Optional
+# Optional. Dietary labels and character; never the course or the cuisine.
 tags:
 - <String>
 
@@ -33,7 +34,8 @@ tables:
   - id: <snake_case_id> # Unique across the whole recipe; named after the action
     setup: true # Optional. Action-only setup such as preheating: takes no
                 # inputs, is never referenced as food, and cannot end a table.
-    inputs:
+                # Place it where the cook starts it; name the object in `action`.
+    inputs: # Required unless the stage is a setup stage
     # Prepared inputs come first, then ingredient inputs.
     # Prepared input: reference an earlier stage by ID.
     - stage: <snake_case_id>
@@ -45,8 +47,9 @@ tables:
       hint: <String> # Optional prep, substitution, or qualitative amount
     action: <String> # Short imperative action, capitalised
     hint: <String> # Optional time, heat, temperature, doneness, or caution; starts lowercase
-    duration_minutes: <Integer> # Optional. Whole minutes to set a kitchen timer to;
-                                # the upper end when the hint gives a range
+    duration_minutes: <Integer> # Required when the hint states a time. Whole minutes
+                                # to set a kitchen timer to: the upper end of a range,
+                                # or one round of a per-side or per-batch time
 
 # Optional recipe-level guidance
 note:

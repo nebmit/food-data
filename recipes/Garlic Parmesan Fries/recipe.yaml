@@ -1,17 +1,26 @@
 schema_version: 2
 
 meta:
-  description: "Crisp golden fries tossed with garlic and freshly grated parmesan cheese."
+  description: "Crisp golden oven fries tossed with garlic oil and freshly grated parmesan cheese."
   source: "Original"
+  course: "Side"
   cuisine: "American"
 
 portion:
   quantity: 4
   descriptor: "servings"
-  active_time_minutes: 25
-  passive_time_minutes: 0
+  active_time_minutes: 15
+  passive_time_minutes: 25
   complexity_rating: 2
   mayhem_rating: 1
+
+items:
+- name: Oven
+  quantity: 1
+- name: Baking tray
+  quantity: 1
+- name: Mixing bowl
+  quantity: 1
 
 tables:
 - name: Fries
@@ -19,55 +28,67 @@ tables:
   - id: preheat_oven
     setup: true
     action: Preheat oven
-    hint: "220°C; line a baking tray with parchment paper"
+    hint: "220°C"
+
+  - id: line_tray
+    setup: true
+    action: Line tray
+    hint: "with parchment paper"
+
   - id: season_fries
     inputs:
     - ingredient: Potato
-      quantity: 6
-      measurement: unit
-      hint: "cut into 1cm-thick fries"
+      quantity: 1000
+      measurement: grams
+      hint: "cut into 1 cm thick fries"
     - ingredient: Olive oil
-      quantity: 30
+      quantity: 20
       measurement: ml
-    - ingredient: Garlic
-      quantity: 2
-      measurement: clove
-      hint: "minced"
     - ingredient: Salt
       quantity: 1
-      measurement: pinch
+      measurement: teaspoon
     - ingredient: Pepper
       quantity: 1
       measurement: pinch
     action: Toss
     hint: "until evenly coated"
+
   - id: arrange_fries
     inputs:
     - stage: season_fries
     action: Spread
-    hint: "in a single layer on the baking tray"
+    hint: "in a single layer on the lined tray"
+
   - id: bake_fries
     inputs:
     - stage: arrange_fries
     action: Bake
-    hint: "20–25 minutes; flip halfway; until golden and crisp"
+    hint: "20–25 min; flip halfway; until golden and crisp"
     duration_minutes: 25
+
+  - id: mix_garlic_oil
+    inputs:
+    - ingredient: Olive oil
+      quantity: 10
+      measurement: ml
+    - ingredient: Garlic
+      quantity: 2
+      measurement: clove
+      hint: "very finely minced"
+    action: Mix
+    hint: "in the mixing bowl, while the fries bake"
+
   - id: finish_fries
     inputs:
     - stage: bake_fries
+    - stage: mix_garlic_oil
     - ingredient: Parmesan cheese
       quantity: 50
       measurement: grams
       hint: "finely grated"
     action: Toss
-    hint: "serve hot"
-
-items:
-- name: Oven
-  quantity: 1
-- name: Baking tray
-  quantity: 1
+    hint: "straight from the oven, so the heat takes the raw edge off the garlic"
 
 note:
-- "Soak the cut potatoes in cold water for 30 minutes before baking for extra crispiness."
+- "Soak the cut potatoes in cold water for 30 minutes and dry them well before baking for extra crispiness."
 - "Add a sprinkle of dried rosemary or smoked paprika for extra flavour."

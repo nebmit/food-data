@@ -3,6 +3,7 @@ schema_version: 2
 meta:
   description: "Spiced ground beef served over buttery rice with a cool cucumber yogurt salad on the side."
   source: "Original"
+  course: "Main"
   cuisine: "North African"
 
 portion:
@@ -27,26 +28,26 @@ tables:
     - ingredient: Dill
       quantity: 10
       measurement: grams
-      hint: "tips picked, stems reserved"
     action: Separate
-    hint: "chop most of the tips; keep the stems and a few tips whole"
+    hint: "pick the tips and chop most of them; keep the stems and a few tips whole"
 
 - name: Rice
   stages:
-  - id: boil_rice_water
+  - id: cook_rice
     inputs:
     - ingredient: Water
       quantity: 800
       measurement: ml
-    action: Boil
-  - id: cook_rice
-    inputs:
-    - stage: boil_rice_water
     - ingredient: Rice
       quantity: 400
       measurement: grams
+    - ingredient: Salt
+      quantity: 1
+      measurement: pinch
     action: Cook
-    hint: "covered, until tender"
+    hint: "bring to a boil, then cover; lowest heat; 12–15 min; until tender"
+    duration_minutes: 15
+
   - id: butter_rice
     inputs:
     - stage: cook_rice
@@ -54,23 +55,25 @@ tables:
       quantity: 30
       measurement: grams
     action: Stir
-    hint: "coat the rice with butter"
+    hint: "until the rice is coated"
 
 - name: Beef
   stages:
-  - id: heat_beef_oil
+  - id: brown_beef
     inputs:
     - ingredient: Olive oil
       quantity: 25
       measurement: ml
-    action: Heat
-    hint: "medium-high heat"
-  - id: brown_beef
-    inputs:
-    - stage: heat_beef_oil
     - ingredient: Ground beef
       quantity: 500
       measurement: grams
+    action: Brown
+    hint: "medium-high heat; 5–6 min; break up the meat"
+    duration_minutes: 6
+
+  - id: soften_beef_vegetables
+    inputs:
+    - stage: brown_beef
     - ingredient: Red onion
       quantity: 1.5
       measurement: unit
@@ -83,12 +86,13 @@ tables:
       quantity: 2
       measurement: packet
       hint: "or ras el hanout"
-    action: Brown
-    hint: "medium-high heat, 3–4 min"
+    action: Cook
+    hint: "3–4 min; until the onion softens"
     duration_minutes: 4
+
   - id: simmer_beef
     inputs:
-    - stage: brown_beef
+    - stage: soften_beef_vegetables
     - stage: separate_dill
       part: "stems"
     - ingredient: Tomato
@@ -97,14 +101,15 @@ tables:
       hint: "diced"
     - ingredient: Tomato paste
       quantity: 2
-      measurement: can
+      measurement: tablespoon
     - ingredient: Water
       quantity: 150
       measurement: ml
       hint: "plus more if needed"
     action: Simmer
-    hint: "medium heat, 10–15 min"
+    hint: "medium heat; 10–15 min"
     duration_minutes: 15
+
   - id: season_beef
     inputs:
     - stage: simmer_beef
@@ -113,6 +118,7 @@ tables:
     - ingredient: Pepper
       hint: "to taste"
     action: Season
+    hint: "fish out the dill stems"
 
 - name: Cucumber salad
   stages:
@@ -135,13 +141,14 @@ tables:
       quantity: 25
       measurement: ml
     - ingredient: Vinegar
-      quantity: 60
+      quantity: 15
       measurement: ml
     - ingredient: Salt
       hint: "to taste"
     - ingredient: Pepper
       hint: "to taste"
     action: Mix
+
   - id: toss_cucumber_salad
     inputs:
     - stage: make_yogurt_dressing

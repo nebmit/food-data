@@ -1,17 +1,24 @@
 schema_version: 2
 
 meta:
-  description: "Pan-fried gnocchi with tender broccoli and sliced sirloin steak in a buttery garlic sauce."
+  description: "Pan-fried gnocchi with tender-crisp broccoli and sliced sirloin steak in garlic butter."
   source: "Original"
+  course: "Main"
   cuisine: "Italian"
 
 portion:
   quantity: 4
   descriptor: "servings"
   active_time_minutes: 30
-  passive_time_minutes: 15
+  passive_time_minutes: 5
   complexity_rating: 2
   mayhem_rating: 1
+
+items:
+- name: Large frying pan
+  quantity: 1
+- name: Lid
+  quantity: 1
 
 tables:
 - name: Steak
@@ -29,17 +36,21 @@ tables:
     - ingredient: Pepper
       hint: "to taste"
     action: Sear
-    hint: "high heat; 2–3 minutes per side for medium-rare"
+    hint: "high heat; 2–3 min per side for medium-rare"
+    duration_minutes: 3
+
   - id: rest_steak
     inputs:
     - stage: sear_steak
     action: Rest
-    hint: "5 minutes"
+    hint: "5 min"
     duration_minutes: 5
+
   - id: slice_steak
     inputs:
     - stage: rest_steak
     action: Slice
+    hint: "against the grain"
 
 - name: Gnocchi
   stages:
@@ -52,8 +63,9 @@ tables:
       quantity: 500
       measurement: grams
     action: Pan-fry
-    hint: "medium heat; 5–6 minutes; until golden on all sides"
+    hint: "medium heat; 5–6 min; until golden on all sides"
     duration_minutes: 6
+
   - id: cook_broccoli
     inputs:
     - stage: brown_gnocchi
@@ -65,8 +77,11 @@ tables:
       quantity: 300
       measurement: grams
       hint: "cut into small florets"
-    action: Cook
-    hint: "3–4 minutes; until the broccoli is tender-crisp"
+    - ingredient: Water
+      quantity: 50
+      measurement: ml
+    action: Steam
+    hint: "covered; 3–4 min; until the broccoli is tender-crisp and the water has cooked off"
     duration_minutes: 4
 
 - name: Assembly
@@ -86,10 +101,6 @@ tables:
     action: Assemble
     hint: "season the gnocchi and broccoli; top with steak and parmesan"
 
-items:
-- name: Large frying pan
-  quantity: 1
-
 note:
-- "Let the steak rest before slicing to keep it juicy."
+- "Cook the gnocchi in the steak pan while the steak rests; the browned bits flavour the butter."
 - "Substitute steak with chicken breast for a lighter option."

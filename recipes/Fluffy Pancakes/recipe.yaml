@@ -3,24 +3,26 @@ schema_version: 2
 meta:
   description: "Light and airy Japanese-style souffle pancakes made with whipped egg whites."
   source: "Original"
+  course: "Breakfast"
   cuisine: "Japanese"
 
 portion:
   quantity: 4
   descriptor: "servings"
-  active_time_minutes: 30
+  active_time_minutes: 40
   passive_time_minutes: 0
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
-- "Dessert"
 - "Vegetarian"
 
 items:
 - name: Mixing bowl
   quantity: 2
 - name: Non-stick pan
+  quantity: 1
+- name: Lid
   quantity: 1
 
 tables:
@@ -33,6 +35,7 @@ tables:
       measurement: unit
     action: Separate
     hint: "put the whites in a clean, dry bowl"
+
   - id: whip_egg_whites
     inputs:
     - stage: separate_eggs
@@ -42,6 +45,7 @@ tables:
       measurement: grams
     action: Beat
     hint: "to stiff peaks"
+
   - id: whisk_yolk_batter
     inputs:
     - stage: separate_eggs
@@ -59,7 +63,8 @@ tables:
       quantity: 2
       measurement: teaspoon
     action: Whisk
-    hint: "in a separate bowl, until smooth"
+    hint: "in a separate bowl; until smooth"
+
   - id: fold_pancake_batter
     inputs:
     - stage: whisk_yolk_batter
@@ -69,33 +74,40 @@ tables:
 
 - name: Cook
   stages:
-  - id: preheat_pancake_pan
+  - id: preheat_pan
     setup: true
-    action: Preheat
-    hint: "use the lowest heat setting"
+    action: Preheat pan
+    hint: "lowest heat setting"
+
   - id: portion_pancakes
     inputs:
     - stage: fold_pancake_batter
+    - ingredient: Vegetable oil
+      hint: "a thin film wiped over the pan"
     action: Spoon
-    hint: "stack the batter high in the pan"
+    hint: "tall mounds; a few at a time, working in batches"
+
   - id: cook_first_pancake_side
     inputs:
     - stage: portion_pancakes
     action: Cook
-    hint: "covered on the lowest heat, 5–6 min"
+    hint: "covered; lowest heat; 5–6 min per batch"
     duration_minutes: 6
+
   - id: flip_pancakes
     inputs:
     - stage: cook_first_pancake_side
     action: Flip
     hint: "turn carefully"
+
   - id: finish_pancakes
     inputs:
     - stage: flip_pancakes
     action: Cook
-    hint: "lowest heat, 5–6 min until golden and cooked through"
+    hint: "covered; lowest heat; 5–6 min per batch; until golden and cooked through"
     duration_minutes: 6
 
 note:
 - "Serve with fresh fruit, whipped cream, maple syrup, or a dusting of icing sugar."
 - "The key to fluffy pancakes is keeping the heat very low and not deflating the egg whites."
+- "The batter does not keep; cook the batches back to back."

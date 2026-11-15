@@ -3,6 +3,7 @@ schema_version: 2
 meta:
   description: "Hearty Midwestern casserole with seasoned ground beef, melted cheddar, and crispy tater tots baked until golden."
   source: "The Official Overwatch Cookbook by Chelsea Monroe-Cassel"
+  course: "Main"
   cuisine: "American"
 
 portion:
@@ -17,7 +18,6 @@ tags:
 - "Gluten-free"
 - "Comfort food"
 - "Casserole"
-- "Dinner"
 
 items:
 - name: Oven
@@ -30,42 +30,36 @@ items:
 tables:
 - name: Filling
   stages:
-  - id: hot_oil
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "220°C"
+
+  - id: brown_beef
     inputs:
     - ingredient: Olive oil
-      quantity: 30
+      quantity: 15
       measurement: ml
-    action: Heat
-    hint: "medium heat"
+    - ingredient: Ground beef
+      quantity: 700
+      measurement: grams
+    action: Brown
+    hint: "medium-high heat; break up the meat; until no pink remains"
 
-  - id: cooked_garlic
+  - id: season_filling
     inputs:
-    - stage: hot_oil
+    - stage: brown_beef
     - ingredient: Garlic
       quantity: 2
       measurement: clove
       hint: "minced"
-    action: Cook
-    hint: "several min; until golden and fragrant"
-
-  - id: browned_beef
-    inputs:
-    - stage: cooked_garlic
-    - ingredient: Ground beef
-      quantity: 680
+    - ingredient: Brown sugar
+      quantity: 50
       measurement: grams
-    action: Brown
-    hint: "break up the meat; cook completely"
-
-  - id: seasoned_filling
-    inputs:
-    - stage: browned_beef
-    - ingredient: Dark brown sugar
-      quantity: 60
-      measurement: ml
+      hint: "dark"
     - ingredient: Tomato paste
-      quantity: 30
-      measurement: ml
+      quantity: 2
+      measurement: tablespoon
     - ingredient: Worcestershire sauce
       quantity: 15
       measurement: ml
@@ -74,68 +68,45 @@ tables:
       measurement: teaspoon
       hint: "or dried thyme"
     - ingredient: Mixed frozen vegetables
-      quantity: 240
-      measurement: ml
+      quantity: 150
+      measurement: grams
     - ingredient: Salt
       hint: "to taste"
     - ingredient: Pepper
       hint: "to taste"
-    action: Stir and season
-    hint: "combine thoroughly"
+    action: Stir
+    hint: "medium heat; until the garlic is fragrant and everything is combined"
 
-  - id: filling_in_dish
+  - id: fill_casserole_dish
     inputs:
-    - stage: seasoned_filling
-    action: Transfer to casserole dish
-    hint: "20 × 28 cm"
+    - stage: season_filling
+    action: Transfer
+    hint: "to a casserole dish of about 20 × 28 cm"
 
 - name: Bake
   stages:
-  - id: preheat_oven
-    setup: true
-    action: Preheat oven
-    hint: "218°C"
-
-  - id: cheese_layer
+  - id: layer_casserole
     inputs:
-    - stage: filling_in_dish
+    - stage: fill_casserole_dish
     - ingredient: Cheddar cheese
-      quantity: 360
-      measurement: ml
-      hint: "shredded"
-    action: Top evenly
-
-  - id: tater_tot_layer
-    inputs:
-    - stage: cheese_layer
-    - ingredient: Frozen tater tots
-      quantity: 907
+      quantity: 170
       measurement: grams
-    action: Arrange on top
-    hint: "in even rows"
+      hint: "shredded"
+    - ingredient: Frozen tater tots
+      quantity: 900
+      measurement: grams
+    action: Layer
+    hint: "cheese first, then the tater tots in even rows"
 
-  - id: baked_casserole
+  - id: bake_casserole
     inputs:
-    - stage: tater_tot_layer
+    - stage: layer_casserole
     action: Bake
-    hint: "30 min; until tater tots are crispy"
+    hint: "30 min; until the tater tots are crisp; broil for the last 2–3 min for extra colour"
     duration_minutes: 30
 
-  - id: broiled_casserole
-    inputs:
-    - stage: baked_casserole
-    action: Broil if desired
-    hint: "2–3 min; watch closely to prevent burning"
-    duration_minutes: 3
-
-  - id: finish_casserole
-    inputs:
-    - stage: broiled_casserole
-    action: Serve hot
-    hint: "with ketchup or preferred condiments"
-
 note:
-- "Dried thyme can be substituted for dried savory if unavailable."
-- "Soy sauce is a surprisingly good condiment pairing."
+- "Serve hot with ketchup; soy sauce is a surprisingly good condiment pairing too."
+- "Watch closely if you broil at the end — the tater tots go from golden to burnt quickly."
 - "This recipe is gluten-free as written, but check tater tot packaging to confirm."
 - "Ground turkey can be used in place of ground beef for a lighter version."

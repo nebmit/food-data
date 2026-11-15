@@ -3,19 +3,19 @@ schema_version: 2
 meta:
   description: "Rich, fudgy blondies loaded with white chocolate chips and a golden caramelised top."
   source: "Original"
+  course: "Dessert"
   cuisine: "American"
 
 portion:
   quantity: 16
   descriptor: "pieces"
   active_time_minutes: 40
-  passive_time_minutes: 120
+  passive_time_minutes: 210
   complexity_rating: 2
   mayhem_rating: 2
 
 tags:
 - "Vegetarian"
-- "Dessert"
 - "Baking"
 
 items:
@@ -23,13 +23,25 @@ items:
   quantity: 1
 - name: Heatproof bowl
   quantity: 1
+- name: Mixing bowl
+  quantity: 1
 - name: Baking tin
   quantity: 1
 
 tables:
 - name: Chocolate mixture
   stages:
-  - id: melted_chocolate
+  - id: preheat_oven
+    setup: true
+    action: Preheat oven
+    hint: "180°C; 160°C fan"
+
+  - id: line_tin
+    setup: true
+    action: Line tin
+    hint: "a 20 cm square baking tin with parchment paper"
+
+  - id: melt_chocolate
     inputs:
     - ingredient: Butter
       quantity: 175
@@ -38,12 +50,12 @@ tables:
       quantity: 175
       measurement: grams
       hint: "roughly chopped"
-    action: Melt together
+    action: Melt
     hint: "in a heatproof bowl over simmering water; stir until smooth"
 
 - name: Batter
   stages:
-  - id: sugar_egg_mixture
+  - id: whisk_sugar_and_eggs
     inputs:
     - ingredient: Sugar
       quantity: 100
@@ -54,57 +66,55 @@ tables:
     - ingredient: Egg
       quantity: 3
       measurement: unit
-    action: Whisk together
+    action: Whisk
     hint: "until combined"
 
-  - id: chip_batter
+  - id: stir_in_chocolate
     inputs:
-    - stage: sugar_egg_mixture
+    - stage: whisk_sugar_and_eggs
+    - stage: melt_chocolate
+    action: Stir
+    hint: "until smooth"
+
+  - id: fold_blondie_batter
+    inputs:
+    - stage: stir_in_chocolate
     - ingredient: Flour
       quantity: 175
       measurement: grams
     - ingredient: White chocolate chips
       quantity: 250
       measurement: grams
-    action: Fold in
-
-  - id: blondie_batter
-    inputs:
-    - stage: chip_batter
-    - stage: melted_chocolate
-    action: Stir together
+    action: Fold
     hint: "until just combined"
 
 - name: Bake
   stages:
-  - id: preheat_oven
-    setup: true
-    action: Preheat oven and line tin
-    hint: "180°C; 160°C fan"
-
-  - id: filled_tin
+  - id: fill_tin
     inputs:
-    - stage: blondie_batter
-    action: Pour into tin
+    - stage: fold_blondie_batter
+    action: Pour
+    hint: "into the lined tin; level the top"
 
-  - id: baked_blondies
+  - id: bake_blondies
     inputs:
-    - stage: filled_tin
+    - stage: fill_tin
     action: Bake
-    hint: "22–27 min; until centre has the slightest wobble"
+    hint: "22–27 min; until the centre has only the slightest wobble"
     duration_minutes: 27
 
-  - id: cooled_blondies
+  - id: cool_blondies
     inputs:
-    - stage: baked_blondies
-    action: Cool in tin
-    hint: "until completely cool"
+    - stage: bake_blondies
+    action: Cool
+    hint: "in the tin; until completely cool"
 
   - id: chill_blondies
     inputs:
-    - stage: cooled_blondies
-    action: Refrigerate
-    hint: "overnight for the fudgiest texture"
+    - stage: cool_blondies
+    action: Chill
+    hint: "refrigerate at least 2 hours; overnight for the fudgiest texture"
+    duration_minutes: 120
 
 note:
 - "Drizzle with melted white chocolate for decoration."

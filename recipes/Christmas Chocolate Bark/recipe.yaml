@@ -1,8 +1,9 @@
 schema_version: 2
 
 meta:
-  description: "Easy festive chocolate bark with a dark and white chocolate swirl, topped with your favourite toppings."
+  description: "Easy festive chocolate bark with a dark and white chocolate swirl, topped with pistachios and cranberries."
   source: "Original"
+  course: "Dessert"
   cuisine: "American"
 
 portion:
@@ -14,11 +15,10 @@ portion:
   mayhem_rating: 1
 
 tags:
-- "Dessert"
 - "Vegetarian"
 
 items:
-- name: Oven tray
+- name: Baking tray
   quantity: 1
 - name: Heatproof bowl
   quantity: 2
@@ -28,10 +28,11 @@ items:
 tables:
 - name: Dark chocolate
   stages:
-  - id: line_bark_tray
+  - id: line_tray
     setup: true
-    action: Line
-    hint: "cover an oven tray with parchment paper"
+    action: Line tray
+    hint: "with parchment paper"
+
   - id: melt_dark_chocolate
     inputs:
     - ingredient: Dark chocolate
@@ -39,12 +40,13 @@ tables:
       measurement: grams
       hint: "roughly chopped"
     action: Melt
-    hint: "stir occasionally in a heatproof bowl over gently simmering bain-marie water"
+    hint: "in a heatproof bowl over barely simmering water; stir until smooth"
+
   - id: spread_dark_chocolate
     inputs:
     - stage: melt_dark_chocolate
     action: Spread
-    hint: "on the lined tray, about 1 cm thick"
+    hint: "on the lined tray; about 5 mm thick"
 
 - name: White chocolate
   stages:
@@ -55,7 +57,7 @@ tables:
       measurement: grams
       hint: "roughly chopped"
     action: Melt
-    hint: "use a separate heatproof bowl over the same bain-marie water"
+    hint: "in the second bowl over the same pot; stir until smooth"
 
 - name: Assembly
   stages:
@@ -65,31 +67,34 @@ tables:
     - stage: melt_white_chocolate
     action: Swirl
     hint: "drizzle the white chocolate over the dark layer; marble with a skewer or knife"
+
   - id: top_chocolate_bark
     inputs:
     - stage: swirl_chocolate
-    - ingredient: Toppings
-      quantity: 200
+    - ingredient: Pistachios
+      quantity: 75
       measurement: grams
-      hint: "nuts, seeds, dried fruit, crushed candy, or pretzels"
+      hint: "shelled and roughly chopped; or any other nut"
+    - ingredient: Dried cranberries
+      quantity: 75
+      measurement: grams
+      hint: "or any other dried fruit"
     action: Scatter
-    hint: "evenly over the surface"
+    hint: "evenly over the surface; press in lightly"
+
   - id: chill_chocolate_bark
     inputs:
     - stage: top_chocolate_bark
     action: Chill
-    hint: "refrigerate for 1–2 hours until fully set"
+    hint: "refrigerate 1–2 hours; until fully set"
     duration_minutes: 120
+
   - id: break_chocolate_bark
     inputs:
     - stage: chill_chocolate_bark
     action: Break
     hint: "into irregular pieces"
-  - id: serve_chocolate_bark
-    inputs:
-    - stage: break_chocolate_bark
-    action: Serve
 
 note:
-- "Use any toppings you like — crushed candy canes and pistachios are great for Christmas."
-- "Store in an airtight container in a cool place for up to 2 weeks."
+- "Any toppings work: seeds, crushed candy canes, or pretzels are all good."
+- "Store in an airtight container in the fridge for up to 2 weeks."
